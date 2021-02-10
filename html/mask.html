@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        #wrap{
+            width : 100%;
+            height : 800px;
+            border : 1px solid black;
+            background-color : lightblue;
+        }
+        #mask{
+            width : 100%;
+            height : 100%;
+            background-image: url(img/img.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            clip-path: circle(50px at 200px 200px);
+        }
+    </style>
+    <script>
+        $(function() {
+            $("#wrap").on({
+                mousemove:function(event){
+                            $("#mask").css({
+                            "clip-path": "circle(100px at "+ event.offsetX +"px "+ event.offsetY +"px)"
+                            });
+                        }
+                    });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="mask">
+        </div>
+    </div>
+</body>
+</html>
