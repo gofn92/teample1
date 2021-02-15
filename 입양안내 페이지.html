@@ -9,11 +9,10 @@
     <style>
         *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;}
         li{list-style: none;}
-
-        img{
-            width :40%;
+        #container {
+            /* border : 1px solid black; */
+            width : 960px;
         }
-
         header h1{
             font-size: 1rem;
             text-align: center;
@@ -35,10 +34,12 @@
             margin-right : 1rem;
         }
         .logo {
-            border : 1px solid blue;
             margin : 0 auto;
-            width : 40%;
-            height : 100px;
+            width : 80%;
+            height : 430px;
+            }
+        .logo img{
+        width: 100%;
         }
         header nav ul {
             width : 100%;
@@ -51,11 +52,27 @@
             width : 9%;
             flex-wrap: nowrap row;
         }
-
+        #on{
+            padding: 40px;
+        }
+        #tw{
+            padding: 40px;
+        }
+        #on p:hover{
+                color : gray;
+                font-size: 2rem;
+        }
+        #th img{
+            width :60%;
+        }
+        footer li{
+           float : left;
+       }
     </style>
 
 </head>
 <body>
+    <div id="container">
     <header>
     <div id="head">
         <h1>행복한 분양소</h1>
@@ -66,7 +83,9 @@
            
         </ul>
     </div>
-    <div class="logo">Tierheim</div>
+    <div class="logo">
+         <img src="img/dc2.jpg">
+        Tierheim</div>
     <nav>
         <ul>
             <li> <a href="#"> 보호소 소개 </a> </li>
@@ -82,15 +101,15 @@
         </ul>
         </nav>
     </header>
-    <div>
-        <img src="dc.jpg">
+    <div id="th">
+        <img src="img/dc.jpg">
     </div>
         
     <div id = "on">
         <h3> 입양 조건 </h3>
-        <p> 18세 이상 성인 </p>
-        <p> 반려 동물을 진심으로 사랑할 줄 아는 사람 </p>
-        <p> 동물들이 충분히 적응할 수 있는 환경 제공이 가능한 사람 </p>
+        <p> 18세 이상 성인이신 분 </p>
+        <p> 반려 동물을 진심으로 사랑할 줄 아시는 분 </p>
+        <p> 동물들이 충분히 적응할 수 있는 환경 제공이 가능하신 분 </p>
         <p> 다른 반려동물로 인해 파양 가능성이 있지 않은 가정 </p>
     </div>
     <div id = "tw">
@@ -99,5 +118,20 @@
         <p> 보호중인 아이와 만남 </p>
         <p> 입양 서류 작성 </p>
     </div>
+    <hr>
+    <footer>
+        <div>
+            <ul>
+                <li> 운영시간 : 00:00~00:00 </li><br>
+                <li> 토/일 공휴일 휴무 </li><br>
+                <li> 고객 센터 : 000-000-0000 </li><br>
+                <li> 위치 : 서울시 도봉구 깐따삐야 </li>
+            </ul>
+        </div>
+        <div>
+
+        </div>
+    </footer>
+</div>
 </body>
 </html>
