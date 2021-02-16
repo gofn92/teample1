@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sub2.css">
+    <title>sub2</title>
+</head>
+<body>
+    <div class="con">
+        <div class="nav">
+            <div class="dog1">
+                <img src="../image/dogr.svg" alt="" width="60px" height="60px">
+            </div>
+            <div class="dog2">
+                <img src="../image/dogl.svg" alt="" width="60px" height="60px">
+            </div>
+            <!-- 위의 이미지의 "느낌!"을 살려보면 어떨까싶음 -->
+            <a href="https://www.naver.com">naver</a>
+            <!-- 네이버쇼핑페이지로 가서 검색해볼수있으면 좋을거같단 생각에 추가 -->
+            <a href="#">home</a>
+            <!-- 보호소 메인 페이지로 돌아가는 버튼 -->
+            <p>애견전용</p>
+            <button class="btn1">LogIn</button>
+            <button class="btn2">JoinUs</button>
+            <!-- php사용 예정이므로 넣었음 -->
+        </div>
+        <header>
+            <ul>
+                <li><a href="#">애견 사료</a></li>
+                <li><a href="#">애견 간식</a></li>
+                <li><a href="#">건강 식품</a></li>
+                <li><a href="#">패션 의류</a></li>
+                <li><a href="#">이동캐리어</a></li>
+                <li><a href="#">산책리드</a></li>
+                <!-- 단순메뉴는 심심해보여 스케일을 줘봄 -->
+            </ul>
+        </header>
+        <section id="content-exp">
+            <div class="item-img">
+                <img src="../image/ex-item1.png" alt="" width="500" height="500">
+            </div>
+            <div class="product">
+                <h2>DENTAL CLEAN TOOTHPASTE</h2>
+                <h3>덴탈 클린 치약</h3>
+                <h3 class="item-price">14,900원 <span class="sale-price">22,000원</span></h3>
+                <p class="info-txt1">고양이 강아지 겸용</p>
+                <p class="info-txt2">구강 건강에 효과적인 국내산 후코이단 최다 함유로 구취&치석제거에 도움을 주며, 끈끈한 제형으로 양치 효과를 오래 지속시켜주는 전성분 EWG 그린등급 ‘덴탈 클린 치약'</p>
+                <a href="#" class="info-txt3">BASIC SET 구매하러가기</a>
+                <p class="price-txt1">3,000원 <span class="price-txt2">(50,000원 이상 구매 시 무료)</span></p>
+                <p class="info-txt4">( * 제주도 전역 추가 배송비 3,000원이 부과됩니다 )</p>
+                <p class="info-txt5">(최소주문수량 1개 이상)</p>
+                <div class="info">
+                    <div class="select-area"><p><span class="info-txt6">함께 구매하시면 좋은 제품</span> 페스룸이 추천드립니다!<a href="#" class="info-icon"><img src="../image/arrow-down.png" alt="" width="20" height="20"></a></p></div>
+                    <div class="sub-img1">
+                        <ul>
+                            <li>
+                                <img src="../image/ex-item2.png" alt=""width="150" height="150">
+                            </li>
+                            <li class="a1">
+                                <p>HEALING BRUSH</p>
+                                <p>18,900원</p>
+                                <p>상품선택</p>
+                                <select style="width: 300px;">
+                                    <option value="*" selected>-[필수]상품 선택-</option>
+                                    <option value="">HEALING BRUSH</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-img2">
+                        <ul>
+                            <li>
+                                <img src="../image/ex-item3.png" alt=""width="150" height="150">
+                            </li>
+                            <li class="b1">
+                                <p>HEALING BRUSH</p>
+                                <p>18,900원</p>
+                                <p>상품선택</p>
+                                <select style="width: 300px;">
+                                    <option value="*" selected>-[필수]상품 선택-</option>
+                                    <option value="">HEALING BRUSH</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-img3">
+                        <ul>
+                            <li>
+                                <img src="../image/ex-item4.png" alt=""width="150" height="150">
+                            </li>
+                            <li class="c1">
+                                <p>HEALING BRUSH</p>
+                                <p>18,900원</p>
+                                <p>상품선택</p>
+                                <select style="width: 300px;">
+                                    <option value="*" selected>-[필수]상품 선택-</option>
+                                    <option value="">HEALING BRUSH</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="total">
+                        <p class="count">수량을 선택해주세요!</p>
+                        <table border="1">
+                            <tr>
+                                <td>DENTAL CLEAN TOOTHPASTE</td>
+                                <td><input type="number" style="width: 30px; height: 22px;" placeholder="1"></td>
+                                <td class="right">14,900원</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="total-price">
+                        <b>총 상품금액</b><span style="font-size: 12px;">(수량):</span><span style="font-size: 20px; font-weight: bolder; color: blue;">14,900원</span><span>(1개)</span>
+                    </div>
+                    <div class="btn-col">
+                        <button style="width: 600px; background: yellow;">이벤트버튼</button>
+                        <button style="width: 196px; background: turquoise;">바로구매</button>
+                        <button style="width: 196px; background: violet;">장바구니</button>
+                        <button style="width: 196px; background: seagreen;">위시리스트</button>
+                    </div>
+                    <div class="npay">
+                        <span>NAVER</span>
+                        <p>네이버ID로 간편구매</p>
+                        <p>네이버페이</p>
+                        <div class="npay-btn">
+                            <button>네이버페이</button>
+                            <button>찜</button>
+                        </div>
+                    </div>
+                    <div class="npay-evt">
+                        <a href="https://nid.naver.com/membership/join"><p><span style="font-weight: bolder; color: green;">멤버십</span>첫달 무료가입하고 추가 4%!</p></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="item-exp">
+            <div class="item-nav">
+                <ul class="item-menu">
+                    <a href="#item-img1"><li>DESCRIPTION</li></a>
+                    <a href="#review"><li>REVIEW</li></a>
+                    <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                    <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                </ul>
+            </div>
+            <article class="item-exp-img" id="item-img1">
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+                <div class="item-img1">
+                    <img src="/image/ex-item4.png" alt="" width="900" height="900">
+                </div>
+            </article>
+            <article class="review" id="review">
+                <div class="item-nav">
+                    <ul class="item-menu">
+                        <a href="#item-img1"><li>DESCRIPTION</li></a>
+                        <a href="#review"><li>REVIEW</li></a>
+                        <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                        <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                    </ul>
+                </div>
+                <div class="review-area">
+                    <p>1</p>
+                </div>
+                <!-- 리뷰를 작성하는곳인데 어떤식으로 만들어야할지 모르겠어서 공란으로 둠 -->
+            </article>
+            <article class="shipping-policy" id="shipping-policy">
+                <div class="item-nav">
+                    <ul class="item-menu">
+                        <a href="#item-img1"><li>DESCRIPTION</li></a>
+                        <a href="#review"><li>REVIEW</li></a>
+                        <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                        <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                    </ul>
+                </div>
+                <div class="shipping-policy-area">
+                    <p>1</p>
+                </div>
+                <!-- 제품정보(배송시주의사항,유통기한등등 기재하는공간) -->
+            </article>
+            <article class="product-qa" id="product-qa">
+                <div class="item-nav">
+                    <ul class="item-menu">
+                        <a href="#item-img1"><li>DESCRIPTION</li></a>
+                        <a href="#review"><li>REVIEW</li></a>
+                        <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                        <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                    </ul>
+                </div>
+                <div class="product-qa-area">
+                    <p>1</p>
+                </div>
+                <!-- 게시판처럼 등록하는것을 전제로 만들라했는데 시간없어서 여기서 스톱 -->
+            </article>
+            <footer>
+                <p>여기가 푸터이긴한데 여기다가 뭘넣을지 나는 몰라요</p>
+            </footer>
+            <!-- 푸터에 뭫넣을지몰라서... -->
+        </section>
+    </div>
+</body>
+</html>
