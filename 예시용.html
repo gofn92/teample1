@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean" rel="stylesheet"> -->
+    <style>
+        *{box-sizing: 0;margin: 0 auto;padding:0;text-align:center;font-family: Black Han Sans;
+        }
+        li{ list-style: none;}img{width : 100%;height : 100%;}
+        a{text-decoration: none;}
+
+        #container {
+            background-color: rgb(255, 225, 232);
+            padding-top : 50px;
+        }
+        header {
+            width : 960px;
+            background-color: white;
+        }
+        header div{
+            width : 60px;
+            height : 60px;
+            display: inline-block;
+            margin : 20px;
+        }
+        header ul {
+            border-bottom: 4px solid rgb(255, 225, 232);
+            display: inline-block;
+            margin : 10px;
+        }
+        header ul li {
+            float: left;
+            font-size : 20px;
+            margin : 5px;
+        }
+        header ul li a{
+            padding : 20px;
+        }
+        section{
+            background-color: rgb(236,178,192);
+        }
+        section .mainimg{
+            width : 600px;
+            height : 300px;
+        }
+        .text{
+            width : 700px;
+            height : 50px;
+            font-size: 40px;
+            border : 1px solid white;
+            background-color: white;
+            border-radius: 30%;
+            box-shadow: 0px 0px 20px 20px white;
+            margin-top : 50px;
+        }
+        .two {
+            width : 1024px;
+            padding : 100px;
+            margin-top : 50px;
+            background-color: rgb(255, 225, 232);
+        }
+        .content {
+            width : 500px;
+            margin : 100px 0;
+            display: inline-block;
+        }
+        .content .up {
+            position : relative;
+        }
+        .content .img {
+            width : 100px;
+            height : 100px;
+            border : none;
+            position : absolute;
+            top : -70px;
+            left : 100px;
+        }
+        .content .back {
+            width : 300px;
+            height : 300px;
+            position : relative;
+            background-color: white;
+        }
+        .con-text{
+            width : 500px;
+            height : 300px;
+            line-height: 3;
+            position : absolute;
+            top : 0px;
+        }
+        .con-text h3{
+            margin-top : 30px;
+            font-size : 25px;
+        }
+        .content .down {
+            position: relative;
+            top : -50px;
+            width : 370px;
+            height : 300px;
+            background-color: white;
+            transform: perspective(500px) rotateX(45deg);
+        }
+        footer {
+            border-top: 10px solid white;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <header>
+        <div class="img">
+            <img src="img/menu.svg" alt="">
+        </div>
+        <ul>
+            <li><a href="#">보호소소개</a></li>
+            <li><a href="#">입소안내.</a></li>
+            <li><a href="#">입양안내.</a></li>
+            <li><a href="#">오시는길.</a></li>
+            <li><a href="#">입양후기.</a></li>
+            <li><a href="#">애견용품.</a></li>
+        </ul>
+    </header>
+    <section>
+        <div class="mainimg">
+            <img src="img/img2.jpg" alt="">
+        </div>
+        <div class="text">
+            <p>ㅇ ㅓ 서 와 ㅏ 나ㅏ 라 ㅇ 노 ㄹ ㅈ ㅏ</p>
+        </div>
+    </section>
+    <section class="two">
+        <h1>입양절차안내</h1>
+        <article class="content">
+            <div class="up">
+                <div class="back">
+                    <div class="img">
+                        <img src="img/menu.svg" alt="">
+                    </div>
+                </div>
+                <div class="con-text">
+                    <h3>입양자격</h3>
+                    18세 이상 성인이신분<br>
+                    반려동물을 진심으로 사랑할 줄 아시는분<br>
+                    동물들이 충분히 적응할 수 있는 환경 제공이 가능하신분<br>
+                    다른 반려동물로 인해 파양가능성이 있지 않은 가정<br>
+                </div>
+            </div>
+            <div class="down">
+                <img src="img/img2.jpg" alt="">
+            </div>
+        </article>
+        <article class="content">
+            <div class="up">
+                <div class="back">
+                    <div class="img">
+                        <img src="img/menu.svg" alt="">
+                    </div>
+                </div>
+                <div class="con-text">
+                    <h3>입양자격</h3>
+                    18세 이상 성인이신분<br>
+                    반려동물을 진심으로 사랑할 줄 아시는분<br>
+                    동물들이 충분히 적응할 수 있는 환경 제공이 가능하신분<br>
+                    다른 반려동물로 인해 파양가능성이 있지 않은 가정<br>
+                </div>
+            </div>
+            <div class="down">
+                <img src="img/img2.jpg" alt="">
+            </div>
+        </article>
+        <h1> 입소 절차안내</h1>
+        <article class="content">
+            <div class="up">
+                <div class="back">
+                    <div class="img">
+                        <img src="img/menu.svg" alt="">
+                    </div>
+                </div>
+                <div class="con-text">
+                    <h3>입양자격</h3>
+                    18세 이상 성인이신분<br>
+                    반려동물을 진심으로 사랑할 줄 아시는분<br>
+                    동물들이 충분히 적응할 수 있는 환경 제공이 가능하신분<br>
+                    다른 반려동물로 인해 파양가능성이 있지 않은 가정<br>
+                </div>
+            </div>
+            <div class="down">
+                <img src="img/img2.jpg" alt="">
+            </div>
+        </article>
+    </section>
+    <footer>
+        <p>후원계좌 : 1214455-1-5-51-5155-1</p>
+        <p>운영시간 : 00:00 ~ 00:00</p>
+        <p>대표 : 홍길동</p>
+        <p>전화번호 : 122-112-112</p>
+    </footer>
+</div>
+</body>
+</html>
