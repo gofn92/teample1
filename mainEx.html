@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>mainEx</title>
+    <script>
+        $(function(){
+            
+        });
+    </script>
     <style>
         *{
             margin: 0;
@@ -12,54 +18,226 @@
             box-sizing: border-box;
         }
         html,body{
-            min-width: 1024px;
             width: 100%; height: 100%;
         }
         .con{
+            margin: 0 auto;
             width: 100%; height: 100%;
             position: relative;
-        }
-        .main-img{
-            width: 100%; height: 100%;
             background: url(image/dog99.jpg);
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .main-img .rkstlr1{
+        .semi-lod{
+            width: 300px; height: 130px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border: 1px solid black;
             position: absolute;
-            bottom: 20px;
+            top: 0%;
+            animation: cc 2s both ease-in;
+            background: rgba(255,192,203,0.6);
+            z-index: 1;
         }
-        .main-img .rkstlr2{
-            position: absolute;
-            bottom: 100px;
+        .semi-lod .logo{
+            animation: dd 1s both 2s;
         }
-        .main-img .rkstlr3{
-            position: absolute;
-            bottom: 200px;
+        @keyframes cc{
+            0%{
+                width: 300px;
+            }
+            100%{
+                width: 100%;
+            }
         }
-        .main-img .rkstlr4{
-            position: absolute;
-            bottom: 20px; right: 0;
+        .main-img{
+            width: 100%; height: 100%;
+            animation: dd 1s both 2.2s;
         }
-        .main-img .rkstlr5{
-            position: absolute;
-            bottom: 100px; right: 0;
+        @keyframes aa{
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                opacity: 1;
+                transform: scale(2);
+            }
         }
-        .main-img .rkstlr6{
-            position: absolute;
-            bottom: 200px; right: 0;
+        @keyframes bb{
+            0%{
+                opacity: 0;
+                
+            }
+            95%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+                position: absolute;
+                left: 20px; top: -20px;
+            }
+        }
+        @keyframes dd{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .main-img .menu1{
+            width: 80px; height: 80px;
+            position: relative;
+            left: 5%; top: 65%;
+            background-position: left;
+            transform-origin: center;
+        }
+        .main-img .menu1:hover{
+            animation: aa 1s both;
+        }
+        .main-img .menu1 .rkstlr1{
+            width: 80px; height: 80px;
+        }
+        .main-img .menu1 .rkstlr1 img{
+            width: 80px; height: 80px;
+            opacity: 0;
+        }
+        .main-img .menu1 .rkstlr1 > img:hover{
+            animation: bb 0.2s both;
+        }
+
+        .main-img .menu2{
+            width: 80px; height: 80px;
+            position: relative;
+            left: 15%; top: 65%;
+            background-position: left;
+            transform-origin: center;
+        }
+        .main-img .menu2:hover{
+            animation: aa 1s both;
+        }
+        .main-img .menu2 .rkstlr2{
+            width: 80px; height: 80px;
+        }
+        .main-img .menu2 .rkstlr2 img{
+            width: 80px; height: 80px;
+            opacity: 0;
+        }
+        .main-img .menu2 .rkstlr2 > img:hover{
+            animation: bb 0.2s both;
+        }
+
+        .main-img .menu3{
+            width: 80px; height: 80px;
+            position: relative;
+            left: 10%; top: 30%;
+            background-position: left;
+            transform-origin: center;
+        }
+        .main-img .menu3:hover{
+            animation: aa 1s both;
+        }
+        .main-img .menu3 .rkstlr3{
+            width: 80px; height: 80px;
+        }
+        .main-img .menu3 .rkstlr3 img{
+            width: 80px; height: 80px;
+            opacity: 0;
+        }
+        .main-img .menu3 .rkstlr3 > img:hover{
+            animation: bb 0.2s both;
+        }
+
+        .main-img .menu4{
+            width: 80px; height: 80px;
+            position: relative;
+            left: 90%; top: 40%;
+            background-position: left;
+            transform-origin: center;
+        }
+        .main-img .menu4:hover{
+            animation: aa 1s both;
+        }
+        .main-img .menu4 .rkstlr4{
+            width: 80px; height: 80px;
+        }
+        .main-img .menu4 .rkstlr4 img{
+            width: 80px; height: 80px;
+            opacity: 0;
+        }
+        .main-img .menu4 .rkstlr4 > img:hover{
+            animation: bb 0.2s both;
+        }
+
+        .main-img .menu5{
+            width: 80px; height: 80px;
+            position: relative;
+            left: 75%; top: 30%;
+            background-position: left;
+            transform-origin: center;
+        }
+        .main-img .menu5:hover{
+            animation: aa 1s both;
+        }
+        .main-img .menu5 .rkstlr5{
+            width: 80px; height: 80px;
+        }
+        .main-img .menu5 .rkstlr5 img{
+            width: 80px; height: 80px;
+            opacity: 0;
+        }
+        .main-img .menu5 .rkstlr5 > img:hover{
+            animation: bb 0.2s both;
+        }
+
+        .main-img .menu6{
+            width: 80px; height: 80px;
+            position: relative;
+            left: 85%; top: 10%;
+            background-position: left;
+            transform-origin: center;
+        }
+        .main-img .menu6:hover{
+            animation: aa 1s both;
+        }
+        .main-img .menu6 .rkstlr6{
+            width: 80px; height: 80px;
+        }
+        .main-img .menu6 .rkstlr6 img{
+            width: 80px; height: 80px;
+            opacity: 0;
+        }
+        .main-img .menu6 .rkstlr6 > img:hover{
+            animation: bb 0.2s both;
         }
     </style>
 </head>
 <body>
     <div class="con">
+        <div class="semi-lod">
+            <div class="logo">
+                <img src="image/logo_pink.png" alt="" width="120" height="120">
+            </div>
+        </div>
         <div class="main-img">
-            <img src="image/dlqdid.gif" alt="" class="rkstlr1">
-            <img src="image/dlqdid.gif" alt="" class="rkstlr2">
-            <img src="image/dlqdid.gif" alt="" class="rkstlr3">
-            <img src="image/dlqdid.gif" alt="" class="rkstlr4">
-            <img src="image/dlqdid.gif" alt="" class="rkstlr5">
-            <img src="image/dlqdid.gif" alt="" class="rkstlr6">
+           <div class="menu1" style="background: url(image/born.gif); background-repeat: no-repeat;">
+               <div class="rkstlr1"><img src="image/dlqdid.gif" alt=""></div>
+           </div>
+           <div class="menu2" style="background: url(image/born.gif); background-repeat: no-repeat;">
+            <div class="rkstlr2"><img src="image/dlqdid.gif" alt=""></div>
+            </div>
+            <div class="menu3" style="background: url(image/born.gif); background-repeat: no-repeat;">
+                <div class="rkstlr3"><img src="image/dlqdid.gif" alt=""></div>
+            </div>
+            <div class="menu4" style="background: url(image/born.gif); background-repeat: no-repeat;">
+                <div class="rkstlr4"><img src="image/dlqdid.gif" alt=""></div>
+            </div>
+            <div class="menu5" style="background: url(image/born.gif); background-repeat: no-repeat;">
+                <div class="rkstlr5"><img src="image/dlqdid.gif" alt=""></div>
+            </div>
+            <div class="menu6" style="background: url(image/born.gif); background-repeat: no-repeat;">
+                <div class="rkstlr6"><img src="image/dlqdid.gif" alt=""></div>
+            </div>
         </div>
     </div>
 </body>
