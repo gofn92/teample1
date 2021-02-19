@@ -49,7 +49,6 @@
                 justify-content: space-around;
                 position: relative;
                 border-bottom: 1px solid black;
-                padding-left: 100px;
             }
             nav a{
                 text-decoration: none;
@@ -109,12 +108,12 @@
                 grid-template-columns: repeat(2,1fr);
             }
             .item-img{
-                width: 720px; height: 720px;
+                width: 500px; height: 500px;
                 grid-column: 1/1;
                 padding: 50px 0 0 0;
             }
             .item-img img{
-                width: 720px; height: 720px;
+                width: 500px; height: 500px;
             }
             .product{
                 width: 500px; height: auto;
@@ -253,7 +252,20 @@
                 padding: 10px;
             }
             #item-exp .review .review-area .re-txt{
-                padding: 20px;
+                position: relative;
+                width: 100%;
+                margin: 0px 25px;
+            }
+            #item-exp .review .review-area .re-txt::before,
+            #item-exp .review .review-area .re-txt::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+            #item-exp .review .review-area .re-txt textarea{
+                width: 100%; height: 150px;
+                padding: 0px;
+                box-sizing: border-box;
             }
             #item-exp .review .review-area .re-txt .re-btn{
                 padding: 5px;
@@ -261,6 +273,7 @@
                 border: none;
                 border-radius: 10px;
                 color: white;
+                float: right;
             }
             #item-exp .review .review-area .re-txt .re-pho{
                 padding: 5px;
@@ -268,12 +281,15 @@
                 border: none;
                 border-radius: 10px;
                 color: white;
+                float: right;
             }
             #item-exp .review .review-area .re-pho-area{
                 display: grid;
                 grid-template-columns: repeat(8,1fr);
                 border: 1px solid black;
                 place-items: center center;
+                position: relative;
+                left: 25px;
             }
             #item-exp .review .review-area .re-pho-area .re-rank{
                 text-align: center;
@@ -284,6 +300,8 @@
             }
             #item-exp .shipping-policy .shipping-policy-area{
                 line-height: 20px;
+                position: relative;
+                left: 30px;
             }
             #item-exp .shipping-policy .shipping-policy-area p{
                 font-size: 14px;
@@ -291,17 +309,22 @@
             #item-exp .product-qa{
                 width: 100%; height: auto;
             }
+            #item-exp .product-qa .row{
+                position: relative;
+                left: 50px;
+            }
             #item-exp .product-qa .product-qa-area table{
                 width: 100%; height: 500px;
                 text-align: center;
             }
             footer{
+                width: 100%;
                 height: 50px;
                 background: grey;
-                position: relative;
-                top: 200px;
                 text-align: center;
                 color: white;
+                position: relative;
+                left: 50px;
             }
         }
     </style>
@@ -362,7 +385,7 @@
                                 <p>HEALING BRUSH</p>
                                 <p>18,900원</p>
                                 <p>상품선택</p>
-                                <select style="width: 240px;">
+                                <select style="width: 200px;">
                                     <option value="*" selected>-[필수]상품 선택-</option>
                                     <option value="">HEALING BRUSH</option>
                                 </select>
@@ -380,7 +403,7 @@
                                 <p>HEALING BRUSH</p>
                                 <p>18,900원</p>
                                 <p>상품선택</p>
-                                <select style="width: 240px;">
+                                <select style="width: 200px;">
                                     <option value="*" selected>-[필수]상품 선택-</option>
                                     <option value="">HEALING BRUSH</option>
                                 </select>
@@ -396,7 +419,7 @@
                                 <p>HEALING BRUSH</p>
                                 <p>18,900원</p>
                                 <p>상품선택</p>
-                                <select style="width: 240px;">
+                                <select style="width: 200px;">
                                     <option value="*" selected>-[필수]상품 선택-</option>
                                     <option value="">HEALING BRUSH</option>
                                 </select>
@@ -491,8 +514,8 @@
                     <!-- in page nav -->
                     <div class="re-txt">
                         <table style="text-align: center;">
-                            <tr>REVIEW/문의글 혹은 악의적인 비방글은 무통보 삭제된다는 점 유의해주세요^^</tr></thead>
-                            <textarea cols="142" rows="10" placeholder="리뷰를 남겨주세요."></textarea>
+                            <tr>REVIEW/문의글 혹은 악의적인 비방글은 무통보 삭제된다는 점 유의해주세요^^</tr>
+                            <textarea maxlength="120" minlength="10" placeholder="리뷰를 남겨주세요."></textarea>
                             <button class="re-pho">사진올리기</button>
                             <input type="submit" class="re-btn" value="리뷰올리기">
                         </table>
