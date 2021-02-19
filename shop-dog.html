@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop-dog</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        @font-face {
+            font-family: 'SDSamliphopangche_Outline';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Cafe24Dongdong';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @media (min-width: 1024px) and (max-width: 1920px){
+            *{
+                list-style: none;
+                text-decoration: none;
+            }
+            h2, tr, i{
+                font-family: 'SDSamliphopangche_Outline';
+            }
+            h3, p, span, a, td, button, textarea, input{
+                font-family: 'Cafe24Dongdong';
+            }
+            html,body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%; 
+                font-size: 100%;
+            }
+            #container{
+                width: 90%; height: 100%;
+                min-width: 1024px;
+                margin: 0 auto;
+            }
+            nav{
+                display: grid;
+                grid-template-columns: 5% 5% 5% 75% 5% 5%;
+                align-items: center;
+                justify-content: space-around;
+                position: relative;
+                border-bottom: 1px solid black;
+                padding-left: 100px;
+            }
+            nav a{
+                text-decoration: none;
+                color: rgba(0,0,0,0.5);
+                transition: 0.2s;
+                font-weight: bolder;
+                padding: 0 0px;
+                font-family: 'Cafe24Dongdong';
+            }
+            nav a:hover{
+                color: black;
+                font-size: 1.2rem;
+            }
+            nav .nav-btn1{
+                padding: 5px;
+                background: none;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Cafe24Dongdong';
+            }
+            nav .nav-btn2{
+                padding: 5px;
+                background: none;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Cafe24Dongdong';
+            }
+            nav p{
+                font-weight: bolder;
+                font-size: 2rem;
+                text-align: center;
+                font-family: 'SDSamliphopangche_Outline';
+            }
+            header{
+                border-bottom: 1px solid black;
+                padding: 0 0 10px 0;
+            }
+            header ul{
+                display: flex;
+                justify-content: space-around;
+                list-style: none;
+            }
+            header ul li a{
+                text-decoration: none;
+                color: black;
+                transition: 0.2s;
+                font-family: 'Cafe24Dongdong';
+            }
+            header ul li a:hover{
+                font-weight: bolder;
+                font-size: 1.2rem;
+            }
+            #content-exp{
+                width: 100%; height: 200%;
+                display: grid;
+                justify-items: center;
+                grid-template-columns: repeat(2,1fr);
+            }
+            .item-img{
+                width: 720px; height: 720px;
+                grid-column: 1/1;
+                padding: 50px 0 0 0;
+            }
+            .item-img img{
+                width: 720px; height: 720px;
+            }
+            .product{
+                width: 500px; height: auto;
+                grid-column: 2/2;
+            }
+            .product .prod-info{
+                text-align: justify;
+            }
+            .product .item-price{
+                font-size: 26px;
+                margin: 0;
+            }
+            .product .sale-price{
+                text-decoration: line-through;
+                color: rgba(0,0,0,0.5);
+                font-size: 22px;
+            }
+            .product .info-txt3{
+                color: blue;
+            }
+            .product .info{
+                width: 100%;
+                position: relative;
+            }
+            .product .select-area{
+                background: pink;
+                padding: 10px;
+                position: relative;
+            }
+            .product .select-area .info-txt6{
+                font-weight: bolder;
+            }
+            .product .select-area .info-icon{
+                position: absolute;
+                right: 50px;
+            }
+            .product .info .sub-img1{
+                width: 100%;
+            }
+            .product .info .sub-img1 ul{
+                position: relative;
+            }
+            .product .info .sub-img1 ul .a1{
+                position: absolute;
+                left: 300px; top: 20px;
+            }
+            .product .info .sub-img2 ul .b1{
+                position: absolute;
+                left: 300px; top: 270px;
+            }
+            .product .info .sub-img3 ul .c1{
+                position: absolute;
+                left: 300px; top: 430px;
+            }
+            .product .info .count{
+                color: red;
+            }
+            .total{
+                width: 100%;
+            }
+            .total table{
+                width: 100%;
+                border-left: none;
+                border-right: none;
+            }
+            .total table .right{
+                text-align: right;
+            }
+            .total-price{
+                margin: 20px 0;
+            }
+            .btn-col{
+                width: 100%;
+                border-bottom: 3px solid black;
+            }
+            .btn-col button{
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            .npay{
+                position: relative;
+            }
+            .npay span{
+                color: green;
+                font-weight: bolder;
+            }
+            .npay p{
+                font-size: 14px;
+            }
+            .npay .npay-btn{
+                position: absolute;
+                left: 160px; top: 10px;
+            }
+            .npay .npay-btn button:nth-child(1){
+                width: 280px; height: 50px;
+                background: green;
+                color: white;
+                font-size: 24px;
+                border: none;
+            }
+            .npay .npay-btn button:nth-child(2){
+                height: 50px;
+                padding: 15px;
+                color: green;
+                font-weight: bolder;
+            }
+            #item-exp{
+                width: 100%; height: 100%;
+            }
+            #item-exp .item-menu{
+                width: 100%;
+                border-bottom: 3px solid black;
+                display: flex;
+                justify-content: space-between;
+            }
+            #item-exp .item-menu a{
+                display: inline-block;
+                font-size: 24px;
+                color: black;
+                font-weight: bolder;
+                position: relative;
+            }
+            #item-exp .item-exp-img{
+                display: grid;
+                grid-template-rows: repeat(8,1fr);
+                justify-content: space-around;
+            }
+            #item-exp .item-exp-img .item-img1{
+                width: 900px;
+            }
+            #item-exp .item-exp-img .item-img1 img{
+                width: 900px;
+            }
+            #item-exp .review{
+                width: 100%;
+                padding: 10px;
+            }
+            #item-exp .review .review-area .re-txt{
+                padding: 20px;
+            }
+            #item-exp .review .review-area .re-txt .re-btn{
+                padding: 5px;
+                background: rgba(0,0,0,0.5);
+                border: none;
+                border-radius: 10px;
+                color: white;
+            }
+            #item-exp .review .review-area .re-txt .re-pho{
+                padding: 5px;
+                background: rgba(0,0,0,0.5);
+                border: none;
+                border-radius: 10px;
+                color: white;
+            }
+            #item-exp .review .review-area .re-pho-area{
+                display: grid;
+                grid-template-columns: repeat(8,1fr);
+                border: 1px solid black;
+                place-items: center center;
+            }
+            #item-exp .review .review-area .re-pho-area .re-rank{
+                text-align: center;
+            }
+            #item-exp .shipping-policy{
+                width: 100%; height: auto;
+                text-align: center;
+            }
+            #item-exp .shipping-policy .shipping-policy-area{
+                line-height: 20px;
+            }
+            #item-exp .shipping-policy .shipping-policy-area p{
+                font-size: 14px;
+            }
+            #item-exp .product-qa{
+                width: 100%; height: auto;
+            }
+            #item-exp .product-qa .product-qa-area table{
+                width: 100%; height: 500px;
+                text-align: center;
+            }
+            footer{
+                height: 50px;
+                background: grey;
+                position: relative;
+                top: 200px;
+                text-align: center;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <div class="dog1">
+                <img src="image/dogr.svg" alt="dogr" width="60px" height="60px">
+            </div>
+            <div class="dog2">
+                <img src="image/dogl.svg" alt="dogl" width="60px" height="60px">
+            </div>
+            <!-- nav small img -->
+            <a href="#">HOME</a>
+            <!-- home button -->
+            <p>애완견용품</p>
+            <input type="button" value="LogIn" class="nav-btn1">
+            <input type="button" value="JoinUs" class="nav-btn2">
+            <!-- login and join btn -->
+        </nav>
+        <header>
+            <ul>
+                <li><a href="#">애견 사료</a></li>
+                <li><a href="#">애견 간식</a></li>
+                <li><a href="#">건강 식품</a></li>
+                <li><a href="#">패션 의류</a></li>
+                <li><a href="#">이동캐리어</a></li>
+                <li><a href="#">산책리드</a></li>
+                <!-- shop menu -->
+            </ul>
+        </header>
+        <section id="content-exp">
+            <div class="item-img">
+                <img src="image/ex-item1.png" alt="item1">
+                <!-- item img -->
+            </div>
+            <div class="product">
+                <div class="prod-info">
+                    <h2>DENTAL CLEAN TOOTHPASTE</h2>
+                    <h3>덴탈 클린 치약</h3>
+                    <p class="sale-price">22,000원</p><h3 class="item-price">14,900원</h3>
+                    <p class="info-txt1">고양이 강아지 겸용</p>
+                    <p class="info-txt2">구강 건강에 효과적인 국내산 후코이단 최다 함유로 <br> 구취&치석제거에 도움을 주며, <br> 끈끈한 제형으로 양치 효과를 오래 지속시켜주는 <br> 전성분 EWG 그린등급 ‘덴탈 클린 치약'</p>
+                    <a href="#" class="info-txt3">BASIC SET 구매하러가기</a>
+                    <p class="price-txt1">3,000원 <span class="price-txt2">(50,000원 이상 구매 시 무료)</span></p>
+                    <p class="info-txt4">( * 제주도 전역 추가 배송비 3,000원이 부과됩니다 )</p>
+                    <p class="info-txt5">(최소주문수량 1개 이상)</p>
+                </div>
+                <div class="info">
+                    <div class="select-area"><p><span class="info-txt6">함께 구매하시면 좋은 제품</span> <span class="info-txt6">페스룸이 추천드립니다!</span><a href="#" class="info-icon"><img src="image/arrow-down.png" alt="" width="20" height="20"></a></p></div>
+                    <div class="sub-img1">
+                        <ul>
+                            <li>
+                                <img src="image/ex-item2.png" alt=""width="150" height="150">
+                            </li>
+                            <li class="a1">
+                                <p>HEALING BRUSH</p>
+                                <p>18,900원</p>
+                                <p>상품선택</p>
+                                <select style="width: 240px;">
+                                    <option value="*" selected>-[필수]상품 선택-</option>
+                                    <option value="">HEALING BRUSH</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <!-- item info1 -->
+                    </div>
+                    <div class="sub-img2">
+                        <!-- add item -->
+                        <ul>
+                            <li>
+                                <img src="image/ex-item3.png" alt=""width="150" height="150">
+                            </li>
+                            <li class="b1">
+                                <p>HEALING BRUSH</p>
+                                <p>18,900원</p>
+                                <p>상품선택</p>
+                                <select style="width: 240px;">
+                                    <option value="*" selected>-[필수]상품 선택-</option>
+                                    <option value="">HEALING BRUSH</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-img3">
+                        <ul>
+                            <li>
+                                <img src="image/ex-item4.png" alt=""width="150" height="150">
+                            </li>
+                            <li class="c1">
+                                <p>HEALING BRUSH</p>
+                                <p>18,900원</p>
+                                <p>상품선택</p>
+                                <select style="width: 240px;">
+                                    <option value="*" selected>-[필수]상품 선택-</option>
+                                    <option value="">HEALING BRUSH</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="total">
+                        <!-- total price area -->
+                        <p class="count">수량을 선택해주세요!</p>
+                        <table border="1">
+                            <tr>
+                                <td>DENTAL CLEAN TOOTHPASTE</td>
+                                <td><input type="number" style="width: 40px; height: 22px;" placeholder="1"></td>
+                                <td class="right">14,900원</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="total-price">
+                        <b>총 상품금액</b><span style="font-size: 12px;">(수량):</span><span style="font-size: 20px; font-weight: bolder; color: blue;">14,900원</span><span>(1개)</span>
+                    </div>
+                    <div class="btn-col">
+                        <button style="width: 440px; background: yellow;">이벤트버튼</button>
+                        <button style="width: 140px; background: turquoise;">바로구매</button>
+                        <button style="width: 140px; background: violet;">장바구니</button>
+                        <button style="width: 140px; background: seagreen;">위시리스트</button>
+                    </div>
+                    <div class="npay">
+                        <!-- link naverpay -->
+                        <span>NAVER</span>
+                        <p>네이버ID로 간편구매</p>
+                        <p>네이버페이</p>
+                        <div class="npay-btn">
+                            <button>네이버페이</button>
+                            <button>찜</button>
+                        </div>
+                    </div>
+                    <div class="npay-evt">
+                        <a href="https://nid.naver.com/membership/join" target="_blank"><p><span style="font-weight: bolder; color: green;">멤버십</span>첫달 무료가입하고 추가 4%!</p></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="item-exp">
+            <!-- in page nav -->
+            <div class="item-nav">
+                <ul class="item-menu">
+                    <a href="#item-img1"><li>DESCRIPTION</li></a>
+                    <a href="#review"><li>REVIEW</li></a>
+                    <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                    <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                </ul>
+            </div>
+            <article class="item-exp-img" id="item-img1">
+                <!-- item explain area -->
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+                <div class="item-img1">
+                    <img src="image/ex-item4.png" alt="ex-item4">
+                </div>
+            </article>
+            <article class="review" id="review">
+                <!-- item review area -->
+                <div class="item-nav">
+                    <!--  -->
+                    <ul class="item-menu">
+                        <a href="#item-img1"><li>DESCRIPTION</li></a>
+                        <a href="#review"><li>REVIEW</li></a>
+                        <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                        <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                    </ul>
+                </div>
+                <div class="review-area">
+                    <!-- in page nav -->
+                    <div class="re-txt">
+                        <table style="text-align: center;">
+                            <tr>REVIEW/문의글 혹은 악의적인 비방글은 무통보 삭제된다는 점 유의해주세요^^</tr></thead>
+                            <textarea cols="142" rows="10" placeholder="리뷰를 남겨주세요."></textarea>
+                            <button class="re-pho">사진올리기</button>
+                            <input type="submit" class="re-btn" value="리뷰올리기">
+                        </table>
+                    </div>
+                    <i>BEST PHOTO REVIEW</i>
+                    <div class="re-pho-area">
+                        <div class="re-rank">
+                            <h2>리뷰평점</h2>
+                            <h2>5.0</h2>
+                            <div><img src="image/star.jpg" alt="" width="80" height="40"></div>
+                        </div>
+                        <div class="re-img"><img src="image/포메.jpg" alt="" width="130" height="100"></div>
+                        <div class="re-img"><img src="image/포메.jpg" alt="" width="130" height="100"></div>
+                        <div class="re-img"><img src="image/포메.jpg" alt="" width="130" height="100"></div>
+                        <div class="re-img"><img src="image/포메.jpg" alt="" width="130" height="100"></div>
+                        <div class="re-img"><img src="image/포메.jpg" alt="" width="130" height="100"></div>
+                        <div class="re-img"><img src="image/포메.jpg" alt="" width="130" height="100"></div>
+                        <div class="re-img"><img src="image/포메.jpg" alt="" width="130" height="100"></div>
+                    </div>
+                </div>
+            </article>
+            <article class="shipping-policy" id="shipping-policy">
+                <!-- item delivery info-->
+                <div class="item-nav">
+                    <!-- in page nav -->
+                    <ul class="item-menu">
+                        <a href="#item-img1"><li>DESCRIPTION</li></a>
+                        <a href="#review"><li>REVIEW</li></a>
+                        <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                        <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                    </ul>
+                </div>
+                <div class="shipping-policy-area">
+                    <h4>상품결제정보</h4>
+                    <p>고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다. 확인과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.</p> <br>
+                    <p>무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다.</p> <br>
+                    <p>주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.</p>
+                    <h4>배송정보</h4>
+                    <p>배송 방법 : 택배</p>
+                    <p>배송 지역 : 전국지역</p>
+                    <p>배송 비용 : 3,000원</p>
+                    <p>배송 기간 : 3일 ~ 7일</p>
+                    <p>배송 안내 :</p>
+                    <p>
+                        ※배송기간 : 평일 오전 9시 30분 이전 결제 완료된 주문건은 오전 당일 출고를 원칙으로 하며,
+                        
+                        평일 오전 9시 30분 이후~ 오후 1시 30분 이전 결제 완료된 주문건은 오후 당일 출고를 원칙으로 도와드리고 있습니다.
+                        
+                        오후 1시 30분 이후 주문건의 경우, 익영업일 순차적으로 출고 진행되오니 참고 부탁드립니다. 아울러 배송은 평균 1~3일 정도 소요되며,
+                        
+                        제주도 및 도서산간 지역의 경우 배송이 다소 지연될 수 있는 점 양해 부탁드립니다.</p>
+                    <h4>교환 및 반품정보</h4>
+                    <br>
+                    <h4>교환 및 반품이 가능한 경우</h4>
+                    <p>- 상품을 공급 받으신 날로부터 7일이내 단, 가전제품의
+                        경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다. <br>
+                      - 공급받으신 상품 및 용역의 내용이 표시.광고 내용과
+                        다르거나 다르게 이행된 경우에는 공급받은 날로부터 3월이내, 그사실을 알게 된 날로부터 30일이내</p>
+                    <h4>교환 및 반품이 불가능한 경우</h4>
+                    <p>** 교환 및 반품이 가능한 경우** <br>
+                        - 상품을 인도받은 날로부터 7일 이내에 한해 계약에 관한 청약철회가 가능합니다. <br>
+                        - 공급받으신 상품 및 용역의 내용이 표시. 광고 내용과 다르거나 다르게 이행된 경우에는 공급받은 날로부터 3월 이내, 그 사실을 알게 된 날로부터 30일 이내 <br>
+                        
+                        ** 교환 및 반품이 불가능한 경우** <br>
+                        - 고객님의 책임 있는 사유로 상품 등이 멸실 또는 훼손된 경우. 단, 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외 <br>
+                        - 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우
+                        (예:'개봉 시 교환/환불 불가 스티커' 를 훼손한 경우, 제품 단 상자가 훼손되어 상품가치가 상실된 경우) <br>
+                        - 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 단, 화장품등의 경우 시용제품을 제공한 경우에 한 합니다. <br>
+                        - 시간의 경과에 의하여 재판매가 곤란할 정도로 상품 등의 가치가 현저히 감소한 경우 <br>
+                          (자세한 내용은 CS센터의 Q&A게시판을 이용해 주시기 바랍니다.)
+                        <br>
+                        ※ 단순변심으로 인한 교환, 반품을 하실 경우 상품반송 비용은 고객님께서 부담하셔야 합니다. (색상 및 사이즈 교환 등 포함)</p>
+                    <h4>서비스문의</h4>
+                    <p>PETHROOM홈페이지 내 게시판문의 / 고객센터 1644-9603로 문의 주시면 빠르게 답변 드리겠습니다.</p>
+                </div>
+                <!-- 제품정보(배송시주의사항,유통기한등등 기재하는공간) -->
+            </article>
+            <article class="product-qa" id="product-qa">
+                <!-- item Q&A area -->
+                <div class="item-nav">
+                    <!-- in page nav -->
+                    <ul class="item-menu">
+                        <a href="#item-img1"><li>DESCRIPTION</li></a>
+                        <a href="#review"><li>REVIEW</li></a>
+                        <a href="#shipping-policy"><li>SHIPPING POLICY</li></a>
+                        <a href="#product-qa"><li>PRODUCT Q&A</li></a>
+                    </ul>
+                </div>
+                <div class="product-qa-area">
+                    <div class="row">
+                        <table border="1">
+                            <thead>
+                                <h3>상품Q&A</h3>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>카테고리</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>작성일</th>
+                                    <th>조회</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>[상품]</td>
+                                    <td>상품관련 문의</td>
+                                    <td>강아지</td>
+                                    <td>2021-02-17</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>[상품]</td>
+                                    <td>상품관련 문의</td>
+                                    <td>고양이</td>
+                                    <td>2021-02-17</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>[상품]</td>
+                                    <td>상품관련 문의</td>
+                                    <td>거북이</td>
+                                    <td>2021-02-17</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>[상품]</td>
+                                    <td>상품관련 문의</td>
+                                    <td>사막여우</td>
+                                    <td>2021-02-17</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>[상품]</td>
+                                    <td>상품관련 문의</td>
+                                    <td>고슴도치</td>
+                                    <td>2021-02-17</td>
+                                    <td>100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input  class="qa-btn" type="button" value="문의하기">
+                    </div>
+                </div>
+            </article>
+            <footer>
+                <p>footer Area</p>
+            </footer>
+            <!-- 푸터 통일안 나오면 작성하기! -->
+        </section>
+    </div>
+</body>
+</html>
