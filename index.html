@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <script src="./index.js"></script>
+    
+    <script>
+    </script>
+    
+    <style>
+        @font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        body{
+            background-image: url(./핑크.png);
+            overflow: hidden;
+        }
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .bg {
+            position: relative;
+            width: 70%;
+            height: 80%;
+            background-image: url(./bg.jpg);
+            background-position: center;
+            margin-top: 5%;
+            
+        }
+        .con{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image:url(./heartdog.gif);
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            left: 0;
+            top: 0;
+            
+            
+        }
+        .linetop{
+            width: 100%;
+            position: absolute;
+            bottom: 15%;
+            border-top: 5px solid rgb(255, 255, 255);
+        }
+        .dot {
+            position: absolute;
+            left: 10%;
+            top: -3%;
+            width: 20%;
+            height: 20%;
+            animation: dot 2s infinite;
+        }
+        .logo{
+            position: absolute;
+            left: 35%;
+            top: 25%;
+        }
+        
+        .choco1,.choco2 {
+            position: absolute;
+            top: 2%;
+            left: 33%;
+            
+        }
+        .a1,.a2{
+            
+            transition: 0.5s;
+        }
+        .a1:hover{
+            
+            transition: 0.5s;
+            transform: rotate(35deg);
+        }
+        .a2:hover{
+            transition: 0.5s;
+            transform: rotate(-35deg);
+        }
+        .dog1 img{
+            width: 15%;
+            height: 35%;
+            position: absolute;
+            top: 51%;
+            left: 15%;
+            animation: dog1 3s infinite linear;
+            box-shadow: rgba(0, 0, 0, 0.329) 5px 5px 5px 5px;
+        }
+        @keyframes dog1 {
+            0% {
+                transform-origin:left top;
+                transform: rotate(5deg);
+            }
+            50% {transform-origin:left top;
+                transform: rotate(10deg);
+            }
+
+            75% {transform-origin:left top;
+                transform: rotate(-5deg);
+            }
+            100% {transform-origin:left top;
+                transform: rotate(5deg);
+            }
+        }
+        .ap {
+            position: absolute;
+            top: 50%;
+            left: 14%;
+        }
+        .네모 {
+            position: absolute;
+            top: 12%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            background-color: rgb(252, 255, 247);
+            text-align:center;
+            font-family:'SDSamliphopangche_Outline';
+            box-shadow: rgba(0, 0, 0, 0.329) 5px 5px 5px 5px;
+        }
+        .post_it {
+            width: 20%;
+            position: absolute;
+            top: 0%;
+            left: 65%;
+        }
+        .cat {
+            
+            width: 69rem;
+            height: 1000px;
+            clip-path: circle(8% at 88% 55%);
+            position: absolute;
+            left: 30%;
+            top: 15%;
+        }
+        h2 {
+            position: absolute;
+            top: 40%;
+            left: 35%;
+            transform: rotate(15deg);
+        }
+        .menu {
+            position: absolute;
+            bottom: 20%;
+            left: 28%;
+        }
+        p { 
+            
+            text-align: center;
+            font-family:'SDSamliphopangche_Outline';
+            padding-top: 16px;
+            width: 150px;
+            height: 50px;
+            background-color: rgb(255, 255, 255);
+            clip-path: polygon(9% 24%, 20% 13%, 28% 12%, 36% 11%, 54% 14%, 66% 18%, 78% 21%, 87% 31%, 93% 41%, 94% 56%, 85% 78%, 70% 88%, 46% 89%, 30% 86%, 14% 80%, 3% 61%, 1% 43%);
+        }
+        .paw {
+            position: absolute;
+            left: 14%;
+            bottom: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="bg"></div>
+        <div class="linetop"></div>
+        <div class="dot">
+        <div class="logo"><img src="./logo_darkbrown.png" width="40%" alt=""></div>
+        </div>
+        <div class="choco2">
+            <img class="a1" src="./초콜렛2-01.png" width="6%"  alt="">
+            <img class="a2" src="./초콜렛2-02.png" width="6%"  alt="">
+            <img class="a1" src="./초콜렛2-03.png" width="6%"  alt="">
+            <img class="a2" src="./초콜렛2-04.png" width="6%"  alt="">
+            <img class="a1" src="./초콜렛2-05.png" width="6%"  alt="">
+            <img class="a2" src="./초콜렛2-06.png" width="6%"  alt="">
+            <img class="a1" src="./초콜렛2-07.png" width="6%"  alt="">
+            <img class="a2" src="./초콜렛2-08.png" width="6%"  alt="">
+        </div>
+        <div class="네모">
+            <img src="./비글.jpg" width="80%" height="80%" style="margin-top: 50px;" alt="">
+            <h1>이달의강아지</h1>
+        </div>
+        <div class="menu">
+            <img src="./입양후기.gif" width="150px" alt="">
+            <img src="./입양후기.gif" width="150px" alt="">
+            <img src="./입양후기.gif" width="150px" alt="">
+            <img src="./입양후기.gif" width="150px" alt="">
+            <img src="./입양후기.gif" width="150px" alt="">
+            <img src="./입양후기.gif" width="150px" alt="">
+            <div class="menu2">
+            <img class="paw" src="./dog_paw.png" width="50px" alt="">
+            <p>입양입소안내</p>
+            </div>
+        </div>
+        <div class="dog1">
+            <img src="./후원계좌.gif" alt="">
+        </div>
+        <div class="ap">
+            <img src="./압정.png" width="50px" alt="">
+        </div>
+        <div class="post_it">
+            <img src="./post_active.gif" width="80%" alt="">
+            <h2>💕</h2>
+        </div>
+        <div class="cat">
+            <video src="./냥냥첩첩.mp4" loop muted autoplay></video>
+        </div>
+    </div>
+</body>
+</html>
