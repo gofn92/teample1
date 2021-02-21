@@ -26,6 +26,11 @@ function checked() {
   if (!checkName(form.u_name.value)) {
       return false;
   }
+  //생일
+  if (!checkbirth(form.birth.value)) {
+    return false;
+  }
+  //
   return true;
 }
 
@@ -76,7 +81,7 @@ function checku_pw(id, u_pw1, u_pw2) {
       form.u_pw2.focus();
       return false;
   }
-
+ 
   //아이디와 비밀번호가 같을 때..
   if (id == u_pw1) {
       alert("아이디와 비밀번호는 같을 수 없습니다!");
@@ -114,3 +119,19 @@ function checkName(name) {
   }
   return true; //확인이 완료되었을 때
 }
+//생일
+function checkbirth(birth) {
+  //Id가 입력되었는지 확인하기
+  if (!checkExistData(birth, "생일을"))
+      return false;
+
+  var birthRegExp = /^[0-9]{6}$/; //생년월일
+  if (!birthRegExp.test(birth)) {
+      alert("생년월일 6자리 숫자를 입력해주세요 ex)000000 ");
+      form.birth.value = "";
+      form.birth.focus();
+      return false;
+  }
+  return true; //확인이 완료되었을 때
+}
+//생일
