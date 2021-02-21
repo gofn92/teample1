@@ -18,46 +18,103 @@
     font-weight: normal;
     font-style: normal;
 }
-          *{
+        *{
             box-sizing: border-box;
             text-align: center;
             font-family: 'Cafe24Dongdong';
             padding: 0;
             font-size: 100%;
         }
-        img{
-            width:320px;
-        }
+
         body{
             background-color: pink;
         }
+        
         .c1{clear: both;}
         li{list-style: none;}
         h1{font-size: 3rem;}
-
+        .a1{
+            display: inline-block;
+            width: 350px;
+            height: 200px;
+            margin: 10px;
+        }
+        .box1{width: 150px; height: 150px; float: left;}
+        .box2{width: 190px; height: 200px; float: right; border: 5px solid white;}
+        .box2 li{font-size: 1.65rem; padding:2px}
+        img{width:100%;}
+        footer div {background-color:rgb(189, 183, 183) ;}
+        .a2 {width: 320px; margin: 0 auto; }
+        .a2 img{width : 100%; border-radius: 50%; }
     </style>
 </head>
 <body>
     <div id="container">
         <h1>보호소 현황</h1>
-        <div>
-            <img src="img/doc.jpg">
+        
+        <div class="a1">
+            <div class="box1"> <img src="tierheim2.jpg"></div>
+        
+            <div class="box2">
             <ul>
                 <li> 이름 : 몽이 </li>
-                <li> 특징 : 덩치가 크고 안기는것을 좋아합니다. </li>
-                <li> 나이 : 5살 </li>
+                <li> 특징 : 배 까고있기 </li>
+                <li> 견종 : 하얗종 </li>
+                <li> 나이 : 1살 </li>
             </ul>
-            
+            </div>
         </div>
-        <div>
-            <img src="">
+
+        <div class="a1">
+            <div class="box1"><img src="tierheim4.jpg"></div>
+            <div class="box2">
+            <ul>
+                <li> 이름 : 홍이 </li>
+                <li> 특징 : 혀내밀기 </li>
+                <li> 견종 : 시고르자브종 </li>
+                <li> 나이 : 0.5살 </li>
+            </ul>
+            </div>
         </div>
-        <div>
-            <div></div>
+
+        <div class="a1">
+            <div class="box1"><img src="tierheim5.jpg"></div>
+                <div class="box2">
+                    <ul>
+                    <li> 이름 : 콩이 </li>
+                    <li> 특징 : 귀엽기 </li>
+                    <li> 견종 : 알다가도 모르겠종 </li>
+                    <li> 나이 : 3살 </li>
+                </ul>
+                </div>
+            </div>
+
+        <div class="a1">
+            <div class="box1"><img src="tierheim6.jpg"></div>
+                <div class="box2">
+                    <ul>
+                    <li> 이름 : 뚱이 </li>
+                    <li> 특징 : 신나게 놀기 </li>
+                    <li> 견종 : 귀엽종 </li>
+                    <li> 나이 : 2살 </li>
+                </ul>
+                </div>
+            </div>
+           
+<p class="c1"></p>
+        <div class="a2">
+            <div><img src="cat2.jpg" width="150" height="200"><a href="보호소 현황(고양이).html">고양이 페이지로 넘어가기!</a> </div>
         </div>
-        <div>
-            <div></div>
-        </div>
+        <hr>
+        <footer>
+            <div>
+                <p>문의 전화 : 000-0000-0000</p>
+                <p>운영 시간 : 00~00</p>
+                <p>주소 : 사랑시 고백구 행복동</p>
+                <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                <p>대포이사 : 채토리</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
