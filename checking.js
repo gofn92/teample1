@@ -121,7 +121,7 @@ function checkName(name) {
 }
 //생일
 function checkbirth(birth) {
-  //Id가 입력되었는지 확인하기
+  // 입력되었는지 확인하기
   if (!checkExistData(birth, "생일을"))
       return false;
 
