@@ -62,11 +62,9 @@
             }
             header ul li img{
                 width: 100px; height: 50px;
-            }
-            header ul li button{
                 transition: 0.5s;
             }
-            header ul li button:hover{
+            header ul li img:hover{
                 transform: scale(1.2);
             }
             section{
@@ -143,26 +141,25 @@
                 /* display: block; */
             }
             .menubtn{
-                border : 0;
-                background: inherit;
-            }
-            .menubtn:focus{
-                outline: none;
+                border : 0px;
+                background: rgba(255,255,255,0.5);
+
             }
         }
     </style>
     <script>
-        function changecon(n){
-                $visible = ".container" + n;
- 
-                for( $i = 0; $i < $maxmenu; $i++){
-                    $reset = ".container"+($i+1);
-                    $($reset).css("display","none");
-                }
-                $($visible).css("display","block");
-            }
         $(function(){
             $maxmenu = $(".menubtn").length;
+            alert($maxmenu);
+            function changecon(n){
+                alert("!");
+                $visible = ".container" + n;
+ 
+                for( $i = 1; $i < $maxmenu; $i++){
+                    $reset = ".container"+$i;
+                    alert($reset);
+                }
+            }
         });
     </script>
 </head>
@@ -173,11 +170,11 @@
                 <img src="image/logo_pink.png" alt="logo">
             </div>
             <ul>
-                <li><button type="button" class="menubtn" onclick="changecon(1);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(2);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(3);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(4);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(5);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button class="menubtn" onclick="changecon(1)"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button class="menubtn" onclick="changecon(2)"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button class="menubtn" onclick="changecon(3)"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button class="menubtn" onclick="changecon(4)"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button class="menubtn" onclick="changecon(5)"><img src="image/dlqdid.gif" alt=""></button></li>
             </ul>
             <div></div>
         </header>
@@ -236,18 +233,6 @@
                     </div>  
                 </article>
             </section>
-        </div>
-        <div class="container container2">
-            2번
-        </div>
-        <div class="container container3">
-            3번
-        </div>
-        <div class="container container4">
-            4번
-        </div>
-        <div class="container container5">
-            5번
         </div>
         <footer>
             <p>
