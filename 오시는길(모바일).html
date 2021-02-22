@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오시는길</title>
+    <script src="js/jquery.js"></script>
+    <style>
+                        @font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        *{
+            box-sizing: border-box;
+            text-align: center;
+            font-family: 'Cafe24Dongdong';
+            padding: 0;
+            font-size: 100%;
+            margin: 0 auto;
+        }
+        body{background-color: pink;}
+        .c1{clear: both;}
+        li{list-style: none;}
+        h1{font-size: 3rem;}
+        footer div {background-color:rgb(189, 183, 183) ;}
+        #container{
+            overflow: hidden;
+            width : 320px;
+            padding : 10px;
+            position: relative;
+        }
+        #menu{
+            width:40px;
+            height:40px;
+            position:absolute;
+            right:5px;
+            top:5px;
+        }
+        #menu img{
+            width:100%;
+            height:100%;
+        }
+        .menu{
+            width :320px;
+            height: 568px;
+            position : absolute;
+            top: 0;
+            left : 320px;
+            background-color: rgb(197, 197, 199);
+            z-index: 99;
+        }
+        .list li{
+                font-size: 1.5rem;
+        }
+        .menumove{
+            animation: menumove 1s linear forwards;
+        }
+        @keyframes menumove{
+            0%{
+                left:320px;
+            }
+            100%{
+                left : 0px;
+            }
+        }
+        header{
+            position: relative;
+        }
+
+    </style>
+    <script>
+        $(function(){
+
+            $("#menu").on("click",function(){
+                $(".menu").addClass(" menumove");
+            });
+            function menuheight(){
+                var menuh = window.outerHeight;
+                $(".menu").height(menuh);
+            }
+            menuheight();
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="menu">
+            <img src="image/pngegg.png" alt="">
+        </div>
+        <div class="menu">
+            <h2>Tierheim</h2>
+        <div class="list">
+            <ul>
+                <a href="보호소 소개(모바일).html"><li> 보호소 소개 </li></a>
+                <a href="입양안내페이지(모바일).html"><li> 입양&입소 안내 </li></a>
+                <a href="보호소현황(강아지).html"><li> 보호 현황(강아지) </li></a>
+                <a href="보호소현황(고양이).html"><li> 보호 현황(고양이) </li></a>
+                <a href="입양후기.html"><li> 입양 후기 </li></a>
+            </ul>
+            <p>반려 용품샵은 모바일 지원이 되지 않습니다. pc에서 접속 부탁드립니다.</p>
+        </div>
+        </div>
+        <h1>오시는 길</h1>
+        <div>
+            <a href="https://map.naver.com/v5/search/%EB%AF%B8%EB%9E%98%EB%8A%A5%EB%A0%A5%EA%B0%9C%EB%B0%9C%EA%B5%90%EC%9C%A1%EC%9B%90?c=14139966.4296180,4517915.6577092,13,0,0,0,dh"><img src="image/map.jpg"></a></div>
+        <div>
+            <h3>주소 : 사랑시 고백구 행복동</h3>
+
+        </div>
+        <div>
+            <h3> 자가용으로 오시는 길</h3>
+            <p> 국민시 후원구 계좌동을 지나 바로 나오는 사랑시 고백구 행복동 Tierheim </p>
+        </div>
+        <div>
+            <h3> 대중교통을 이용하여 오시는 길</h3>
+            <p> 사랑역에서 행복동 방향으로 가는 486버스 승차 후 Tierheim 정류장 하차 </p>
+        </div>
+        <hr>
+        <footer>
+            <div>
+                <p>문의 전화 : 000-0000-0000</p>
+                <p>운영 시간 : 00~00</p>
+                <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                <p>대포이사 : 채토리</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
