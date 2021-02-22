@@ -7,7 +7,7 @@
     <title>index</title>
     <script src="./index.js"></script>
     
-    <script>
+    <script src="./jquery.js">
     </script>
     
     <style>
@@ -18,7 +18,9 @@
     font-style: normal;
 }
         body{
-            background-image: url(./핑크.png);
+            background-image: url(./핑크.png); /*핑크색배경임*/
+            background-size: cover;
+            background-repeat: no-repeat;
             overflow: hidden;
         }
         *{
@@ -30,37 +32,26 @@
             position: relative;
             width: 70%;
             height: 80%;
-            background-image: url(./bg.jpg);
+            background-image: url(./bg.jpg); /*코르크이미지*/
             background-position: center;
             margin-top: 5%;
             
         }
         .con{
-            position: relative;
+            position: relative; /*전체감싸고있는컨테이너*/
             width: 100%;
             height: 100vh;
-            background-image:url(./heartdog.gif);
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            background-position: center;
             left: 0;
             top: 0;
+            overflow: hidden;
             
-            
-        }
-        .linetop{
-            width: 100%;
-            position: absolute;
-            bottom: 15%;
-            border-top: 5px solid rgb(255, 255, 255);
         }
         .dot {
-            position: absolute;
+            position: absolute; /*로고싸고있는 박스*/
             left: 10%;
             top: -3%;
             width: 20%;
             height: 20%;
-            animation: dot 2s infinite;
         }
         .logo{
             position: absolute;
@@ -68,35 +59,33 @@
             top: 25%;
         }
         
-        .choco1,.choco2 {
-            position: absolute;
+        .choco2 { 
+            position: absolute; /*초콜렛글자들*/
             top: 2%;
             left: 33%;
             
         }
         .a1,.a2{
-            
-            transition: 0.5s;
+            transition: 0.5s; /*초콜렛글자들*/
         }
         .a1:hover{
-            
             transition: 0.5s;
-            transform: rotate(35deg);
+            transform: rotate(35deg); /*초콜렛글자들 호버시 흔들림*/
         }
         .a2:hover{
             transition: 0.5s;
             transform: rotate(-35deg);
         }
         .dog1 img{
-            width: 15%;
-            height: 35%;
-            position: absolute;
-            top: 51%;
+            width: 10%;
+            height: 23%;
+            position: absolute; /*후원이미지*/
+            top: 65%;
             left: 15%;
             animation: dog1 3s infinite linear;
             box-shadow: rgba(0, 0, 0, 0.329) 5px 5px 5px 5px;
         }
-        @keyframes dog1 {
+        @keyframes dog1 {    /*후원 흔들리는 애니메이션*/
             0% {
                 transform-origin:left top;
                 transform: rotate(5deg);
@@ -112,14 +101,16 @@
                 transform: rotate(5deg);
             }
         }
-        .ap {
-            position: absolute;
-            top: 50%;
+        .ap { 
+            position: absolute;  /*압정*/
+            top: 63.5%;
             left: 14%;
         }
-        .네모 {
+        .slider { 
+            overflow: hidden;
+            background-color: black;  /*슬라이더 싸고있는 박스*/
             position: absolute;
-            top: 12%;
+            top: 20%;
             left: 25%;
             width: 50%;
             height: 50%;
@@ -128,55 +119,175 @@
             font-family:'SDSamliphopangche_Outline';
             box-shadow: rgba(0, 0, 0, 0.329) 5px 5px 5px 5px;
         }
-        .post_it {
+        .slide {
+            overflow: hidden;
+            position: absolute; /*슬라이더안 이미지 여기에 이미지*/
+            width: 80%;
+            height: 80%;
+            animation: fade2 2s;
+            left: 10%;
+            top:8%;
+            display:none;
+        }
+        .prev,
+        .next { 
+            width: 10%;
+            z-index: 9999;
+            cursor: pointer;
+            position: absolute;    /*슬라이더 양쪽 버튼*/
+            top: 30%;
+            left: 0%;
+            transform: translateY(50%);
+            padding: 2%;
+            color: rgb(0, 0, 0);
+            font-size: 3vw;
+            transition: 0.6s ease;
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+            clip-path: circle(30% at 50% 50%);
+        }
+        .next {
+        
+        left: 90%;
+        }
+        .prev:hover,
+        .next:hover {
+        background-color: rgba(252, 151, 255, 0.5);
+        }
+
+        @keyframes fade2 {   /*슬라이더 투명효과*/
+        0% {
+            opacity:0;  
+        }
+
+        100% {
+            opacity:1;
+        }
+        }
+        .post_it { 
             width: 20%;
-            position: absolute;
-            top: 0%;
+            position: absolute; /*포스트잇*/
+            top: 10%;
             left: 65%;
         }
         .cat {
+            width: 10%;
+            height: 10%;
+            position: absolute; /*냥냥첩첩 싸고있는 div*/
+            left: 72%;
+            top: 60%;
             
-            width: 69rem;
-            height: 1000px;
-            clip-path: circle(8% at 88% 55%);
-            position: absolute;
-            left: 30%;
-            top: 15%;
         }
-        h2 {
+        .eat {
+            width: 150%;
+            height: 150%;
+            clip-path: circle(20% at 50% 50%); /*냥냥첩첩 video태그 원모양은 여기서 조절 크기 위치 위치*/
+        }
+        .idle h2{
+            position: absolute; /*입양가능한아이들*/
+            top: 90%;
+            left: 40%;
+            font-size:50% 50%
+        }
+        .menu1 {
+            width: 10%;
+            position: absolute; /*메뉴랑 고양이 발바닥 싸고있는 div박스*/
+            bottom: 25%;
+            left: 25%;
+            display: flex;
+        }
+        .menu2 {
+            width: 10%;
             position: absolute;
-            top: 40%;
+            bottom: 25%;
             left: 35%;
-            transform: rotate(15deg);
+            display: flex;
         }
-        .menu {
+        .menu3 {
+            width: 10%;
             position: absolute;
-            bottom: 20%;
-            left: 28%;
+            bottom: 25%;
+            left: 45%;
+            display: flex;
         }
-        p { 
+        .menu4 {
+            width: 10%;
+            position: absolute;
+            bottom: 25%;
+            left: 55%;
+            display: flex;
+        }
+        .menu5 {
+            width: 10%;
+            position: absolute;
+            bottom: 25%;
+            left: 65%;
+            display: flex;
+        }
+        .menu6 {
+            width: 10%;
+            position: absolute;
+            bottom: 25%;
+            left: 75%;
+            display: flex;
+        }
+        .paw1,.paw2,.paw3,.paw4,.paw5,.paw6 { /*고양이 발바닥*/
+            position: absolute;
+            bottom: 60%;
+            left: 30%;
+            transform-origin: bottom;
+            transform: rotate(120deg);
+            transition: 1s;
+        }
+        .men1,.men2,.men3,.men4,.men5,.men6 {/*메뉴들*/
+            position:relative;
+            width: 90%;
             
-            text-align: center;
-            font-family:'SDSamliphopangche_Outline';
-            padding-top: 16px;
-            width: 150px;
-            height: 50px;
-            background-color: rgb(255, 255, 255);
-            clip-path: polygon(9% 24%, 20% 13%, 28% 12%, 36% 11%, 54% 14%, 66% 18%, 78% 21%, 87% 31%, 93% 41%, 94% 56%, 85% 78%, 70% 88%, 46% 89%, 30% 86%, 14% 80%, 3% 61%, 1% 43%);
         }
-        .paw {
-            position: absolute;
-            left: 14%;
-            bottom: 50%;
+    
+        .menu1:hover .paw1{ /*호버시 고양이 발바닥 나옴*/
+            transform: rotate(0deg);
+            /*animation: paw1 2s;
+            animation-fill-mode:forwards;*/
+        }
+        .menu2:hover .paw2{
+            transform: rotate(0deg);
+            /*animation: paw1 2s;
+            animation-fill-mode:forwards;*/
+        }
+        .menu3:hover .paw3{
+            transform: rotate(0deg);
+            /*animation: paw1 2s;
+            animation-fill-mode:forwards;*/
+        }
+        .menu4:hover .paw4{
+            transform: rotate(0deg);
+            /*animation: paw1 2s;
+            animation-fill-mode:forwards;*/
+        }
+        .menu5:hover .paw5{
+            transform: rotate(0deg);
+            /*animation: paw1 2s;
+            animation-fill-mode:forwards;*/
+        }
+        .menu6:hover .paw6{
+            transform: rotate(0deg);
+            /*animation: paw1 2s;
+            animation-fill-mode:forwards;*/
+        }
+        .menu-con { /*메뉴 싸고있는 위치조절용 div 박스*/
+            width: 90%;
+            position:absolute;
+            bottom:17%;
+            right: 7%;
         }
     </style>
 </head>
 <body>
     <div class="con">
         <div class="bg"></div>
-        <div class="linetop"></div>
         <div class="dot">
-        <div class="logo"><img src="./logo_darkbrown.png" width="40%" alt=""></div>
+        <div class="logo"><img src="./logo_darkbrown.png" width="30%" height="30%" alt=""></div>
         </div>
         <div class="choco2">
             <img class="a1" src="./초콜렛2-01.png" width="6%"  alt="">
@@ -188,35 +299,81 @@
             <img class="a1" src="./초콜렛2-07.png" width="6%"  alt="">
             <img class="a2" src="./초콜렛2-08.png" width="6%"  alt="">
         </div>
-        <div class="네모">
-            <img src="./비글.jpg" width="80%" height="80%" style="margin-top: 50px;" alt="">
-            <h1>이달의강아지</h1>
+        <div class="slider">
+            <img class="slide" src="./비글.jpg" width="100%" alt="">
+            <img class="slide" src="./비글.jpg"alt="">
+            <img class="slide" src="./비글.jpg"alt="">
+            <img class="slide" src="./비글.jpg"alt="">
+            <a class="prev" onclick="button_click(-1)"><img src="./dog_paw.png" width="100%" alt=""></a>
+            <a class="next" onclick="button_click(1)"><img src="./dog_paw.png" width="100%" alt=""></a>
+            <div class="idle"><h2>입양가능한아이들</h2></div>
         </div>
-        <div class="menu">
-            <img src="./입양후기.gif" width="150px" alt="">
-            <img src="./입양후기.gif" width="150px" alt="">
-            <img src="./입양후기.gif" width="150px" alt="">
-            <img src="./입양후기.gif" width="150px" alt="">
-            <img src="./입양후기.gif" width="150px" alt="">
-            <img src="./입양후기.gif" width="150px" alt="">
+        <div class="menu-con">
+            <div class="menu1">
+                <img class="paw1" src="./발바닥.gif" width="20%" alt="">
+                <img class="men1" src="./보호소소개.gif" width="15%" alt="">
+            </div>
             <div class="menu2">
-            <img class="paw" src="./dog_paw.png" width="50px" alt="">
-            <p>입양입소안내</p>
+                <img class="paw2" src="./발바닥.gif" width="10%" alt="">
+                <img class="men2" src="./입양입소안내.gif" width="15%" alt="">
+            </div>
+            <div class="menu3">
+                <img class="paw3" src="./발바닥.gif" width="30%" alt="">
+                <img class="men3" src="./오시는길.gif" width="15%" alt="">
+            </div>
+            <div class="menu4">
+                <img class="paw4" src="./발바닥.gif" width="20%" alt="">
+                <img class="men4" src="./애견용품샵.gif" width="15%" alt="">
+            </div>
+            <div class="menu5">
+                <img class="paw5" src="./발바닥.gif" width="10%" alt="">
+                <img class="men5" src="./입양후기.gif" width="15%" alt="">
+            </div>
+            <div class="menu6">
+                <img class="paw6" src="./발바닥.gif" width="25%" alt="">
+                <img class="men6" src="./입양후기.gif" width="15%" alt="">
             </div>
         </div>
+    </div>
         <div class="dog1">
-            <img src="./후원계좌.gif" alt="">
+            <img src="./후원350.png" alt="">
         </div>
         <div class="ap">
-            <img src="./압정.png" width="50px" alt="">
+            <img src="./압정.png" width="15%" alt="">
         </div>
         <div class="post_it">
             <img src="./post_active.gif" width="80%" alt="">
-            <h2>💕</h2>
+            <p style="position: absolute; left: 37%;top: 40%;">💕</p>
         </div>
         <div class="cat">
-            <video src="./냥냥첩첩.mp4" loop muted autoplay></video>
+            <video class="eat"src="./냥냥첩첩320.mp4" loop muted autoplay width="20%" height="20%" ></video>
         </div>
+    <script>
+        let currSlide = 1;
+        showSlide(currSlide);
+
+        function button_click(num){
+            showSlide((currSlide += num));
+        }
+        function showSlide(num)
+        { 
+            const slides = document.querySelectorAll(".slide");
+            if(num>slides.length)
+            {
+                currSlide =1;                   
+            }
+            
+            if(num<1)
+            {
+                currSlide = slides.length;
+            }
+                                                        
+            for(let i=0; i<slides.length; i++)
+            {
+                slides[i].style.display="none";}
+                slides[currSlide -1].style.display="block";
+        }       
+    </script>
     </div>
 </body>
 </html>
