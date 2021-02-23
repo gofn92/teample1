@@ -11,13 +11,13 @@
 	}
 ?>
 <!--
-    로그인 페이지 파일
-    signIn.php
-    회원가입 페이지파일
-    signUp.php
-    로그아웃 페이지 파일
-    logout.php
-    링크걸고 자리잡아줄것
+    로그인 페이지 파일      signIn.php
+    회원가입 페이지파일     signUp.html 에서 signUp.php로 감(html만 걸어줄것)
+    로그아웃 페이지 파일    logout.php
+        링크걸고 자리잡아줄것
+
+
+
     로그인을 로그아웃으로 바꾸는 부분은 아래쪽에!!!!!!!!!
 -->
 <!DOCTYPE html>
