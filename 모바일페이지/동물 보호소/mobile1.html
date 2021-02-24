@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>입양 안내 페이지</title>
+    <title>동물보호소 소개 페이지</title>
     <script src="js/jquery.js"></script>
     <style>
-
-    h3{background-color: rgb(233, 240, 135);
-    font-family: 'SDSamliphopangche_Outline';
-    color: rgb(117, 111, 167);}
-    .z1 li{margin: 5px;}
-
+    .a2{
+        width: 300px;
+        margin: 0 auto;
+        }
+    .a2 img{
+        width: 100%;
+    }
+    .im{
+        width : 340px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    .im img{
+        width : 100%;
+        height: 100%;
+    }
+    .im video{
+        width : 100%;
+        height: 100%;
+        margin: 0;
+    }
+    article div p{
+        margin: 15px;
+    }
 /* 반복되는 부분 */
-@font-face {
+        @font-face {
     font-family: 'Cafe24Dongdong';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
     font-weight: normal;
@@ -160,12 +178,8 @@
         }
         h1{font-size: 3rem;}
         footer div {background-color:rgb(189, 183, 183);}
-        .im {
-            width : 320px;
-        }
-        .im img{
-            width : 100%;
-        }
+
+
     </style>
     <script>
         $(function(){
@@ -179,22 +193,23 @@
     </script>
 </head>
 <body>
+    <!-- 반복 -->
 <div id="container">
         <h2>Tierheim</h2>
         <div class="con">
         <div class="overlay">
                 <ul>
-                    <a href="보호소 소개(모바일).html"><li> 보호소 소개 </li></a>
-                    <a href="보호소현황(강아지).html"><li> 보호 현황(강아지) </li></a>
-                    <a href="보호소현황(고양이).html"><li> 보호 현황(고양이) </li></a>
-                    <a href="입양후기(모바일).html"><li> 입양 후기 </li></a>
-                    <a href="오시는길(모바일).html"><li> 오시는 길 </li></a>
+                    <a href="mobile2.html"><li> 입양&입소 안내 </li></a>
+                    <a href="mobile3.html"><li> 보호 현황(강아지) </li></a>
+                    <a href="mobile4.html"><li> 보호 현황(고양이) </li></a>
+                    <a href="mobile5.html"><li> 입양 후기 </li></a>
+                    <a href="mobile6.html"><li> 오시는 길 </li></a>
                 </ul>
                 <p>반려 용품샵은 모바일 지원이 되지 않습니다.<br>pc에서 접속 해주세요.</p>
                 <div class="a1">
                     <ul>
-                        <a href="#"><li> 로그인 </li></a>
-                        <a href="#"><li> 회원 가입 </li></a>
+                        <a href="signIn.html"><li> 로그인 </li></a>
+                        <a href="signUp.html"><li> 회원 가입 </li></a>
                     </ul>
                 </div>
             </div>
@@ -207,61 +222,60 @@
         </div>
     </div>
     <!-- 반복 -->
-        <h1> 입양 입소 안내 </h1>
-        <div class="im">
-            <img src="image/dc2.jpg">
-        </div>
-        <div class="z1">
-            <h3> 입양 조건 </h3>
-        <ul>
-            <li> 18세 이상 성인이신분 </li>
-            <li> 반려동물을 진심으로 사랑해주실 수 있는 분 </li>
-            <li> 동물들이 충분히 적응 할 수 있는 환경 제공이 가능 하신 분 </li>
-            <li> 다른 반려동물로 인해 파양 가능성이 있지 않은 가정 </li>
-        </ul>
-        </div>
+    <h1>보호소 소개</h1>
+    <header>
 
-        <div class="z1">
-            <h3> 입양 절차 </h3>
-        <ul>
-            <li> 심리 테스트 </li>
-            <li> 보호중인 아이와 만남 </li>
-            <li> 입양 서류 작성 후 입양 </li>
-        </ul>
-        </div>
-
-        <div class="z1">
-            <h3> 무료 입소 안내 </h3>
-            <p> <span>면제 지원 대상<span> </p>
-            <ul>
-                <li> 소형견의 기준으로 품종견 or 묘 </li>
-                <li> 8세 이하 </li>
-                <li> 결격 사유가 없는 경우 </li>
-            </ul>
-        </div>
-
-        <div class="z1">
-            <h3> 입소 절차 </h3>
-            <ul>
-                <li> 입소 신청 </li>
-                <li> 1:1 상담 진행 후 결정 </li>
-                <li> 보호 기간중 면회 및 외출 </li>
-                <li> 입양 후의 소식 제공 </li>
-            </ul>
-        </div>
-
-<p class="c1"></p>
-<hr>
-
-        <footer>
+    <div class="im">
+        <img src="image/dc.jpg">
+    </div>
+    </header>
+    <article>
         <div>
-            <p>문의 전화 : 000-0000-0000</p>
-            <p>운영 시간 : 00~00</p>
-            <p>주소 : 사랑시 고백구 행복동</p>
-            <p>후원 : 005702-04-091524 국민은행 티어하임</p>
-            <p>대포이사 : 채토리</p>
+            <p>
+                저희 보호소에서는 지속적인 발전을 통해 독일의 최대 규모인 유기견 보호소 'Tierheim' 의 운영을 기반으로 삼으며 운영중입니다.
+            </p>
+            <p>
+                저희 보호소에서는 아이들이 맘껏 뛰놀 수 있는 넓은 마당이 있습니다.
+            </p>
+            <p>
+                저희 보호소에서는 보호 명목으로 금전을 요구하는 일이 없으며 무료로 입소를 할 수 있습니다.
+            </p>
+            <p>
+                저희 보호소에서는 나의 반려 동물이 지내는 공간으로 생각하여 편안한 생활을 할 수 있도록 따듯한 보금자리가 되어주고 있습니다.
+            </p>
+        <div class="im">
+            <video autoplay loop muted preload="auto">
+                <source src="image/doctoy.mp4" type="video/mp4">
+                    zzz
+            </video>
         </div>
-        </footer>
+            <p>
+                저희 보호소에서는 아이들의 특별 훈련과 특별 관리체계를 진행 하고 있습니다.
+            </p>
+            <p>
+                저희 보호소에서는 아이들의 건강을 위해 '로0캣0'회사의 고급 사료들만 배식합니다.
+            </p>
+            <p>
+                저희 보호소에서는 아이들의 건강을 위해 의사 선생님께서 항시 대기중이십니다.
+            </p>
+            <p>
+                반려동물을 가족으로 생각하고 평생 함께할 각오와 책임만 다한다면 반려동물과 함께 하는 삶은 정서적으로 풍요롭고 행복할 수 있습니다.
+            </p>
+        </div>
+        </article>
+        <div class="a2">
+          <img src="image/hu.gif">
+        </div>
+    <p class="c1"></p>
+<hr>
+<footer>
+    <div>
+        <p>문의 전화 : 000-0000-0000</p>
+        <p>운영 시간 : 00~00</p>
+        <p>주소 : 사랑시 고백구 행복동</p>
+        <p>대포이사 : 채토리</p>
+    </div>
+</footer>
 </div>
 </body>
 </html>

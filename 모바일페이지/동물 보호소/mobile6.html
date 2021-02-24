@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>보호소 현황(강아지)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오시는길</title>
     <script src="js/jquery.js"></script>
     <style>
-    .a3{
-            display: inline-block;
-            width: 300px;
-            height: 200px;
-        }
-    .box1{width: 150px; height: 190px; float: left;}
-    .box2{width: 150px; height: 190px; float: right; border: 5px solid white;}
-    .box2 li{font-size: 1.5rem; padding:2px}
-    img{width:100%;height:100%;border: 5px solid white;}
-    .a2{width: 150px;}
-    .a2 img{width : 100%; border-radius: 50%;}
+
+        .z1 h2{font-size: 1.5rem;
+        background-color: pink;
+        font-family: 'Cafe24Dongdong';
+        color: chocolate;}
+        .z2{margin: 5px;}
+        .z2 p{margin: 5px;}
+        #map{width: 330px;}
 /* 반복되는 부분 */
 @font-face {
     font-family: 'Cafe24Dongdong';
@@ -159,7 +156,7 @@
         body{
             background-color: pink;
         }
-        .c1{clear: both; margin: 20px;}
+        .c1{clear: both;}
         hr{margin: 20px;}
         h2{
             color: rgba(245, 102, 185, 0.616);
@@ -187,17 +184,17 @@
         <div class="con">
         <div class="overlay">
                 <ul>
-                    <a href="입양안내페이지(모바일).html"><li> 입양&입소 안내 </li></a>
-                    <a href="보호소현황(강아지).html"><li> 보호 현황(강아지) </li></a>
-                    <a href="보호소현황(고양이).html"><li> 보호 현황(고양이) </li></a>
-                    <a href="입양후기(모바일).html"><li> 입양 후기 </li></a>
-                    <a href="오시는길(모바일).html"><li> 오시는 길 </li></a>
+                    <a href="mobile1.html"><li> 보호소 소개 </li></a>
+                    <a href="mobile2.html"><li> 입양&입소 안내 </li></a>
+                    <a href="mobile3.html"><li> 보호소 현황(강아지) </li></a>
+                    <a href="mobile4.html"><li> 보호소 현황(고양이) </li></a>
+                    <a href="mobile5.html"><li> 입양 후기 </li></a>
                 </ul>
                 <p>반려 용품샵은 모바일 지원이 되지 않습니다.<br>pc에서 접속 해주세요.</p>
                 <div class="a1">
                     <ul>
-                        <a href="#"><li> 로그인 </li></a>
-                        <a href="#"><li> 회원 가입 </li></a>
+                        <a href="signIn.html"><li> 로그인 </li></a>
+                        <a href="signUp.html"><li> 회원 가입 </li></a>
                     </ul>
                 </div>
             </div>
@@ -210,64 +207,27 @@
         </div>
     </div>
     <!-- 반복 -->
-        <h1>보호소 현황</h1>
-
-        <div class="a3">
-            <div class="box1"> <img src="image/tierheim2.jpg"></div>
-
-            <div class="box2">
-            <ul>
-                <li> 이름 : 몽이 </li>
-                <li> 특징 : 배 까고있기 </li>
-                <li> 견종 : 하얗종 </li>
-                <li> 나이 : 1살 </li>
-            </ul>
-            </div>
+        <h1>오시는 길</h1>
+        <div id="map">
         </div>
-
-        <div class="a3">
-            <div class="box1"><img src="image/tierheim4.jpg"></div>
-            <div class="box2">
-            <ul>
-                <li> 이름 : 홍이 </li>
-                <li> 특징 : 혀내밀기 </li>
-                <li> 견종 : 시고르자브종 </li>
-                <li> 나이 : 0.5살 </li>
-            </ul>
-            </div>
+        <div class="z1">
+            <h2>주소 : 사랑시 고백구 행복동</h2>
         </div>
-
-        <div class="a3">
-            <div class="box1"><img src="image/tierheim5.jpg"></div>
-                <div class="box2">
-                    <ul>
-                    <li> 이름 : 콩이 </li>
-                    <li> 특징 : 귀엽기 </li>
-                    <li> 견종 : 알다가도 모르겠종 </li>
-                    <li> 나이 : 3살 </li>
-                </ul>
-                </div>
-            </div>
-
-        <div class="a3">
-            <div class="box1"><img src="image/tierheim6.jpg"></div>
-                <div class="box2">
-                    <ul>
-                    <li> 이름 : 뚱이 </li>
-                    <li> 특징 : 신나게 놀기 </li>
-                    <li> 견종 : 귀엽종 </li>
-                    <li> 나이 : 2살 </li>
-                </ul>
-                </div>
-            </div>
-<p class="c1"></p>
-            <div class="a2"><a href="보호소현황(고양이).html"><img src="image/cat2.jpg">고양이 페이지로 넘어가기!</a> </div>
+        <div class="z2">
+            <h3> 자가용으로 오시는 길</h3>
+            <p> 국민시 후원구 계좌동을 지나 바로 나오는 사랑시 고백구 행복동 Tierheim </p>
+        </div>
+        <div class="z2">
+            <h3> 대중교통을 이용하여 오시는 길</h3>
+            <p> 사랑역에서 행복동 방향으로 가는 486버스 승차 후 Tierheim 정류장 하차 </p>
+        
+        </div>
+        <p class="c1"></p>
         <hr>
         <footer>
             <div>
                 <p>문의 전화 : 000-0000-0000</p>
                 <p>운영 시간 : 00~00</p>
-                <p>주소 : 사랑시 고백구 행복동</p>
                 <p>후원 : 005702-04-091524 국민은행 티어하임</p>
                 <p>대포이사 : 채토리</p>
             </div>

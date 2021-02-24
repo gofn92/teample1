@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>입양 후기 페이지</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>보호소 현황(강아지)</title>
     <script src="js/jquery.js"></script>
     <style>
+    .a3{
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+        }
+    .box1{width: 150px; height: 190px; float: left;}
+    .box2{width: 150px; height: 190px; float: right; border: 5px solid white;}
+    .box2 li{font-size: 1.5rem; padding:2px}
+    img{width:100%;height:100%;border: 5px solid white;}
+    .a2{width: 150px;}
+    .a2 img{width : 100%; border-radius: 50%;}
 /* 반복되는 부분 */
 @font-face {
     font-family: 'Cafe24Dongdong';
@@ -158,23 +169,6 @@
         }
         footer div {background-color:rgb(189, 183, 183);}
 
-    .slider{
-        width:300px;
-        height: 500px;
-        position: relative;
-    }
-    .slide{
-        width: 300px;
-        height: 300px;
-        background-size: cover;
-        display: block;
-    }
-    .slide img{ width : 100%;}
-    .prev,.next{
-        cursor: pointer;
-        position: absolute;
-    }
-
     </style>
     <script>
         $(function(){
@@ -188,22 +182,22 @@
     </script>
 </head>
 <body>
-    <div id="container">
+<div id="container">
         <h2>Tierheim</h2>
         <div class="con">
         <div class="overlay">
                 <ul>
-                    <a href="입양안내페이지(모바일).html"><li> 입양&입소 안내 </li></a>
-                    <a href="보호소현황(강아지).html"><li> 보호 현황(강아지) </li></a>
-                    <a href="보호소현황(고양이).html"><li> 보호 현황(고양이) </li></a>
-                    <a href="입양후기(모바일).html"><li> 입양 후기 </li></a>
-                    <a href="오시는길(모바일).html"><li> 오시는 길 </li></a>
+                    <a href="mobile1.html"><li> 보호소 소개 </li></a>
+                    <a href="mobile2.html"><li> 입양&입소 안내 </li></a>
+                    <a href="mobile4.html"><li> 보호 현황(고양이) </li></a>
+                    <a href="mobile5.html"><li> 입양 후기 </li></a>
+                    <a href="mobile6.html"><li> 오시는 길 </li></a>
                 </ul>
                 <p>반려 용품샵은 모바일 지원이 되지 않습니다.<br>pc에서 접속 해주세요.</p>
                 <div class="a1">
                     <ul>
-                        <a href="#"><li> 로그인 </li></a>
-                        <a href="#"><li> 회원 가입 </li></a>
+                        <a href="signIn.html"><li> 로그인 </li></a>
+                        <a href="signUp.html"><li> 회원 가입 </li></a>
                     </ul>
                 </div>
             </div>
@@ -215,55 +209,69 @@
             <span></span>
         </div>
     </div>
-        
-    <h1> 입양 후기 </h1>
-    <div class="slider">
-        <div class="slide" style="background-image: url(image/hugi.jpg);"></div>
-        <div class="slide" style="background-image: url(image/hugi2.jpg);"></div>
-        <div class="slide" style="background-image: url(image/hugi3.jpg);"></div>
-        <div class="slide" style="background-image: url(image/hugi4.jpg);"></div>
-        <div class="slide" style="background-image: url(image/hugi5.jpg);"></div>
-        <div class="slide" style="background-image: url(image/hugi6.jpg);"></div>
-        <div class="slide" style="background-image: url(image/hugi7.jpg);"></div>
-        <div class="slide" style="background-image: url(image/hugi8.jpg);"></div>
+    <!-- 반복 -->
+        <h1>보호소 현황</h1>
 
-        <a class="prew" onclick="bc(-1)"> &#10094 &emsp; </a>
-        <a class="next" onclick="bc(1)"> &#10095 </a>
+        <div class="a3">
+            <div class="box1"> <img src="image/tierheim2.jpg"></div>
 
-        <p class="c1"></p>
-    <input type="button" value="더 많고 자세한 후기 찾으러 가기!">
-
-    <hr>
-    <footer>
-        <div>
-            <p>문의 전화 : 000-0000-0000</p>
-            <p>운영 시간 : 00~00</p>
-            <p>주소 : 사랑시 고백구 행복동</p>
-            <p>후원 : 005702-04-091524 국민은행 티어하임</p>
-            <p>대포이사 : 채토리</p>
+            <div class="box2">
+            <ul>
+                <li> 이름 : 몽이 </li>
+                <li> 특징 : 배 까고있기 </li>
+                <li> 견종 : 하얗종 </li>
+                <li> 나이 : 1살 </li>
+            </ul>
+            </div>
         </div>
-    </footer>
-</div>
-</div>
+
+        <div class="a3">
+            <div class="box1"><img src="image/tierheim4.jpg"></div>
+            <div class="box2">
+            <ul>
+                <li> 이름 : 홍이 </li>
+                <li> 특징 : 혀내밀기 </li>
+                <li> 견종 : 시고르자브종 </li>
+                <li> 나이 : 0.5살 </li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="a3">
+            <div class="box1"><img src="image/tierheim5.jpg"></div>
+                <div class="box2">
+                    <ul>
+                    <li> 이름 : 콩이 </li>
+                    <li> 특징 : 귀엽기 </li>
+                    <li> 견종 : 알다가도 모르겠종 </li>
+                    <li> 나이 : 3살 </li>
+                </ul>
+                </div>
+            </div>
+
+        <div class="a3">
+            <div class="box1"><img src="image/tierheim6.jpg"></div>
+                <div class="box2">
+                    <ul>
+                    <li> 이름 : 뚱이 </li>
+                    <li> 특징 : 신나게 놀기 </li>
+                    <li> 견종 : 귀엽종 </li>
+                    <li> 나이 : 2살 </li>
+                </ul>
+                </div>
+            </div>
+<p class="c1"></p>
+            <div class="a2"><a href="mobile4.html"><img src="image/cat2.jpg">고양이 페이지로 넘어가기!</a> </div>
+        <hr>
+        <footer>
+            <div>
+                <p>문의 전화 : 000-0000-0000</p>
+                <p>운영 시간 : 00~00</p>
+                <p>주소 : 사랑시 고백구 행복동</p>
+                <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                <p>대포이사 : 채토리</p>
+            </div>
+        </footer>
+    </div>
 </body>
-<script>
-    var currSlide = 1;
-    showSlide(currSlide);
-
-    function bc(num){
-        showSlide((currSlide += num));
-    }
-
-    function showSlide(num){
-        const slides = document.querySelectorAll(".slide");
-        if(num>slides.length){
-            currSlide =1;
-        }if(num<1){
-            currSlide = slides.length;
-        }
-        for(var i=0; i<slides.length; i++){
-            slides[i].style.display = "none";
-        }slides[currSlide -1].style.display="block";
-    }
-</script>
 </html>

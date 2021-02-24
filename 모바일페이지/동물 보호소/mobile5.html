@@ -4,35 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>동물보호소 소개 페이지</title>
+    <title>입양 후기 페이지</title>
     <script src="js/jquery.js"></script>
     <style>
-    .a2{
-        width: 300px;
-        margin: 0 auto;
-        }
-    .a2 img{
-        width: 100%;
-    }
-    .im{
-        width : 340px;
-        height: 200px;
-        margin: 10px;
-    }
-    .im img{
-        width : 100%;
-        height: 100%;
-    }
-    .im video{
-        width : 100%;
-        height: 100%;
-        margin: 0;
-    }
-    article div p{
-        margin: 15px;
-    }
 /* 반복되는 부분 */
-        @font-face {
+@font-face {
     font-family: 'Cafe24Dongdong';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
     font-weight: normal;
@@ -54,6 +30,9 @@
         li{list-style: none;}
         /* 햄버거시작 */
 
+        .overlay ul li:hover{
+            opacity: 1;
+        }
 
         @keyframes aa{
             0%{
@@ -63,6 +42,7 @@
                 opacity: 1; transform: translateX(0);
             }
         }
+
         .overlay.visible{
             height: 100%;
             opacity: 1;
@@ -176,9 +156,24 @@
             font-family: 'SDSamliphopangche_Outline';
             font-size: 2rem;
         }
-        h1{font-size: 3rem;}
         footer div {background-color:rgb(189, 183, 183);}
 
+    .slider{
+        width:300px;
+        height: 320px;
+        position: relative;
+    }
+    .slide{
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+        display: block;
+    }
+    .slide img{ width : 100%;}
+    .prev,.next{
+        cursor: pointer;
+        position: absolute;
+    }
 
     </style>
     <script>
@@ -193,23 +188,22 @@
     </script>
 </head>
 <body>
-    <!-- 반복 -->
-<div id="container">
+    <div id="container">
         <h2>Tierheim</h2>
         <div class="con">
         <div class="overlay">
                 <ul>
-                    <a href="입양안내페이지(모바일).html"><li> 입양&입소 안내 </li></a>
-                    <a href="보호소현황(강아지).html"><li> 보호 현황(강아지) </li></a>
-                    <a href="보호소현황(고양이).html"><li> 보호 현황(고양이) </li></a>
-                    <a href="입양후기(모바일).html"><li> 입양 후기 </li></a>
-                    <a href="오시는길(모바일).html"><li> 오시는 길 </li></a>
+                    <a href="mobile1.html"><li> 보호소 소개 </li></a>
+                    <a href="mobile2.html"><li> 입양&입소 안내 </li></a>
+                    <a href="mobile3.html"><li> 보호 현황(강아지) </li></a>
+                    <a href="mobile4.html"><li> 보호소 현황(고양이) </li></a>
+                    <a href="mobile6.html"><li> 오시는 길 </li></a>
                 </ul>
                 <p>반려 용품샵은 모바일 지원이 되지 않습니다.<br>pc에서 접속 해주세요.</p>
                 <div class="a1">
                     <ul>
-                        <a href="#"><li> 로그인 </li></a>
-                        <a href="#"><li> 회원 가입 </li></a>
+                        <a href="signIn.html"><li> 로그인 </li></a>
+                        <a href="signUp.html"><li> 회원 가입 </li></a>
                     </ul>
                 </div>
             </div>
@@ -221,61 +215,55 @@
             <span></span>
         </div>
     </div>
-    <!-- 반복 -->
-    <h1>보호소 소개</h1>
-    <header>
+        
+    <h1> 입양 후기 </h1>
+    <div class="slider">
+        <div class="slide" style="background-image: url(image/hugi.jpg);"></div>
+        <div class="slide" style="background-image: url(image/hugi2.jpg);"></div>
+        <div class="slide" style="background-image: url(image/hugi3.jpg);"></div>
+        <div class="slide" style="background-image: url(image/hugi4.jpg);"></div>
+        <div class="slide" style="background-image: url(image/hugi5.jpg);"></div>
+        <div class="slide" style="background-image: url(image/hugi6.jpg);"></div>
+        <div class="slide" style="background-image: url(image/hugi7.jpg);"></div>
+        <div class="slide" style="background-image: url(image/hugi8.jpg);"></div>
+   
+        <a class="prew" onclick="bc(-1)"> &#10094 &emsp; </a>
+        <a class="next" onclick="bc(1)"> &#10095 </a>
+    </div>
+        <p class="c1"></p>
+    <input type="button" value="더 많고 자세한 후기 찾으러 가기!">
 
-    <div class="im">
-        <img src="image/dc.jpg">
-    </div>
-    </header>
-    <article>
+    <hr>
+    <footer>
         <div>
-            <p>
-                저희 보호소에서는 지속적인 발전을 통해 독일의 최대 규모인 유기견 보호소 'Tierheim' 의 운영을 기반으로 삼으며 운영중입니다.
-            </p>
-            <p>
-                저희 보호소에서는 아이들이 맘껏 뛰놀 수 있는 넓은 마당이 있습니다.
-            </p>
-            <p>
-                저희 보호소에서는 보호 명목으로 금전을 요구하는 일이 없으며 무료로 입소를 할 수 있습니다.
-            </p>
-            <p>
-                저희 보호소에서는 나의 반려 동물이 지내는 공간으로 생각하여 편안한 생활을 할 수 있도록 따듯한 보금자리가 되어주고 있습니다.
-            </p>
-        <div class="im">
-            <video autoplay loop muted preload="auto">
-                <source src="image/doctoy.mp4" type="video/mp4">
-                    zzz
-            </video>
+            <p>문의 전화 : 000-0000-0000</p>
+            <p>운영 시간 : 00~00</p>
+            <p>주소 : 사랑시 고백구 행복동</p>
+            <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+            <p>대포이사 : 채토리</p>
         </div>
-            <p>
-                저희 보호소에서는 아이들의 특별 훈련과 특별 관리체계를 진행 하고 있습니다.
-            </p>
-            <p>
-                저희 보호소에서는 아이들의 건강을 위해 '로0캣0'회사의 고급 사료들만 배식합니다.
-            </p>
-            <p>
-                저희 보호소에서는 아이들의 건강을 위해 의사 선생님께서 항시 대기중이십니다.
-            </p>
-            <p>
-                반려동물을 가족으로 생각하고 평생 함께할 각오와 책임만 다한다면 반려동물과 함께 하는 삶은 정서적으로 풍요롭고 행복할 수 있습니다.
-            </p>
-        </div>
-        </article>
-        <div class="a2">
-          <img src="image/hu.gif">
-        </div>
-    <p class="c1"></p>
-<hr>
-<footer>
-    <div>
-        <p>문의 전화 : 000-0000-0000</p>
-        <p>운영 시간 : 00~00</p>
-        <p>주소 : 사랑시 고백구 행복동</p>
-        <p>대포이사 : 채토리</p>
-    </div>
-</footer>
+    </footer>
+
 </div>
 </body>
+<script>
+    var currSlide = 1;
+    showSlide(currSlide);
+
+    function bc(num){
+        showSlide((currSlide += num));
+    }
+
+    function showSlide(num){
+        const slides = document.querySelectorAll(".slide");
+        if(num>slides.length){
+            currSlide =1;
+        }if(num<1){
+            currSlide = slides.length;
+        }
+        for(var i=0; i<slides.length; i++){
+            slides[i].style.display = "none";
+        }slides[currSlide -1].style.display="block";
+    }
+</script>
 </html>
