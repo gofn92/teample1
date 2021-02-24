@@ -26,6 +26,7 @@ pageLeft에서는 back이 pageRight에서는 front가 보임
 width : 600px;
 height : 300px;
 position: relative;
+/* display: none; */
 /* 포지션 relative만 해두면 여기는 마음껏 */
 }
 #bookLeft{
@@ -46,11 +47,11 @@ top:0;
 left:50%;
 z-index: 99;
 }
-.page{ 
+.page{
 width :50%;
 height: 100%;;
 position : relative;
-perspective: 1800px;
+perspective: 900px;
 display: none;
 /* 페이지에 들어가는 부분 display:none인 이유는 맨앞에없는것을 가리기위함 */
 }
@@ -63,16 +64,16 @@ top:0;
 }
 .front{
 backface-visibility: hidden;
-background-color: green;
+/* background-color: green; */
 /* 페이지중 앞면 */
 }
 .back{
-background-color: blue;
+/* background-color: blue; */
 backface-visibility: hidden;
 /* 페이지중 뒷면 넘어갔을때 제대로보이기위해서
 미리 뒤집어둠 */
 }
-@keyframes paging{  
+@keyframes paging{
 /* 페이지넘어가는 중간에 앞뒤가 바뀌게 되는 장면 */
 0%{}
 50%{
@@ -102,7 +103,7 @@ transform:rotateY(180deg);
 /* 오른쪽에서 왼쪽으로넘어감 */
 animation: pagingRight 2s linear forwards;
 transform-origin: 0 0;
-/* 페이지넘어가는 애니메이션을 주는 클래스 
+/* 페이지넘어가는 애니메이션을 주는 클래스
 jq로 부여하며 직접 클래스 준곳은없음( 줬다가 빼야함) */
 }
 .pagingRight .back{
@@ -116,7 +117,7 @@ z-index: 5;
 0% {
     transform:rotateY(0deg); }
 100% {
-    transform:rotateY(-180deg); } 
+    transform:rotateY(-180deg); }
 }
 
 
@@ -138,7 +139,7 @@ transform:rotateY(180deg);
 /* 오른쪽에서 왼쪽으로넘어감 */
 animation: pagingLeft 2s linear forwards;
 transform-origin: right bottom;
-/* 페이지넘어가는 애니메이션을 주는 클래스 
+/* 페이지넘어가는 애니메이션을 주는 클래스
 jq로 부여하며 직접 클래스 준곳은없음( 줬다가 빼야함) */
 }
 .pagingLeft .front{
@@ -153,5 +154,5 @@ z-index: 5;
 0% {
     transform:rotateY(0deg); }
 100% {
-    transform:rotateY(180deg); } 
+    transform:rotateY(180deg); }
 }
