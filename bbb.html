@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>bbb</title>
+    <script>
+        // $(function(){
+        //     const a = $('.front1');
+        //     const b = $('.back1');
+        //     $(a).each(function(i){
+        //         $(this).click(function(e){
+        //             a.addClass('active');
+        //             b.addClass('active');
+        //         });
+        //     });
+        // });
+    </script>
+    <style>
+        @media (max-width: 1920px){
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html,body{
+                height: 100vh; width: 100%;
+            }
+            .box{
+                height: 100%; width: 100%;
+                background: url(image/bg.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            .s-box{
+                width: 320px; height: 320px;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+            }
+            .s-box:nth-child(1){
+                position: absolute;
+                top: 40%; left: 50%;
+                transform: translate(-50%,-80%);
+            }
+            .s-box:nth-child(2){
+                position: absolute;
+                top: 50%; left: 35%;
+                transform: translate(-50%,-50%);
+            }
+            .s-box:nth-child(3){
+                position: absolute;
+                top: 50%; right: 20%;
+                transform: translate(-50%,-50%);
+            }
+            .s-box:nth-child(4){
+                position: absolute;
+                top: 70%; right: 35%;
+                transform: translate(-50%,-50%);
+            }
+            
+
+            .s-box .front,
+            .s-box .back{
+                background: red;
+                background-size: cover;
+                background-position: center;
+                transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                border-radius: 10px;
+                backface-visibility: hidden;
+                text-align: center;
+                height: 320px; width: 250px;
+                color: #fff;
+                position: absolute;
+                text-align: center;
+                line-height: 30px;
+                
+            }
+            .s-box .back{
+                background: #cedce7;
+                background: linear-gradient(220deg, rgb(151, 34, 34) 0%, rgb(44, 6, 6) 100%);
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0; left: 0; bottom: 0; right: 0;
+                width: 250px; height: 320px;
+                border-radius: 10px;
+                z-index: -1;
+            }
+
+
+            .s-box .front{
+                transform: rotateY(0deg);
+                transform-style: preserve-3d;
+            }
+            .s-box .back{
+                transform: rotateY(180deg);
+                transform-style: preserve-3d;
+            }
+
+            .s-box .back.active{
+                transform: rotateY(0deg) scale(1);
+                transform-style: preserve-3d;
+                transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+
+            .s-box .front.active{
+                transform: rotateY(-180deg);
+                transform-style: preserve-3d;
+                transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="s-box">
+            <div class="front front1">
+                <div class="inner">
+                    <img src="image/hugi.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back back1">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="s-box">
+            <div class="front front2">
+                <div class="inner">
+                    <img src="image/hugi2.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back back2">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="s-box">
+            <div class="front front3">
+                <div class="inner">
+                    <img src="image/hugi3.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back back3">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="s-box">
+            <div class="front front4">
+                <div class="inner">
+                    <img src="image/hugi4.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back back4">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const a = document.querySelector('.front1');
+
+        a.addEventListener('click',function(){
+            const b = document.querySelector('.back1');
+
+
+            const c = setInterval (function(){
+                    if(a != true){
+                    a.animate({
+                        transform : 'rotateY(-180deg)',
+                        transformStyle: 'preserve-3d'
+                    },20000)
+                    b.animate({
+                        transform : 'rotateY(0)',
+                        transform : 'scale(1.5)',
+                        transformStyle: 'preserve-3d'
+                    },20000)
+                }else{
+                    return true;
+                }
+            });
+
+            function stop(){
+                clearInterval(c);
+            }
+        });
+    </script>
+</body>
+</html>
