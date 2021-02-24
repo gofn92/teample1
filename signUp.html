@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> signup.html </title>
-    <script src="js/checkingsing.js"></script>
+    <script src="js/checking.js"></script>
     <style>
-        *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;}
+
+        *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;
+        font-family: 'Cafe24Dongdong';}
         li{list-style: none;}
         a{
             text-decoration: none;
@@ -21,7 +23,6 @@
             border-bottom : 2px solid gray;
         }
         section {
-
             padding : 20px;
         }
         form {
@@ -31,7 +32,7 @@
         section label {
             left : 0;
             cursor: pointer;
-            width : 500px;
+            width : 300px;
             height : 30px;
         }
         section input {
@@ -67,6 +68,9 @@
             -moz-appearance: textfield;
         }
         /* 여기까지 input type=number에 붙는 스피너삭제 */
+         input[type=password]{
+             font-family: sans-serif;
+         }
         .btn {
             width : 150px;
             text-align: center;
@@ -88,15 +92,35 @@
         }
         footer {
             height : 100px;
-            border-top: 2px solid gray;
         }
         footer li{
            float : left;
        }
        footer::after{
            content : "";
+           display: block;
            clear : both;
-       }
+      }
+
+       /* 은영 */
+       body{background-color: pink;}
+       h1{color: rgba(245, 102, 185, 0.616);
+            background-color: rgb(158, 222, 238);
+            font-family: 'SDSamliphopangche_Outline';
+            font-size: 2rem;}
+@font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
     </style>
 </head>
 <body>
@@ -104,19 +128,21 @@
     <!-- container 시작 -->
         <header>
             <!-- header 시작 -->
-            Tierheim
+            <h1>Tierheim</h1>
+
         </header>
             <!-- header 끝 -->
+            
         <section>
             <!-- section 시작 -->
-            <h1> 회원가입 </h1><br>
+            <h2> 회원가입 </h2><br>
             <form method="POST" action="signUp.php" name="form" onsubmit="return checked()" autocomplete="off">
                 <label><p>아 이 디 : &nbsp;</p><input type="text" id="u_id" name="u_id" placeholder=" 아이디" required></label><br><br>
-                <label><p>비밀번호 : </p><input type="password" id="u_pw1" name="u_pw1"value="" required onkeyup="check_pw()"></label><br>
-                <label><p>비번확인 : </p><input type="password" id="u_pw2" name="u_pw2" value="" onkeyup="check_pw()" required></label><br>
+                <label><p>비밀번호 : </p><input type="password" id="u_pw1" name="u_pw1" value="" required onkeyup="check_pw()"></label><br>
+                <label><p>재 확  : </p><input type="password" id="u_pw2" name="u_pw2" value="" onkeyup="check_pw()" required></label><br>
                 <span id="pw_check_msg"></span><br><br>
-                <label><p class="twoword"> 성 명 : </p><input type="text" name="u_name" placeholder=" 이름을 적어주세요" required></label><br>
-                <label><p>생년월일 : </p><input type="number" name="birth" placeholder=" ex) 960512"></label><br>
+                <label><p class="twoword"> 성 명 : </p><input type="text" name="u_name" placeholder=" 성함을 적어주세요" required></label><br>
+                <label><p>생년월일 : </p><input type="number" name="birth" placeholder=" ex)"></label><br>
                 <label><p>전화번호 : </p><input type="number" name="tel"pattern="[0-9]+" placeholder=" '-' 없이 숫자만 입력해주세요" required></label><br>
                 <label><p>이 메 일 : &nbsp;</p><input type="email" name="email"></label><br>
                 <div id="genderbox">
@@ -124,22 +150,25 @@
                     <label><input type="radio" class="gender" name="gender" value="man">남자</label>
                     <label><input type="radio" class="gender" name="gender" value="woman">여자</label>
                 </div>
+                <div>
+                    <label><input type="radio" class="gender">메세지 광고 수신 동의(입소 소식, 이벤트)</label>
+                </div>
                 <p>
-                    <input type="submit" value="회원가입" class="btn">
+                    <input type="submit" value="가입하기" class="btn">
                     <input type="reset" value="취 소" class="btn">
                 </p>
             </form>
         </section>
+        <hr>
             <!-- section 끝 -->
         <footer>
-            <div>
-                <ul>
-                    <li> 운영시간 : 00:00~00:00 </li><br>
-                    <li> 토/일 공휴일 휴무 </li><br>
-                    <li> 고객 센터 : 000-000-0000 </li><br>
-                    <li> 위치 : 서울시 도봉구 깐따삐야 </li>
-                </ul>
-            </div>
+                <div>
+                    <p>문의 전화 : 000-0000-0000</p>
+                    <p>운영 시간 : 00~00</p>
+                    <p>위치 : 사랑시 고백구 행복동</p>
+                    <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                    <p>대포이사 : 채토리</p>
+                </div>
         </footer>
     </div>
     <!-- container -->
