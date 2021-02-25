@@ -140,14 +140,15 @@
 
         </header>
             <!-- header 끝 -->
-            
+
         <section>
             <!-- section 시작 -->
             <h2> 회원가입 </h2><br>
             <form method="POST" action="signUp.php" name="form" onsubmit="return checked()" autocomplete="off">
+                <table>
                 <label><p>아 이 디 : &nbsp;</p><input type="text" id="u_id" name="u_id" placeholder=" 아이디" required></label><br><br>
                 <label><p>비밀번호 : </p><input type="password" id="u_pw1" name="u_pw1" value="" required onkeyup="check_pw()"></label><br>
-                <label><p>재 확  : </p><input type="password" id="u_pw2" name="u_pw2" value="" onkeyup="check_pw()" required></label><br>
+                <label><p>재 확 인 : </p><input type="password" id="u_pw2" name="u_pw2" value="" onkeyup="check_pw()" required></label><br>
                 <span id="pw_check_msg"></span><br><br>
                 <label><p class="twoword"> 성 명 : </p><input type="text" name="u_name" placeholder=" 성함을 적어주세요" required></label><br>
                 <label><p>생년월일 : </p><input type="number" name="birth" placeholder=" ex)"></label><br>
@@ -158,12 +159,14 @@
                     <label><input type="radio" class="gender" name="gender" value="man">남자</label>
                     <label><input type="radio" class="gender" name="gender" value="woman">여자</label>
                 </div>
+                </table>
                 <div>
                     <label><input type="radio" class="gender">메세지 광고 수신 동의(입소 소식, 이벤트)</label>
+                    <!-- 그저 버튼입니다 -->
                 </div>
                 <p>
                     <input type="submit" value="가입하기" class="btn">
-                    <input type="reset" value="취 소" class="btn">
+                    <input type="reset" value="다시입력" class="btn">
                 </p>
             </form>
         </section>
