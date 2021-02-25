@@ -32,14 +32,14 @@
 		if(mysqli_num_rows($result)==0){
 			echo("<script>
 					alert('아이디가 없습니다');
-					document.location.href='signIn.php';
+					document.location.href='signIn.html';
 				</script>");
 		}
 		else{
 			if($u_pw != $db_pass){
 				echo("<script>
 					alert('비번이 틀립니다');
-					document.location.href='signIn.php';
+					document.location.href='signIn.html';
 				</script>");
 				// exit;
 			}
@@ -47,7 +47,7 @@
 				setcookie("loginCook",$u_id,time()+3600);
 				echo("<script>
 					alert('로그인에 성공했습니다!');
-					document.location.href='index.php';
+					document.location.href='index.html';
 				</script>");
 			}
 	}

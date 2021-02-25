@@ -48,7 +48,7 @@
 		if($db_id == $u_id){
             echo("<script>
 				alert('비밀번호는 $db_pass 입니다.');
-				document.location.href='index.php';
+				document.location.href='signIn.php';
 			</script>");
 			// exit;
 		}
@@ -56,7 +56,7 @@
 			// setcookie("loginCook",$u_id,time()+3600);
 			echo("<script>
 				alert('가입된 정보가 없습니다');
-				document.location.href='signIn.html';
+				document.location.href='findSign.html';
 			</script>");
 		}
 	?>

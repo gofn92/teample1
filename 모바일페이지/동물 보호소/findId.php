@@ -23,7 +23,7 @@
 		if(mysqli_num_rows($result)==0){
 			echo("<script>
 					alert('가입된 이름이 없습니다');
-					document.location.href='findSign.php';
+					document.location.href='findSign.html';
 				</script>");
 		}
 		else{
@@ -35,8 +35,8 @@
 
 		if($db_tel == $tel){
             echo("<script>
-				alert('아이디는 $db_pass 입니다.');
-				document.location.href='index.php';
+				alert('아이디는 $db_id 입니다.');
+				document.location.href='signIn.php';
 			</script>");
 			// exit;
 		}
@@ -44,7 +44,7 @@
 			// setcookie("loginCook",$u_id,time()+3600);
 			echo("<script>
 				alert('가입된 정보가 없습니다');
-				document.location.href='signIn.html';
+				document.location.href='findSign.html';
 			</script>");
 		}
 	?>

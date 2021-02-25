@@ -7,6 +7,12 @@
     <title>main-idx2</title>
     <link rel="stylesheet" href="css/reset.css">
     <style>
+        @font-face {
+            font-family: 'Cafe24Syongsyong';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Syongsyong.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         @media (max-width: 1920px){
         *{
             margin: 0;
@@ -14,6 +20,7 @@
             box-sizing: border-box;
             list-style: none;
             text-decoration: none;
+            font-family: 'Cafe24Syongsyong';
         }
         html,body{
             height: 100%; width: 100%;
@@ -32,6 +39,7 @@
             align-items: center;
             padding: 8px 12px;
             background: rgba(255,255,255,0.5);
+            border : 1px solid red;
         }
         .logo img{
             width: 65px; height: 65px;
@@ -52,6 +60,14 @@
         }
         header ul li button:hover{
             transform: scale(1.2);
+            cursor: pointer;
+        }
+        header ul li a{
+            padding : 10px;
+            color : black;
+        }
+        header ul li a:hover{
+            background-color: rgb(243, 198, 115);
         }
         .help{
             width: 100%; height: 50%;
@@ -103,8 +119,9 @@
                 <li><button type="button" class="menubtn" onclick="changecon(3);"><img src="image/dlqdid.gif" alt=""></button></li>
                 <li><button type="button" class="menubtn" onclick="changecon(4);"><img src="image/dlqdid.gif" alt=""></button></li>
                 <li><button type="button" class="menubtn" onclick="changecon(5);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><a href="signIn.html"> 로그인 </a></li>
+                <li><a href="signUp.html"> 회원가입 </a></li>
             </ul>
-            <div></div>
         </header>
         <article class="help">
             <div>
@@ -121,7 +138,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus beatae accusantium voluptatum veniam praesentium blanditiis harum aliquam. Natus expedita iste blanditiis ducimus asperiores dolores est quod hic sequi consectetur!
                     </p>
                 </div>
-                
+
                 <div>
                     <img src="https://via.placeholder.com/500/800" alt="">
                     <p>

@@ -45,6 +45,9 @@
             background-color: white;
             text-align: center;
         }
+        input[type=password]{
+             font-family: sans-serif;
+         }
         /* #logchk{
             width : 100px;
             margin-left : -200px;
@@ -184,6 +187,14 @@
     </div>
     <!-- container -->
 </body>
+<!-- <?php
+if(isset($_COOKIE["failCook"])){
+    setcookie("failCook","",time()-60);
+    echo"<script>
+        alert('비밀번호가 틀립니다!');
+    </script>";
+    }
+?> -->
 </html>
 <script>
     function check(){
