@@ -3,16 +3,19 @@ $(function(){
         $(this).addClass(" openbook");
         $(this).removeClass(" book1 book2 book3");
         $(".openbook").html("<img src='image/book.gif' alt='사진'>");
+        $(".openbook>.img").css("margin-top","0px");
         $(".book1").css("transform","translateX(-900px) translateY(-220px) translateZ(0px) rotateX(10deg)");
         $(".book2").css("transform","translateX(-900px) translateY(-220px) translateZ(0px) rotateX(10deg)");
         $(".book3").css("transform","translateX(-900px) translateY(-220px) translateZ(0px) rotateX(10deg)");
         $(".bookshelf").addClass("openshelf");
         $("#book").css("opacity","1").css("z-index","50").addClass("open");
+
         setTimeout(function(){
             $("#book").css("display","block");
+        },1000).delay(700,function(){
             $(".openbook").css("display","none");
             return pageDelay=0;
-        },500);
+        });
     });
     var pageIndex = 0;
     // 현재페이지를 표시할 변수 0부터시작하며 왼쪽페이지기준
