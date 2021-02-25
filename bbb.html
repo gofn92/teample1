@@ -65,8 +65,8 @@
             }
             
 
-            .s-box .front,
-            .s-box .back{
+            .s-box .front1,.front2,.front3,.front4,
+            .s-box .back1,.back2,.back3,.back4{
                 background: red;
                 background-size: cover;
                 background-position: center;
@@ -76,12 +76,9 @@
                 text-align: center;
                 height: 320px; width: 250px;
                 color: #fff;
-                position: absolute;
-                text-align: center;
-                line-height: 30px;
                 
             }
-            .s-box .back{
+            .s-box .back1, .back2, .back3, .back4{
                 background: #cedce7;
                 background: linear-gradient(220deg, rgb(151, 34, 34) 0%, rgb(44, 6, 6) 100%);
                 background-size: cover;
@@ -90,42 +87,54 @@
                 top: 0; left: 0; bottom: 0; right: 0;
                 width: 250px; height: 320px;
                 border-radius: 10px;
-                z-index: -1;
+                z-index: -11;
+                text-align: center;
+                line-height: 30px;
             }
 
-
-            .s-box .front{
+            .s-box .front1, .front2, .front3, .front4{
                 transform: rotateY(0deg);
                 transform-style: preserve-3d;
+                
             }
-            .s-box .back{
-                transform: rotateY(180deg);
-                transform-style: preserve-3d;
-            }
-
-            .s-box .back.active{
-                transform: rotateY(0deg) scale(1);
-                transform-style: preserve-3d;
-                transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
-            }
-
-            .s-box .front.active{
+            .s-box .back1, .back2, .back3, .back4{
                 transform: rotateY(-180deg);
                 transform-style: preserve-3d;
-                transition: transform 1s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+
+            .active{
+                transform: rotateY(180deg);
+                transform-style: preserve-3d;
+                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+
+            .active1{
+                transform: rotateY(0deg) scale(1.6);
+                transform-style: preserve-3d;
+                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+            .active2{
+                transform: rotateY(0deg);
+                transform-style: preserve-3d;
+                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+            .active3{
+                transform: rotateY(-180deg);
+                transform-style: preserve-3d;
+                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
             }
         }
     </style>
 </head>
 <body>
-    <div class="box">
-        <div class="s-box">
-            <div class="front front1">
+    <div class="box" id="box">
+        <div class="s-box" id="sBox">
+            <div class="front1" id="front1">
                 <div class="inner">
                     <img src="image/hugi.jpg" alt="" width="250" height="320">
                 </div>
             </div>
-            <div class="back back1">
+            <div class="back1" id="back1">
                 <div class="inner">
                     <h2>입양입소안내</h2>
                     <p>
@@ -134,13 +143,13 @@
                 </div>
             </div>
         </div>
-        <div class="s-box">
-            <div class="front front2">
+        <div class="s-box" id="sBox">
+            <div class="front2" id="front2">
                 <div class="inner">
                     <img src="image/hugi2.jpg" alt="" width="250" height="320">
                 </div>
             </div>
-            <div class="back back2">
+            <div class="back2" id="back2">
                 <div class="inner">
                     <h2>입양입소안내</h2>
                     <p>
@@ -149,13 +158,13 @@
                 </div>
             </div>
         </div>
-        <div class="s-box">
-            <div class="front front3">
+        <div class="s-box" id="sBox">
+            <div class="front3" id="front3">
                 <div class="inner">
                     <img src="image/hugi3.jpg" alt="" width="250" height="320">
                 </div>
             </div>
-            <div class="back back3">
+            <div class="back3" id="back3">
                 <div class="inner">
                     <h2>입양입소안내</h2>
                     <p>
@@ -164,13 +173,13 @@
                 </div>
             </div>
         </div>
-        <div class="s-box">
-            <div class="front front4">
+        <div class="s-box" id="sBox">
+            <div class="front4" id="front4">
                 <div class="inner">
                     <img src="image/hugi4.jpg" alt="" width="250" height="320">
                 </div>
             </div>
-            <div class="back back4">
+            <div class="back4" id="back4">
                 <div class="inner">
                     <h2>입양입소안내</h2>
                     <p>
@@ -181,32 +190,54 @@
         </div>
     </div>
     <script>
-        const a = document.querySelector('.front1');
+        let a = document.getElementById('front1');
+        let b = document.getElementById('back1');
 
-        a.addEventListener('click',function(){
-            const b = document.querySelector('.back1');
+        let c = document.getElementById('front2');
+        let d = document.getElementById('back2');
+        
 
 
-            const c = setInterval (function(){
-                    if(a != true){
-                    a.animate({
-                        transform : 'rotateY(-180deg)',
-                        transformStyle: 'preserve-3d'
-                    },20000)
-                    b.animate({
-                        transform : 'rotateY(0)',
-                        transform : 'scale(1.5)',
-                        transformStyle: 'preserve-3d'
-                    },20000)
-                }else{
-                    return true;
-                }
-            });
+        function open(){
+            document.getElementById('front1').classList.add('active');
+            document.getElementById('front1').classList.remove('active2');
 
-            function stop(){
-                clearInterval(c);
-            }
-        });
+            document.getElementById('back1').classList.add('active1');
+            document.getElementById('back1').classList.remove('active3');
+
+        };
+
+        function open2(){
+            document.getElementById('front2').classList.add('active');
+            document.getElementById('front2').classList.remove('active2');
+
+            document.getElementById('back2').classList.add('active1');
+            document.getElementById('back2').classList.remove('active3');
+
+        };
+
+
+        function close(){
+            document.getElementById('front1').classList.add('active2');
+            document.getElementById('front1').classList.remove('active');
+
+            document.getElementById('back1').classList.add('active3');
+            document.getElementById('back1').classList.remove('active1');
+        };
+
+        function close2(){
+            document.getElementById('front2').classList.add('active2');
+            document.getElementById('front2').classList.remove('active');
+
+            document.getElementById('back2').classList.add('active3');
+            document.getElementById('back2').classList.remove('active1');
+        };
+
+        a.addEventListener('click',open);
+        b.addEventListener('click',close);
+
+        c.addEventListener('click',open2);
+        d.addEventListener('click',close2);
     </script>
 </body>
 </html>
