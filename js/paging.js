@@ -63,6 +63,7 @@ $(function(){
         }
     });
     $(".book").click(function(){
+        $(".book").css("background-color","transparent");
         $(this).addClass(" openbook");
         $(this).removeClass(" book1 book2 book3");
         $(".openbook").html("<img src='image/book.gif' alt='사진'>");

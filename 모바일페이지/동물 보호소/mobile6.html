@@ -184,6 +184,10 @@
             color: chocolate;
             border: 1px solid chocolate;
         }
+        .waytobtn ul li a:focus{
+            background-color: tomato;
+            color:white;
+        }
         .waytobtn ul li a::after{
             content:"";
             display: block;
@@ -233,6 +237,7 @@
     <!-- 반복 -->
         <h1>오시는 길</h1>
         <div id="map"></div>
+        <!-- 수정할때오래걸린다면 이아래부분을 주석처리하고 수정하세요 요청하고 거절당할때까지 로딩이안되는겁니다 -->
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ff7c2a21f45d70f4b5198fa38d5efdb"></script>
         <script>
             var container = document.getElementById('map');
