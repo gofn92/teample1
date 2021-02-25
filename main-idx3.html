@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main-idx2</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/paging.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/paging.js"></script>
+    <style>
+/* 공통 스타일 */
+        @font-face {
+            font-family: 'Cafe24Syongsyong';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Syongsyong.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @media (max-width: 1920px){
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Cafe24Syongsyong';
+            text-align: center;
+        }
+        html,body{
+            height: 100%; width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(image/pink.png);
+        }
+        .loading{
+                position: fixed;
+                top: 0; left: 0; right: 0;
+                z-index: 30000;
+        }
+        .con{
+            height: 100%; width: 90%;
+        }
+        h1,h2,h3,h4{
+                font-family: 'SDSamliphopangche_Outline';
+            }
+        header{
+            height: 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.5);
+        }
+        .logo img{
+            width: 65px; height: 65px;
+        }
+        header ul{
+            display: flex;
+        }
+        header ul li{
+            /* padding: 10px 20px; */
+            transition: 0.5s;
+            margin: 0px 50px;
+        }
+        header ul li img{
+            width: 100px; height: 50px;
+        }
+        header ul li button{
+            cursor: pointer;
+            background: none;
+            border: 0;
+            outline: 0;
+            padding : 10px 20px;
+        }
+        header ul li:hover{
+            transform: scale(1.2);
+            background-color: rgb(243, 198, 115);
+            cursor: pointer;
+        }
+        header ul li a{
+            transition: all 0.5s;
+            padding : 10px;
+            color : black;
+            line-height: 2;
+        }
+        section{
+            /* height: 100vh; */
+            background: white;
+        }
+        article{
+            height: 100vh;
+            background: white;
+        }
+/* 공통스타일 끝 */
+/* 보호소 소개 */
+        .content1{
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+        }
+        .content{
+            width: 90%;
+        }
+        .content img{
+            width: 100%; height: 300px;
+        }
+        .content2{
+            line-height: 50px;
+            text-align: center;
+        }
+        .content2 h2{margin-bottom: 20px;}
+        .content2 .crew{
+            display: flex;
+            justify-content: space-around;
+            height: 50vh;
+        }
+        .content2 .crew-img{
+            width: 200px;
+            /* height: 200px; */
+        }
+        .content2 .crew-img img{
+            width: 200px; height: 200px;
+        }
+        .content2 .crew-txt{
+            width: 100%;
+            height: 60%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .content2 .crew-txt .c-txt{
+            width: 40%;
+            color: black;
+        }
+        .content2 .crew-txt2{
+            height: 30%;
+        }
+        .content2 .crew-img2{
+            position: relative;
+            height: 50%;
+        }
+        .content2 .crew-img2 img{
+            width: 100%; height: 400px;
+        }
+        .content2 .crew-img2::before{
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 400px;
+            background: rgba(255,255,255,0.5);
+        }
+/* 보호소 소개 끝 */
+/* 입양/입소 안내 */
+        .container2{
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+        .container2 h3{
+            font-size: 1.5rem;
+            line-height: 3;
+            margin-bottom: 30px;
+        }
+        .container2 article{
+            width : 90%;
+            height : 500px;
+            display: flex;
+            padding :100px;
+            /* background: url("image/wood.png"); */
+            background: url(image/pink.png);
+            margin-bottom: 50px;
+            transition: all 1s;
+            opacity: 0;
+        }
+        .container2 article:first-child{
+            width : 100%;
+            height : 800px;
+            background: url("image/dog99.jpg");
+            background-size: cover;
+            opacity: 1;
+            transition-property: none;
+        }
+        .container2 article:first-child div{
+            width : 80%;
+            height : 400px;
+            /* margin : 200px 0px; */
+        }
+        .container2 article div{
+            width : 500px;
+            height : 350px;
+        }
+        .container2 article div{
+            font-size: 1.3em;
+            line-height: 2;
+        }
+        .container2 article div img{
+            width : 100%;
+            height: 100%;
+        }
+        .comeLeft{
+            transform: translateX(-1000px);
+        }
+        .comeRight{
+            transform: translateX(1000px);
+        }
+
+        .come{
+            /* opacity: 1; */
+            transform: translateX(0px);
+        }
+/* 입양/입소 안내 끝 */
+/* 입양후기 */
+        .container4{
+            width : 100%;
+            height : 800px;
+            /* border : 1px solid red; */
+            position: relative;
+            perspective: 1000px;
+        }
+        .container4 article{
+            width : 800px;
+            height : 200px;
+        }
+        .container4 article .bookshelf{
+            width : 800px;
+            height : 200px;
+            position: absolute;
+            left: 450px;
+            bottom : 200px;
+            perspective: 1000px;
+            transform: rotateX(90deg);
+            transform-style:preserve-3d;
+            /* box-shadow: 10px 320px 100px -80px black; */
+        }
+        .container4 .bookshelf div{
+            background-image: url(image/wood.png) ;
+            background: cover no-repeat;
+            /* border : 1px solid black; */
+        }
+        .container4 .bookshelf .bsup{
+            width : 100%;
+            height : 100%;
+        }
+        .container4 .bookshelf .bsfront{
+            transform: rotateX(-50deg);
+            transform-origin: left top;
+            width : 100%;
+            height : 30px;
+            box-shadow: 30px 30px 60px 5px black;
+        }
+        .container4 .book{
+            position : absolute;
+            background-image: none;
+            bottom: -50px;
+            width : 175px;
+            height : 250px;
+            /* border : 10px solid rgb(233, 56, 56); */
+            /* box-shadow: 2px 0px 20px black; */
+            transition: all 1s;
+            background-image: url(image/bookcover.gif);
+            background-size: 175px 250px;
+            background-repeat: no-repeat;
+        }
+        .container4 .book img{
+            margin-top: 10px;
+            margin-left: 50px;
+            width : 50%;
+            height: 30%;
+        }
+        .container4 .book1{
+            transform:translateX(55px) translateY(-350px) translateZ(0px) rotateX(10deg);
+        }
+        .container4 .book1:hover{
+            transform:translateX(55px) translateY(-400px) translateZ(100px) rotateX(0deg);
+        }
+        .container4 .book2{
+            transform:translateX(305px) translateY(-350px) translateZ(0px) rotateX(10deg);
+        }
+        .container4 .book2:hover{
+            transform:translateX(305px) translateY(-400px) translateZ(100px) rotateX(0deg);
+        }
+        .container4 .book3{
+            transform:translateX(555px) translateY(-350px) translateZ(0px) rotateX(10deg);
+        }
+        .container4 .book3:hover{
+            transform:translateX(555px) translateY(-400px) translateZ(100px) rotateX(0deg);
+        }
+        .container4 .openbook{
+            width : 1000px;
+            height : 750px;
+            border : none;
+            z-index: 1;
+            transform:translateX(-150px) translateY(-80px) rotateX(0deg);
+            box-shadow: none;
+        }
+        .container4 .openbook img{
+            width : 100%;
+            height : 100%;
+        }
+        .container4 article .openshelf{
+            height : 500px;
+            left: -1500px;
+            transition: all 1s;
+            border : none;
+        }
+        .container4 .book:hover{
+            cursor: pointer;
+        }
+        .container4 #book{
+            width :1000px;
+            height : 750px;
+            display: none;
+            opacity: 0;
+            top: 30px;
+            left: -100px;
+            z-index: -99;
+            transition: all 1s;
+            perspective: 20000px;
+            background-image: url("image/book.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container4 .page{
+            border : 30px solid transparent;
+        }
+        .container4 .page div{
+            background-color: rgb(243,239,211);
+            padding : 10px;
+        }
+        .container4 .open{
+            /* display: block; */
+            /* z-index: 99; */
+            opacity: 1;
+            /* border :5px solid white; */
+        }
+        .container4 #book{
+            cursor: pointer;
+        }
+        .container4 .backpage img{
+            width : 100%;
+            height: 50%;
+        }
+        .container4 .frontpage img{
+            width: 100%;
+            height: 50%;
+        }
+/* 입양후기끝 */
+/* 오시는길 */
+        .container5{
+            width : 100%;
+            height : 90vh;
+            padding: 1%;
+        }
+        .container5 article{
+            margin-top: 30px;
+            font-size: 1.2em;
+            width : 90%;
+            height : 650px;
+            line-height: 2;
+            position: relative;
+        }
+        .container5 #map{
+            position: relative;
+            width : 75%;
+            height: 500px;
+            margin : 10px;
+            border :1px solid blue;
+        }
+        .container5 article .waytobtn{
+            position: absolute;
+            top: 20px;
+            right: 2%;
+            width : 300px;
+            height : 400px;
+        }
+        .container5 article .waytobtn ul{
+            width : 100%;
+            height: 300px;
+        }
+        .container5 article .waytobtn ul li{
+            width : 100%;
+        }
+        .container5 article .waytobtn ul li a{
+            float: left;
+            padding : 10px 80px;
+            margin: 70px 30px;
+            color: chocolate;
+            border: 1px solid pink;
+        }
+        .container5 article .waytobtn ul li a:hover{
+            background-color: tomato;
+            color:white;
+        }
+        .container5 article .waytobtn ul li a:focus{
+            background-color: tomato;
+            color:white;
+        }
+        .waytobtn ul li a::after{
+            content:"";
+            display: block;
+            clear:both;
+        }
+/* 오시는길 끝 */
+        footer{
+            /* background: white; */
+            border-top: 10px solid white;
+        }
+        .container{
+            display: none;
+        }
+        .container5{
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <!-- <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" autoplay muted></video> -->
+        <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" muted></video>
+    </div>
+    <div class="con">
+        <header>
+            <div class="logo">
+                <img src="image/logo_pink.png" alt="logo">
+            </div>
+            <ul>
+                <li><button type="button" class="menubtn" onclick="changecon(1);">보호소 소개</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(2);">입양/입소 안내</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(3);">보호 현황</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(4);">입양후기</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(5);">오시는길</button></li>
+                <li><a href="signIn.html"> 로그인 </a></li>
+                <li><a href="signUp.html"> 회원가입 </a></li>
+            </ul>
+        </header>
+        <div class="container container1">
+            <section class="content1">
+            <div class="content">
+                <img src="image/dog2.jpg" alt="dog2">
+            </div>
+            </section>
+            <section class="content2">
+                <h2>보호소 소개</h2>
+                <div class="crew">
+                    <div class="crew-img">
+                        <img src="image/hugi6.jpg" alt="">
+
+                    </div>
+                    <div class="crew-img">
+                        <img src="image/cogi.jpg" alt="">
+
+                    </div>
+                    <div class="crew-img">
+                        <img src="image/doc.jpg" alt="">
+
+                    </div>
+                    <div class="crew-img">
+                        <img src="image/cat2.jpg" alt="">
+
+                    </div>
+                </div>
+                <article class="crew-txt">
+                    <div class="c-txt">
+                        <h2>저희 보호소에서는</h2>
+                        <p>
+                            저희 보호소에서는 지속적인 발전을 통해 독일의 최대 규모인 유기견 보호소 'Tierheim' 의 운영을 기반으로 삼으며 운영중입니다.
+                        </p>
+                        <p>
+                            저희 보호소에서는 아이들이 맘껏 뛰놀 수 있는 넓은 마당이 있습니다.
+                        </p>
+                        <p>
+                            저희 보호소에서는 보호 명목으로 금전을 요구하는 일이 없으며 무료로 입소를 할 수 있습니다.
+                        </p>
+                        <p>
+                            저희 보호소에서는 나의 반려 동물이 지내는 공간으로 생각하여 편안한 생활을 할 수 있도록 따듯한 보금자리가 되어주고 있습니다.
+                        </p>
+                    </div>
+                </article>
+                <article class="crew-txt2">
+                    <div class="c-txt2">
+                        <h2>우리 보호소 장점</h2>
+                        <p>
+                            저희 보호소에서는 아이들의 특별 훈련과 특별 관리체계를 진행 하고 있습니다.
+                        </p>
+                        <p>
+                            저희 보호소에서는 아이들의 건강을 위해 '로0캣0'회사의 고급 사료들만 배식합니다.
+                        </p>
+                        <p>
+                            저희 보호소에서는 아이들의 건강을 위해 의사 선생님께서 항시 대기중이십니다.
+                        </p>
+                        <p>
+                            반려동물을 가족으로 생각하고 평생 함께할 각오와 책임만 다한다면 반려동물과 함께 하는 삶은 정서적으로 풍요롭고 행복할 수 있습니다.
+                        </p>
+                    </div>
+                </article>
+                <article class="crew-img2">
+                    <div class="c-img2">
+                        <img src="image/dc2.jpg" alt="" width="100%">
+                    </div>
+                </article>
+            </section>
+        </div>
+        <section class="container container2">
+            <article class="adbot">
+                <div>
+                    <!-- <img src="image/dog99.jpg" alt="" width="90%" height="auto"> -->
+                </div>
+            </article>
+            <article class="adobt1 comeRight">
+                <div>
+                    <h3> 입양 조건 </h3>
+                    <ul>
+                        <li> 18세 이상 성인이신분 </li>
+                        <li> 반려동물을 진심으로 사랑해주실 수 있는 분 </li>
+                        <li> 동물들이 충분히 적응 할 수 있는 환경 제공이 가능 하신 분 </li>
+                        <li> 다른 반려동물로 인해 파양 가능성이 있지 않은 가정 </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="image/tierheim4.jpg" alt="">
+                </div>
+            </article>
+            <article class="adobt2 comeLeft">
+                <div>
+                    <img src="image/tierheim.jpg" alt="">
+                </div>
+                <div>
+                    <h3> 입양 절차 </h3>
+                    <ul>
+                        <li> 심리 테스트 </li>
+                        <li> 보호중인 아이와 만남 </li>
+                        <li> 입양 서류 작성 후 입양 </li>
+                    </ul>
+                </div>
+            </article>
+            <article class="adobt3 comeRight">
+                <div>
+                    <h3> 무료 입소 안내 </h3>
+                    <ul>
+                        <li> 8세 이하 </li>
+                        <li> 결격 사유가 없는 경우 </li>
+                        <li> 소형견의 기준으로 품종견 or 묘 </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="image/tierheim2.jpg" alt="">
+                </div>
+            </article>
+            <article class="adobt4 comeLeft">
+                <div>
+                    <img src="image/tierheim3.jpg" alt="">
+                </div>
+                <div>
+                    <h3> 입소 절차 </h3>
+                    <ul>
+                        <li> 입소 신청 </li>
+                        <li> 1:1 상담 진행 후 결정 </li>
+                        <li> 보호 기간중 면회 및 외출 </li>
+                        <li> 입양 후의 소식 제공 </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section class="container container3">
+
+        </section>
+        <section class="container container4">
+            <article>
+                <div class="bookshelf">
+                    <div class="bsup"></div>
+                    <div class="bsfront"></div>
+                </div>
+                    <div class="book book1">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div class="book book2">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div class="book book3">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div id="book">
+                        <div id="bookLeft"></div>
+                        <div id="bookRight"></div>
+                        <div class="page pageLeft">
+                            <div class="frontpage">맨앞(안보임)</div>
+                            <div class="backpage">
+                                <img src="image/hugi11.jpg" alt="사진">
+                                <img src="image/hugi12.jpg" alt="사진">
+                            </div>
+                        </div>
+                        <div class="page pageRight">
+                            <div class="frontpage">
+                                <img src="image/hugi9.jpg" alt="사진">
+                                <img src="image/hugi10.jpg" alt="사진">
+
+                            </div>
+                            <div class="backpage">
+                                <img src="image/hugi7.jpg" alt="사진">
+                                <img src="image/hugi8.jpg" alt="사진">
+                            </div>
+                        </div>
+                        <div class="page">
+                            <div class="frontpage">
+                                <img src="image/hugi5.jpg" alt="사진">
+                                <img src="image/hugi6.jpg" alt="사진">
+                            </div>
+                            <div class="backpage">
+                                <img src="image/hugi3.jpg" alt="사진">
+                                <img src="image/hugi4.jpg" alt="사진">
+                            </div>
+                        </div>
+                        <div class="page">
+                            <div class="frontpage">
+                                <img src="image/hugi.jpg" alt="사진">
+                                <img src="image/hugi2.jpg" alt="사진">
+                            </div>
+                            <div class="backpage">맨뒤(안보임)</div>
+                        </div>
+                    </div>
+            </article>
+        </section>
+        <section class="container container5">
+                <h1> 오시는길 </h1>
+                <article>
+                <div id="map">
+                    <!-- 이부분에 지도가 나오는건데 특정웹페이지에서만 나옵니다
+                    제 자리에서 파일질라로 서버에파일올리면 보실수 있어요 -->
+                </div>
+                <!-- 수정할때오래걸린다면 이아래부분을 주석처리하고 수정하세요 요청하고 거절당할때까지 로딩이안되는겁니다 -->
+                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ff7c2a21f45d70f4b5198fa38d5efdb"></script>
+                <div class="waytobtn">
+                    <ul>
+                        <li><a href="https://map.kakao.com/link/to/Tierheim,37.56092925965829, 127.03480620586456"> 길찾기 </a></li>
+                        <li><a href="https://map.kakao.com/link/roadview/37.56104268588326, 127.0350491188542"> 로드뷰 </a></li>
+                    </ul>
+                </div>
+                <div class="howtoway">
+                    <h1>
+                        주 소 사랑시 고백구 행복동</h1>
+                    <h3> 자가용으로 오시는 길</h3>
+                    <p> 국민시 후원구 계좌동을 지나 바로 나오는 사랑시 고백구 행복동 Tierheim </p>
+                    <h3> 대중교통을 이용하여 오시는 길</h3>
+                    <p> 사랑역에서 행복동 방향으로 가는 486버스 승차 후 Tierheim 정류장 하차 </p>
+                </div>
+            </article>
+        </section>
+            <footer>
+                <div>
+                    <p>문의 전화 : 000-0000-0000</p>
+                    <p>운영 시간 : 00~00</p>
+                    <p>주소 : 사랑시 고백구 행복동</p>
+                    <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                    <p>대포이사 : 채토리</p>
+                </div>
+            </footer>
+        </div>
+        <script>
+            //페이지 로딩시 들어오는 애니메이션
+            $(function(){
+                $video = $("#video1").get(0);
+                $video.play();
+                $("#video1").delay(500).fadeOut(1000);
+            });
+            // 헤더에서 메뉴클릭시 애니메이션 나타나게 + container전환
+            function changecon(n){
+                    // 여기가 버튼을누르면 작동하는곳
+
+                    $video.load();
+                    // 비디오를 새로 로드
+                    $video.play();
+                    // 비디오를 실행
+
+                    $("#video1").fadeIn().delay(500).fadeOut(500);
+                    // 비디오를 나타나게하고 잠시후 다시사라지게 하는것
+
+                    $maxmenu = $(".menubtn").length;
+                    $visible = ".container" + n;
+                    for( $i = 0; $i < $maxmenu; $i++){
+                        $reset = ".container"+($i+1);
+                        $($reset).css("display","none");
+                    }
+                    $($visible).css("display","block");
+                }
+            $(window).scroll(function(){
+                $(".container2>article").each(function(){
+                    var objectTop = $(this).offset().top;
+                    var windowTop = $(window).scrollTop();
+                    var workTop = (windowTop-objectTop)/2;
+                    if( workTop > -400 ){
+                        $(this).addClass("come").delay(300).animate({'opacity':'1'},300);
+                    }
+                    else{
+                        $(this).css("opacity","0").removeClass("come");
+                    }
+                });
+            });
+
+            // 지도지도지도지도
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(37.56092925965829, 127.03480620586456),
+                level: 2
+            };
+
+            var map = new kakao.maps.Map(container, options);
+            // map.setDraggable(false);
+            // 맵 못움직이게 하는 부분
+
+            //마커의 위치를 잡아주는 변수
+            var markerPosition  = new kakao.maps.LatLng(37.56092925965829, 127.03480620586456);
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+        </script>
+</body>
+</html>

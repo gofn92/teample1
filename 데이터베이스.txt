@@ -1,0 +1,1 @@
+maketable.php로 만들어 놨씀다
