@@ -63,7 +63,7 @@ $(function(){
         }
     });
     $(".book").click(function(){
-        $(".book").css("background-color","transparent");
+        $(".book").css("background-color","transparent").css("background","none");
         $(this).addClass(" openbook");
         $(this).removeClass(" book1 book2 book3");
         $(".openbook").html("<img src='image/book.gif' alt='사진'>");
@@ -75,9 +75,8 @@ $(function(){
         $("#book").css("opacity","1").css("z-index","50").addClass("open");
         setTimeout(function(){
             $("#book").css("display","block");
-        },1000)
-        .delay(300,function(){
-            $(".openbook").css("display","none");
-        });
+            $(".openbook").css("display","none").delay(300);
+        },1000);
+        
     });
 });
