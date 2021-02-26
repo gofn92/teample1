@@ -26,6 +26,8 @@
             font-family: 'Cafe24Dongdong';
             padding:0;
             margin: 0 auto;
+            color : rgb(75, 14, 110);
+            font-weight: bolder;
         }
         li{list-style: none;}
         /* 햄버거시작 */
@@ -68,7 +70,7 @@
         .ham-btn{
             width: 50px; height: 50px;
             position: absolute;
-            top: 30px; right: 0px;
+            top: 30px; right: -5px;
             transform: translateY(-50%);
             cursor:pointer;
             display: block;
@@ -127,7 +129,7 @@
         height: 150px;
         display: inline-block;
         margin-top: 80px;
-
+        
         }
         .a1 ul a{
             float: left;
@@ -146,18 +148,18 @@
             position: relative;
         }
         body{
-            background-color: pink;
+            background:url(image/white.gif)
         }
         .c1{clear: both; margin: 20px;}
         hr{margin: 20px;}
         h2{
-            color: rgba(245, 102, 185, 0.616);
-            background-color: rgb(158, 222, 238);
+            color: rgb(253, 106, 130);
             font-family: 'SDSamliphopangche_Outline';
             font-size: 2rem;
         }
+        h1{font-size: 3rem; margin-top: 15px;}
         footer div {background-color:rgb(189, 183, 183);}
-
+        .z1{font-size: 1.5rem;}
     .slider{
         width:300px;
         height: 320px;
@@ -215,7 +217,7 @@
             <span></span>
         </div>
     </div>
-
+        
     <h1> 입양 후기 </h1>
     <div class="slider">
         <div class="slide" style="background-image: url(image/hugi.jpg);"></div>
@@ -226,12 +228,12 @@
         <div class="slide" style="background-image: url(image/hugi6.jpg);"></div>
         <div class="slide" style="background-image: url(image/hugi7.jpg);"></div>
         <div class="slide" style="background-image: url(image/hugi8.jpg);"></div>
-
+   
         <a class="prew" onclick="bc(-1)"> &#10094 &emsp; </a>
         <a class="next" onclick="bc(1)"> &#10095 </a>
     </div>
         <p class="c1"></p>
-    <input type="button" value="더 많고 자세한 후기 찾으러 가기!">
+    <input type="button" value="더 많고 자세한 후기 찾으러 가기!" class="z1">
 
     <hr>
     <footer>
