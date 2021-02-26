@@ -7,95 +7,182 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>bbb</title>
     <script>
-        // $(function(){
-        //     const a = $('.front1');
-        //     const b = $('.back1');
-        //     $(a).each(function(i){
-        //         $(this).click(function(e){
-        //             a.addClass('active');
-        //             b.addClass('active');
-        //         });
-        //     });
-        // });
+         $(function(){
+            $video = $("#video1").get(0);
+            $video.play();
+            $("#video1").delay(500).fadeOut(1000);
+
+            // $('.loading').delay(500).fadeOut(1000, function() {
+            //     $("#video1").get(0).stop();
+            // });
+        });
+        function changecon(n){
+                // 여기가 버튼을누르면 작동하는곳
+
+                $video.load();
+                // 비디오를 새로 로드
+                $video.play();
+                // 비디오를 실행
+
+                $("#video1").fadeIn(500).delay(500).fadeOut(500);
+                // 비디오를 나타나게하고 잠시후 다시사라지게 하는것
+
+                $visible = ".container" + n;
+                for( $i = 0; $i < $maxmenu; $i++){
+                    $reset = ".container"+($i+1);
+                    $($reset).css("display","none");
+                }
+                $($visible).css("display","block");
+            }
+        $(function(){
+            $maxmenu = $(".menubtn").length;
+
+        });
     </script>
     <style>
-        @media (max-width: 1920px){
+        @media (min-width: 1024px){
             *{
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
+                list-style: none;
+                text-decoration: none;
             }
             html,body{
-                height: 100vh; width: 100%;
-            }
-            .box{
                 height: 100%; width: 100%;
-                background: url(image/bg.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background: url(image/white.gif);
+            }
+            .loading{
+                width: 100%; height: 100%;
+                position: fixed;
+                top: 0%; left: 0; right: 0;
+                z-index: 111111111;
+            }
+            .con{
+                width: 90%; height: 100%;
+            }
+            .con h2{
+                text-align: center;
+                margin: 50px auto;
+            }
+            header{
+                height: 120px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 12px;
+                background: rgba(255,255,255,0.5);
+                border : 1px solid red;
+            }
+            .logo img{
+                width: 65px; height: 65px;
+            }
+            header ul{
+                display: flex;
+            }
+            header ul li{
+                padding: 8px 12px;
+            }
+            header ul li img{
+                width: 100px; height: 50px;
+            }
+            header ul li button{
+                transition: 0.5s;
+                border: 0;
+                outline: 0;
+            }
+            header ul li button:hover{
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+            header ul li a{
+                padding : 10px;
+                color : black;
+            }
+            header ul li a:hover{
+                background-color: rgb(243, 198, 115);
+            }
+            section{
+                width: 100%; height: 100%;
+            }
+            .box{
+                height: 100%; width: 100%;
+                background: transparent;
+                background-repeat: no-repeat;
+                background-size: cover;
                 position: relative;
+                display: grid;
+                grid-template-columns: repeat(20%);
+                place-items: center center;
+                overflow: hidden;
             }
             .s-box{
-                width: 320px; height: 320px;
+                width: 256px; height: 320px;
                 perspective: 1000px;
                 transform-style: preserve-3d;
             }
             .s-box:nth-child(1){
-                position: absolute;
-                top: 40%; left: 50%;
-                transform: translate(-50%,-80%);
+                grid-column: 1/1;
             }
             .s-box:nth-child(2){
-                position: absolute;
-                top: 50%; left: 35%;
-                transform: translate(-50%,-50%);
+                grid-column: 2/2;
             }
             .s-box:nth-child(3){
-                position: absolute;
-                top: 50%; right: 20%;
-                transform: translate(-50%,-50%);
-            }
+                grid-column: 3/3;
+            }   
             .s-box:nth-child(4){
-                position: absolute;
-                top: 70%; right: 35%;
-                transform: translate(-50%,-50%);
+                grid-column: 4/4;
             }
 
 
-            .s-box .front1,.front2,.front3,.front4,
-            .s-box .back1,.back2,.back3,.back4{
-                background: red;
+            .s-box .front1,.front2,.front3,.front4,.front5,.front6,.front7,.front8,
+            .front9,.front10,.front11,.front12,.front13,.front14,.front15,.front16,
+            .s-box .back1,.back2,.back3,.back4,.back5,.back6,.back7,.back8,
+            .back9,.back10,.back11,.back12,.back13,.back14,.back15,.back16{
                 background-size: cover;
                 background-position: center;
                 transition: all 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
                 border-radius: 10px;
                 backface-visibility: hidden;
                 text-align: center;
-                height: 320px; width: 250px;
-                color: #fff;
-
+                height: 320px; width: 256px;
+                /* color: #fff; */
             }
-            .s-box .back1, .back2, .back3, .back4{
-                background: #cedce7;
-                background: linear-gradient(220deg, rgb(151, 34, 34) 0%, rgb(44, 6, 6) 100%);
+            .s-box .back1, .back2, .back3, .back4,.back5,.back6,.back7,.back8,
+            .back9,.back10,.back11,.back12,.back13,.back14,.back15,.back16{
+                /* background: #cedce7; */
+                background: url(image/bg.jpg);
                 background-size: cover;
                 background-repeat: no-repeat;
                 position: absolute;
                 top: 0; left: 0; bottom: 0; right: 0;
-                width: 250px; height: 320px;
+                width: 256px; height: 320px;
                 border-radius: 10px;
                 z-index: -11;
                 text-align: center;
-                line-height: 30px;
+                line-height: 20px;
             }
+
 
             .front1,
             .front2,
             .front3,
-            .front4{
+            .front4,
+            .front4,
+            .front5,
+            .front6,
+            .front7,
+            .front8,.front9,
+            .front10,
+            .front11,
+            .front12,
+            .front13,
+            .front14,
+            .front15,
+            .front16{
                 transform: rotateY(0deg);
                 transform-style: preserve-3d;
 
@@ -103,7 +190,19 @@
             .back1,
             .back2,
             .back3,
-            .back4{
+            .back4,
+            .back5,
+            .back6,
+            .back7,
+            .back8,
+            .back9,
+            .back10,
+            .back11,
+            .back12,
+            .back13,
+            .back14,
+            .back15,
+            .back16{
                 transform: rotateY(-180deg);
                 transform-style: preserve-3d;
             }
@@ -115,7 +214,7 @@
             }
 
             .active1{
-                transform: rotateY(0deg) scale(1.6);
+                transform: rotateY(0deg);
                 transform-style: preserve-3d;
                 transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
             }
@@ -129,72 +228,296 @@
                 transform-style: preserve-3d;
                 transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
             }
+
+            footer{
+            /* background: white; */
+            border-top: 10px solid black;
+        }
         }
     </style>
 </head>
 <body>
-    <div class="box" id="box">
-        <div class="s-box" id="sBox">
-            <div class="front1" id="front1">
-                <div class="inner">
-                    <img src="image/hugi.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back1" id="back1">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="s-box" id="sBox">
-            <div class="front2" id="front2">
-                <div class="inner">
-                    <img src="image/hugi2.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back2" id="back2">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="s-box" id="sBox">
-            <div class="front3" id="front3">
-                <div class="inner">
-                    <img src="image/hugi3.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back3" id="back3">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="s-box" id="sBox">
-            <div class="front4" id="front4">
-                <div class="inner">
-                    <img src="image/hugi4.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back4" id="back4">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <div class="loading">
+        <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" autoplay muted></video>
+        <!-- <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" muted></video> -->
     </div>
+    <div class="con">
+        <header>
+            <div class="logo">
+                <img src="image/logo_pink.png" alt="logo">
+            </div>
+            <ul>
+                <li><button type="button" class="menubtn" onclick="changecon(1);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(2);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(3);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(4);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(5);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><a href="signIn.html"> 로그인 </a></li>
+                <li><a href="signUp.html"> 회원가입 </a></li>
+            </ul>
+        </header>
+        <h2>강아지 보호 현황</h2>
+        <section>
+            <div class="box" id="box">
+                <div class="s-box" id="sBox">
+                    <div class="front1" id="front1">
+                        <div class="inner">
+                            <img src="image/hugi.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back1" id="back1">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front2" id="front2">
+                        <div class="inner">
+                            <img src="image/hugi2.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back2" id="back2">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front3" id="front3">
+                        <div class="inner">
+                            <img src="image/hugi3.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back3" id="back3">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front4" id="front4">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back4" id="back4">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front5" id="front5">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back5" id="back5">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front6" id="front6">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back6" id="back6">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front7" id="front7">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back7" id="back7">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front8" id="front8">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back8" id="back8">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2>고양이 보호 현황</h2>
+        <section>
+            <div class="box" id="box">
+                <div class="s-box" id="sBox">
+                    <div class="front9" id="front9">
+                        <div class="inner">
+                            <img src="image/hugi.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back9" id="back9">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front10" id="front10">
+                        <div class="inner">
+                            <img src="image/hugi2.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back10" id="back10">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front11" id="front11">
+                        <div class="inner">
+                            <img src="image/hugi3.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back11" id="back11">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front12" id="front12">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back12" id="back12">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front13" id="front13">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back13" id="back13">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front14" id="front14">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back14" id="back14">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front15" id="front15">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back15" id="back15">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-box" id="sBox">
+                    <div class="front16" id="front16">
+                        <div class="inner">
+                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                        </div>
+                    </div>
+                    <div class="back16" id="back16">
+                        <div class="inner">
+                            <h2>입양입소안내</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div>
+                <p>문의 전화 : 000-0000-0000</p>
+                <p>운영 시간 : 00~00</p>
+                <p>주소 : 사랑시 고백구 행복동</p>
+                <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                <p>대포이사 : 채토리</p>
+            </div>
+        </footer>
+    </div>
+
+
     <script>
         let a = document.getElementById('front1');
         let b = document.getElementById('back1');
@@ -208,82 +531,108 @@
         let g = document.getElementById('front4');
         let h = document.getElementById('back4');
 
+        let i = document.getElementById('front5');
+        let j = document.getElementById('back5');
+
+        let k = document.getElementById('front6');
+        let l = document.getElementById('back6');
+
+        let m = document.getElementById('front7');
+        let n = document.getElementById('back7');
+
+        let o = document.getElementById('front8');
+        let p = document.getElementById('back8');
+
+        let q = document.getElementById('front9');
+        let r = document.getElementById('back9');
+
+        let s = document.getElementById('front10');
+        let t = document.getElementById('back10');
+
+        let u = document.getElementById('front11');
+        let v = document.getElementById('back11');
+
+        let w = document.getElementById('front12');
+        let x = document.getElementById('back12');
+
+        let y = document.getElementById('front13');
+        let z = document.getElementById('back13');
+
+        let aa = document.getElementById('front14');
+        let bb = document.getElementById('back14');
+
+        let cc = document.getElementById('front15');
+        let dd = document.getElementById('back15');
+
+        let ee = document.getElementById('front16');
+        let ff = document.getElementById('back16');
+
+
         function open(){
-            a.classList.add('active');
-            a.classList.remove('active2');
+            this.classList.add('active');
+            this.classList.remove('active2');
+            this.nextElementSibling.classList.add('active1');
+            this.nextElementSibling.classList.remove('active3');
 
-            b.classList.add('active1');
-            b.classList.remove('active3');
         };
-
-        function open2(){
-            c.classList.add('active');
-            c.classList.remove('active2');
-
-            d.classList.add('active1');
-            d.classList.remove('active3');
-        };
-
-        function open3(){
-            e.classList.add('active');
-            e.classList.remove('active2');
-
-            f.classList.add('active1');
-            f.classList.remove('active3');
-        };
-
-        function open4(){
-            g.classList.add('active');
-            g.classList.remove('active2');
-
-            h.classList.add('active1');
-            h.classList.remove('active3');
-        };
-
 
         function close(){
-            a.classList.add('active2');
-            a.classList.remove('active');
+            this.previousElementSibling.classList.add('active2');
+            this.previousElementSibling.classList.remove('active');
 
-            b.classList.add('active3');
-            b.classList.remove('active1');
-        };
-
-        function close2(){
-            c.classList.add('active2');
-            c.classList.remove('active');
-
-            d.classList.add('active3');
-            d.classList.remove('active1');
-        };
-
-        function close3(){
-            e.classList.add('active2');
-            e.classList.remove('active');
-
-            f.classList.add('active3');
-            f.classList.remove('active1');
-        };
-
-        function close4(){
-            g.classList.add('active2');
-            g.classList.remove('active');
-
-            h.classList.add('active3');
-            h.classList.remove('active1');
+            this.classList.add('active3');
+            this.classList.remove('active1');
         };
 
         a.addEventListener('click',open);
         b.addEventListener('click',close);
 
-        c.addEventListener('click',open2);
-        d.addEventListener('click',close2);
+        c.addEventListener('click',open);
+        d.addEventListener('click',close);
 
-        e.addEventListener('click',open3);
-        f.addEventListener('click',close3);
+        e.addEventListener('click',open);
+        f.addEventListener('click',close);
 
-        g.addEventListener('click',open4);
-        h.addEventListener('click',close4);
+        g.addEventListener('click',open);
+        h.addEventListener('click',close);
+
+        i.addEventListener('click',open);
+        j.addEventListener('click',close);
+
+        k.addEventListener('click',open);
+        l.addEventListener('click',close);
+
+        m.addEventListener('click',open);
+        n.addEventListener('click',close);
+
+        o.addEventListener('click',open);
+        p.addEventListener('click',close);
+
+
+        q.addEventListener('click',open);
+        r.addEventListener('click',close);
+
+        s.addEventListener('click',open);
+        t.addEventListener('click',close);
+
+        u.addEventListener('click',open);
+        v.addEventListener('click',close);
+
+        w.addEventListener('click',open);
+        x.addEventListener('click',close);
+
+        
+        y.addEventListener('click',open);
+        z.addEventListener('click',close);
+
+        aa.addEventListener('click',open);
+        bb.addEventListener('click',close);
+
+        cc.addEventListener('click',open);
+        dd.addEventListener('click',close);
+
+        ee.addEventListener('click',open);
+        ff.addEventListener('click',close);
     </script>
 </body>
 </html>
