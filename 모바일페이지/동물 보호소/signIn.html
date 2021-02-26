@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> login.html </title>
+    <title> signIn.html </title>
     <style>
         *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;
             font-family: 'Cafe24Dongdong';}
@@ -41,29 +41,35 @@
             outline: 2px solid green;
         }
         #submit {
+            width : 100%;
             background-color: white;
             text-align: center;
         }
-        #logchk{
+        input[type=password]{
+             font-family: sans-serif;
+         }
+        /* #logchk{
             width : 100px;
             margin-left : -200px;
         }
         #logchk input{
             height : 20px;
             width : 20px;
-        }
+        } */
         li a:focus{
-            background-color: greenyellow;
+            border : 2px solid green;
         }
         section ul {
-            width : 300px;
+            width : 400px;
         }
         section ul li a{
             float: left;
-            width : 135px;
+            width : 156px;
             height : 30px;
+            padding-top : 5px;
             border : 1px solid green;
-            margin-right: 15px;
+            margin: 5px 22px 0px;
+            background-color: white;
         }
         footer {
             height : 100px;
@@ -75,7 +81,7 @@
            content : "";
            clear : both;
        }
-       
+
        /* 은영 */
     @font-face {
     font-family: 'Cafe24Dongdong';
@@ -99,9 +105,10 @@
         /* background-color: rgb(158, 222, 238); */
          font-family: 'SDSamliphopangche_Outline';
             color : rgb(125, 15, 158);
-         text-shadow: 5px 5px 10px white;
+            text-shadow: 5px 5px 10px white;
          /* object-fit: reflect linear (); */
          }
+
     footer div {background-color:rgb(189, 183, 183);}
     @media screen and (max-width : 768px){
         #container {
@@ -117,6 +124,27 @@
         form{
             width:200px;
         }
+        tr td:first-child{
+            display: none;
+        }
+        tr:last-child{
+            padding: 0;
+        }
+        tr:last-child td:first-child{
+            width : 100%;
+            margin: 0;
+            display: block;
+        }
+        section ul {
+            width :300px;
+        }
+        section ul li a{
+            width : 100px;
+        }
+    }
+    /* 창영 */
+    table td{
+        width : 150px;
     }
     </style>
 </head>
@@ -132,13 +160,22 @@
             <!-- section 시작 -->
             <h2>로그인</h2><br>
             <form method="POST" action="loginCheck.php" name="signIn" autocomplete="off" onsubmit="return check()">
-                <input type="text" name="u_id" placeholder="아이디"><br>
-                <input type="password" name="u_pw" placeholder="비밀번호"><br><br>
-                <input type="submit" value="로그인" id="submit"><br>
-                <!-- <label id="logchk"><input type="checkbox" name="logchk">ID 기억하기</label> -->
-            </form><br>
+                <table>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" name="u_id" placeholder="아이디"></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" name="u_pw" placeholder="비밀번호"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="login"><input type="submit" value="로그인" id="submit"></td>
+                    </tr>
+                </table>
+            </form>
             <ul>
-                <li><a href="#"> id / pw 찾기 </a></li>
+                <li><a href="findSign.html"> id / pw 찾기 </a></li>
                 <li><a href="signUp.html"> 회원가입 </a></li>
             </ul>
         </section>
@@ -156,6 +193,14 @@
     </div>
     <!-- container -->
 </body>
+<!-- <?php
+if(isset($_COOKIE["failCook"])){
+    setcookie("failCook","",time()-60);
+    echo"<script>
+        alert('비밀번호가 틀립니다!');
+    </script>";
+    }
+?> -->
 </html>
 <script>
     function check(){

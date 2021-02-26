@@ -6,7 +6,6 @@
     <title> signup.html </title>
     <script src="js/checking.js"></script>
     <style>
-
         *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;
         font-family: 'Cafe24Dongdong';}
         li{list-style: none;}
@@ -82,14 +81,6 @@
             height : 15px;
             margin-right : 5px;
         }
-        .twoword{
-            display: inline;
-            margin: 20px;
-            margin-right: 50px;
-        }
-        #genderbox label{
-            margin-right: 30px;
-        }
         footer {
             height : 100px;
         }
@@ -115,6 +106,7 @@
     font-weight: normal;
     font-style: normal;
     }
+<<<<<<< HEAD
     body{background:url(image/white.gif)}
     h1{
             color: rgb(253, 106, 130);
@@ -123,15 +115,30 @@
             margin-top: 15px;
         }
     h2{font-size: 2rem; margin-top: 15px;}
+=======
+    body{background-color:rgb(250,219,224);}
+    h1{color: rgb(125, 15, 158);
+        font-size: 3rem; margin-top:15px;}
+>>>>>>> bb12e69d879e1320f1bcf43175d4fa091788bfc0
     hr{margin: 20px;}
-
     .z1{width: 30px;
     height: 30px;}
+<<<<<<< HEAD
+=======
+    .title{
+        /* background-color: rgb(158, 222, 238);  */
+    font-family: 'SDSamliphopangche_Outline';}
+>>>>>>> bb12e69d879e1320f1bcf43175d4fa091788bfc0
     footer div {background-color:rgb(189, 183, 183);}
     @media screen and (max-width : 768px){
         #container {
             width : 330px;
         }
+    }
+    /* 창영 */
+    table td{
+        width : 150px;
+        height:20px;
     }
     </style>
 </head>
@@ -140,15 +147,20 @@
     <!-- container 시작 -->
         <header>
             <!-- header 시작 -->
+<<<<<<< HEAD
             <h1><img src="image/dog_paw.png" class="z1">Tierheim<img src="image/cat_paw.png" class="z1"></h1>
 
+=======
+            <h1><img src="image/dog_paw.png" class="z1"><span class="title">Tierheim</span><img src="image/cat_paw.png" class="z1"></h1>
+>>>>>>> bb12e69d879e1320f1bcf43175d4fa091788bfc0
         </header>
             <!-- header 끝 -->
-            
+
         <section>
             <!-- section 시작 -->
             <h2> 회원가입 </h2><br>
             <form method="POST" action="signUp.php" name="form" onsubmit="return checked()" autocomplete="off">
+<<<<<<< HEAD
                 <label><p>아 이 디 :&nbsp;</p><input type="text" id="u_id" name="u_id" placeholder=" 아이디" required></label><br><br>
                 <label><p>비밀번호 :</p><input type="password" id="u_pw1" name="u_pw1" value="" required onkeyup="check_pw()"></label><br>
                 <label><p>재 확 인 : </p><input type="password" id="u_pw2" name="u_pw2" value="" onkeyup="check_pw()" required></label><br>
@@ -165,6 +177,76 @@
                 <div>
                     <label><input type="radio" class="gender">메세지 광고 수신 동의(입소 소식, 이벤트)</label>
                 </div>
+=======
+                <table>
+                    <tr>
+                        <td> 아 이 디</td>
+                        <td><input type="text" id="u_id" name="u_id" placeholder=" 아이디" required></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" id="u_pw1" name="u_pw1" value="" required onkeyup="check_pw()"></td>
+                    </tr>
+                    <tr>
+                        <td>비번확인</td>
+                        <td><input type="password" id="u_pw2" name="u_pw2" value="" onkeyup="check_pw()" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span id="pw_check_msg"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            성 명
+                        </td>
+                        <td>
+                            <input type="text" name="u_name" placeholder=" 성함을 적어주세요" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            생년월일
+                        </td>
+                        <td>
+                            <input type="number" name="birth" placeholder=" ex)960512">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            전화번호
+                        </td>
+                        <td>
+                            <input type="number" name="tel"pattern="[0-9]+" placeholder=" '-' 없이 숫자만 입력해주세요" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            이 메 일
+                        </td>
+                        <td>
+                            <input type="email" name="email" placeholder="이메일을 적어주세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            성 별
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="radio" class="gender" name="gender" value="man">남자</label>
+                        </td>
+                        <td>
+                            <label><input type="radio" class="gender" name="gender" value="woman">여자</label>
+                        </td>
+                    </tr>
+                <!-- <div>
+                    <input type="radio" class="gender">메세지 광고 수신 동의(입소 소식, 이벤트)</label>
+                </div> -->
+            </table>
+
+>>>>>>> bb12e69d879e1320f1bcf43175d4fa091788bfc0
                 <p>
                     <input type="submit" value="가입하기" class="btn">
                     <input type="reset" value="취 소" class="btn">
