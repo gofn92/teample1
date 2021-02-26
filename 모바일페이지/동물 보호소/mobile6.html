@@ -7,11 +7,9 @@
     <title>오시는길</title>
     <script src="js/jquery.js"></script>
     <style>
-
         .z1 h2{font-size: 1.5rem;
         background-color: pink;
-        font-family: 'Cafe24Dongdong';
-        color: chocolate;}
+        font-family: 'Cafe24Dongdong';}
         .z2{margin: 5px;}
         .z2 p{margin: 5px;}
         #map{width: 330px;}
@@ -34,6 +32,8 @@
             font-family: 'Cafe24Dongdong';
             padding:0;
             margin: 0 auto;
+            color : rgb(75, 14, 110);
+            font-weight: bolder;
         }
         li{list-style: none;}
         /* 햄버거시작 */
@@ -154,17 +154,46 @@
             position: relative;
         }
         body{
-            background-color: pink;
+            background:url(image/white.gif)
         }
         .c1{clear: both;}
         hr{margin: 20px;}
         h2{
-            color: rgba(245, 102, 185, 0.616);
-            background-color: rgb(158, 222, 238);
+            color: rgb(253, 106, 130);
             font-family: 'SDSamliphopangche_Outline';
             font-size: 2rem;
         }
+        h1{font-size: 3rem; margin-top: 15px;}
         footer div {background-color:rgb(189, 183, 183);}
+        /* 맵잡아넣는부분 */
+        #map{
+            width : 310px;
+            height : 300px;
+        }
+        .waytobtn{
+            width : 310px;
+            height : 70px;
+            margin : 20px auto;
+        }
+        .waytobtn ul{
+            margin-left: 10px;
+        }
+        .waytobtn ul li a{
+            float: left;
+            padding: 10px 30px;
+            margin: 0px 20px;
+            color: chocolate;
+            border: 1px solid chocolate;
+        }
+        .waytobtn ul li a:focus{
+            background-color: tomato;
+            color:white;
+        }
+        .waytobtn ul li a::after{
+            content:"";
+            display: block;
+            clear:both;
+        }
 
     </style>
     <script>
@@ -207,9 +236,38 @@
         </div>
     </div>
     <!-- 반복 -->
-        <h1>오시는 길</h1>
-        <div id="map">
-        </div>
+    <h1>오시는 길</h1>
+    <div id="map"></div>
+    <!-- 수정할때오래걸린다면 이아래부분을 주석처리하고 수정하세요 요청하고 거절당할때까지 로딩이안되는겁니다 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ff7c2a21f45d70f4b5198fa38d5efdb"></script>
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new kakao.maps.LatLng(37.56092925965829, 127.03480620586456),
+            level: 2
+        };
+
+        var map = new kakao.maps.Map(container, options);
+        // map.setDraggable(false);
+        // 맵 못움직이게 하는 부분
+
+        //마커의 위치를 잡아주는 변수
+        var markerPosition  = new kakao.maps.LatLng(37.56092925965829, 127.03480620586456);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+    </script>
+    <div class="waytobtn">
+        <ul>
+            <li><a href="https://map.kakao.com/link/to/Tierheim,37.56092925965829, 127.03480620586456"> 길찾기 </a></li>
+            <li><a href="https://map.kakao.com/link/roadview/37.56104268588326, 127.0350491188542"> 로드뷰 </a></li>
+        </ul>
+    </div>
         <div class="z1">
             <h2>주소 : 사랑시 고백구 행복동</h2>
         </div>
