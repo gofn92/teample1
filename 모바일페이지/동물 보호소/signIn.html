@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> signIn.html </title>
+    <title> login.html </title>
     <style>
         *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;
             font-family: 'Cafe24Dongdong';}
@@ -41,35 +41,29 @@
             outline: 2px solid green;
         }
         #submit {
-            width : 100%;
             background-color: white;
             text-align: center;
         }
-        input[type=password]{
-             font-family: sans-serif;
-         }
-        /* #logchk{
+        #logchk{
             width : 100px;
             margin-left : -200px;
         }
         #logchk input{
             height : 20px;
             width : 20px;
-        } */
+        }
         li a:focus{
-            border : 2px solid green;
+            background-color: greenyellow;
         }
         section ul {
-            width : 400px;
+            width : 300px;
         }
         section ul li a{
             float: left;
-            width : 156px;
+            width : 135px;
             height : 30px;
-            padding-top : 5px;
             border : 1px solid green;
-            margin: 5px 22px 0px;
-            background-color: white;
+            margin-right: 15px;
         }
         footer {
             height : 100px;
@@ -95,56 +89,23 @@
         font-weight: normal;
         font-style: normal;
     }
-    body{background-color:rgb(250,219,224);}
-    h1{color: rgba(245, 102, 185, 0.616);
-        font-size: 3rem;margin-top:15px;}
+    body{background:url(image/white.gif)}
+    h1{
+            color: rgb(253, 106, 130);
+            font-family: 'SDSamliphopangche_Outline';
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+    h2{font-size: 2rem; margin-top: 15px;}
     hr{margin: 20px;}
+
     .z1{width: 30px;
     height: 30px;}
-    .title{
-        /* background-color: rgb(158, 222, 238); */
-         font-family: 'SDSamliphopangche_Outline';
-            color : rgb(125, 15, 158);
-            text-shadow: 5px 5px 10px white;
-         /* object-fit: reflect linear (); */
-         }
-
     footer div {background-color:rgb(189, 183, 183);}
     @media screen and (max-width : 768px){
         #container {
             width : 330px;
         }
-        section{
-            padding:0px;
-            height: 280px;
-        }
-        h2{
-            margin-top: 20px;
-        }
-        form{
-            width:200px;
-        }
-        tr td:first-child{
-            display: none;
-        }
-        tr:last-child{
-            padding: 0;
-        }
-        tr:last-child td:first-child{
-            width : 100%;
-            margin: 0;
-            display: block;
-        }
-        section ul {
-            width :300px;
-        }
-        section ul li a{
-            width : 100px;
-        }
-    }
-    /* 창영 */
-    table td{
-        width : 150px;
     }
     </style>
 </head>
@@ -153,29 +114,19 @@
     <!-- container 시작 -->
         <header>
             <!-- header 시작 -->
-            <h1><img src="image/dog_paw.png" class="z1"><span class="title">Tierheim</span><img src="image/cat_paw.png" class="z1"></h1>
+            <h1><img src="image/dog_paw.png" class="z1">Tierheim<img src="image/cat_paw.png" class="z1"></h1>
         </header>
             <!-- header 끝 -->
         <section>
             <!-- section 시작 -->
             <h2>로그인</h2><br>
             <form method="POST" action="loginCheck.php" name="signIn" autocomplete="off" onsubmit="return check()">
-                <table>
-                    <tr>
-                        <td>아이디</td>
-                        <td><input type="text" name="u_id" placeholder="아이디"></td>
-                    </tr>
-                    <tr>
-                        <td>비밀번호</td>
-                        <td><input type="password" name="u_pw" placeholder="비밀번호"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="login"><input type="submit" value="로그인" id="submit"></td>
-                    </tr>
-                </table>
-            </form>
+                <input type="text" name="u_id" placeholder="아이디"><br>
+                <input type="password" name="u_pw" placeholder="비밀번호"><br><br>
+                <input type="submit" value="로그인" id="submit"><br>
+            </form><br>
             <ul>
-                <li><a href="findSign.html"> id / pw 찾기 </a></li>
+                <li><a href="#"> id / pw 찾기 </a></li>
                 <li><a href="signUp.html"> 회원가입 </a></li>
             </ul>
         </section>
@@ -193,14 +144,6 @@
     </div>
     <!-- container -->
 </body>
-<!-- <?php
-if(isset($_COOKIE["failCook"])){
-    setcookie("failCook","",time()-60);
-    echo"<script>
-        alert('비밀번호가 틀립니다!');
-    </script>";
-    }
-?> -->
 </html>
 <script>
     function check(){

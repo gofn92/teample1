@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/paging.css">
     <script src="js/jquery.js"></script>
+    <script src="js/paging.js"></script>
     <style>
         @media (max-width: 1920px){
         *{
@@ -100,9 +101,18 @@
             bottom: -50px;
             width : 175px;
             height : 250px;
-            border : 10px solid red;
-            box-shadow: 2px 0px 20px black;
+            /* border : 10px solid rgb(233, 56, 56); */
+            /* box-shadow: 2px 0px 20px black; */
             transition: all 1s;
+            background-image: url(image/bookcover.gif);
+            background-size: 175px 250px;
+            background-repeat: no-repeat;
+        }
+        .book img{
+            margin-top: 10px;
+            margin-left: 50px;
+            width : 50%;
+            height: 30%;
         }
         .book1{
             transform:translateX(55px) translateY(-350px) translateZ(0px) rotateX(10deg);
@@ -123,22 +133,26 @@
             transform:translateX(555px) translateY(-400px) translateZ(100px) rotateX(0deg);
         }
         .openbook{
-            width : 1200px;
-            height : 500px;
+            width : 1000px;
+            height : 750px;
             border : none;
             z-index: 1;
-            transform:translateX(-200px) translateY(-100px) translateZ(100px) rotateX(0deg);
+            transform:translateX(-100px) translateY(-80px) rotateX(0deg);
             box-shadow: none;
+            /* border : 1px solid green; */
+            /* background-image: url("image/book.gif");
+            background: cover no-repeat; */
             /* border : 11px solid red; */
         }
+        .openbook img{
+            width : 100%;
+            height : 100%;
+        }
         article .openshelf{
-            /* transform:rotateX(9); */
-            /* width : 0px; */
             height : 500px;
             left: -1500px;
             transition: all 1s;
             border : none;
-            /* display: none; */
         }
         .book:hover{
             cursor: pointer;
@@ -148,11 +162,11 @@
             height : 750px;
             display: none;
             opacity: 0;
-            top: 0px;
+            top: 30px;
             left: -100px;
             z-index: -99;
             transition: all 1s;
-            perspective: 1000px;
+            perspective: 20000px;
             background-image: url("image/book.gif");
             background-repeat: no-repeat;
             background-size: cover;
@@ -162,6 +176,7 @@
         }
         .page div{
             background-color: rgb(243,239,211);
+            padding : 10px;
         }
         .open{
             /* display: block; */
@@ -169,7 +184,7 @@
             opacity: 1;
             /* border :5px solid white; */
         }
-        #bookLeft{
+        #book{
             cursor: pointer;
         }
         .back img{
@@ -186,85 +201,6 @@
         }
     }
     </style>
-    <script>
-        $(function(){
-            $(".book").click(function(){
-                $(this).addClass(" openbook");
-                $(this).removeClass(" book1 book2 book3");
-                $(".book1").css("transform","translateX(-900px) translateY(-220px) translateZ(0px) rotateX(10deg)");
-                $(".book2").css("transform","translateX(-900px) translateY(-220px) translateZ(0px) rotateX(10deg)");
-                $(".book3").css("transform","translateX(-900px) translateY(-220px) translateZ(0px) rotateX(10deg)");
-                $(".bookshelf").addClass("openshelf");
-                $("#book").css("opacity","1").css("z-index","50").addClass("open");
-                setTimeout(function(){
-                    $("#book").css("display","block");
-                    $(".openbook").css("display","none");
-                    return pageDelay=0;
-                },500);
-            });
-            var pageIndex = 0;
-            // 현재페이지를 표시할 변수 0부터시작하며 왼쪽페이지기준
-            var maxpage = $(".page").length-2;
-            // 마지막페이지를 체크할 변수 마지막인덱스는-1이지만 pageIndex가왼쪽페이지를 기준으로하므로 추가로-1
-            var pageDelay = 1;
-            $("#bookLeft").on("click",function(){
-                if(pageDelay == 0){
-                    pageDelay++;
-                    if(pageIndex == 0){
-                        // 맨 앞페이지를 체크할 부분 맨앞이아니면 기능
-                        alert("맨앞입니다!!");
-                    }
-                    else{
-                        // 페이지들을 선택해 변수를 저장
-                        var lfPage= $(".page").eq(pageIndex);
-                        // 왼쪽페이지
-                        var prevPage= $(".page").eq(pageIndex-1);
-                        // 동작후 보여질 왼쪽페이지
-                        var nextPage= $(".page").eq(pageIndex+1);
-                        // 동작후 없앨 오른쪽페이지
-                        lfPage.addClass(" paging pagingLeft");
-                        // 왼쪽페이지를 오른쪽으로 넘기는 기능
-                        prevPage.addClass("pageLeft");
-                        // 왼쪽페이지가 넘어가면서 미리 페이지를 보이게함
-                        setTimeout(function(){
-                            // 애니메이션이 끝나고 동작
-                            lfPage.removeClass(" pageLeft paging pagingLeft");
-                            // 넘어간 페이지에서 쓸모없는 클래스제거
-                            lfPage.addClass(" pageRight");
-                            // 넘어갔으므로 오른쪽페이지
-                            nextPage.removeClass(" pageRight");
-                            // 오른쪽페이지가 덮혀있으므로 지워서 안보이게함
-                            pageIndex--;
-                            pageDelay--;
-                        },2000);
-                    }
-                }
-            });
-            $("#bookRight").on("click",function(){
-                // 왼쪽과 오른쪽만 바뀌고 기능은 동일
-                if(pageDelay == 0){
-                    pageDelay++;
-                    if(pageIndex == maxpage){
-                        alert("맨마지막입니다!");
-                    }
-                    else{
-                        var rtPage= $(".page").eq(pageIndex+1);
-                        var prevPage= $(".page").eq(pageIndex);
-                        var nextPage= $(".page").eq(pageIndex+2);
-                        rtPage.addClass(" paging pagingRight");
-                        nextPage.addClass("pageRight");
-                        setTimeout(function(){
-                            rtPage.removeClass(" pageRight paging pagingRight");
-                            rtPage.addClass(" pageLeft");
-                            prevPage.removeClass(" pageLeft");
-                            pageIndex++;
-                            pageDelay--;
-                        },2000);
-                    }
-                }
-            });
-        });
-    </script>
 </head>
 <body>
         <div class="con">
@@ -287,9 +223,15 @@
                     <div class="bsup"></div>
                     <div class="bsfront"></div>
                 </div>
-                <div class="book book1"></div>
-                    <div class="book book2"></div>
-                    <div class="book book3"></div>
+                    <div class="book book1">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div class="book book2">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div class="book book3">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
                     <div id="book">
                         <div id="bookLeft"></div>
                         <div id="bookRight"></div>
@@ -331,23 +273,15 @@
                     </div>
             </article>
         </section>
-            <footer>
-                <p>
-                    회장 : 김 은 영
-                </p>
-                <p>
-                    문의전화 : 000-0000-0000
-                </p>
-                <p>
-                    운영시간 : 00시~00시
-                </p>
-                <p>
-                    주소 : 서울특별시 캘리포이나주 대구 부산역
-                </p>
-                <p>
-                    후원 : <strong>005702-04-091524</strong> 군미은행 티어하임
-                </p>
-            </footer>
+      <footer>
+        <div>
+            <p>문의 전화 : 000-0000-0000</p>
+            <p>운영 시간 : 00~00</p>
+            <p>주소 : 사랑시 고백구 행복동</p>
+            <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+            <p>대포이사 : 채토리</p>
+        </div>
+      </footer>
     </div>
 </body>
 </html>

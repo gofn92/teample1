@@ -7,6 +7,12 @@
     <title>main-idx2</title>
     <link rel="stylesheet" href="css/reset.css">
     <style>
+        @font-face {
+            font-family: 'Cafe24Syongsyong';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Syongsyong.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         @media (max-width: 1920px){
         *{
             margin: 0;
@@ -14,6 +20,7 @@
             box-sizing: border-box;
             list-style: none;
             text-decoration: none;
+            font-family: 'Cafe24Syongsyong';
         }
         html,body{
             height: 100%; width: 100%;
@@ -32,6 +39,7 @@
             align-items: center;
             padding: 8px 12px;
             background: rgba(255,255,255,0.5);
+            border : 1px solid red;
         }
         .logo img{
             width: 65px; height: 65px;
@@ -52,6 +60,14 @@
         }
         header ul li button:hover{
             transform: scale(1.2);
+            cursor: pointer;
+        }
+        header ul li a{
+            padding : 10px;
+            color : black;
+        }
+        header ul li a:hover{
+            background-color: rgb(243, 198, 115);
         }
         .help{
             width: 100%; height: 50%;
@@ -103,8 +119,9 @@
                 <li><button type="button" class="menubtn" onclick="changecon(3);"><img src="image/dlqdid.gif" alt=""></button></li>
                 <li><button type="button" class="menubtn" onclick="changecon(4);"><img src="image/dlqdid.gif" alt=""></button></li>
                 <li><button type="button" class="menubtn" onclick="changecon(5);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><a href="signIn.html"> 로그인 </a></li>
+                <li><a href="signUp.html"> 회원가입 </a></li>
             </ul>
-            <div></div>
         </header>
         <article class="help">
             <div>
@@ -121,7 +138,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus beatae accusantium voluptatum veniam praesentium blanditiis harum aliquam. Natus expedita iste blanditiis ducimus asperiores dolores est quod hic sequi consectetur!
                     </p>
                 </div>
-                
+
                 <div>
                     <img src="https://via.placeholder.com/500/800" alt="">
                     <p>
@@ -150,21 +167,13 @@
                 </div>
             </article>
             <footer>
-                <p>
-                    회장 : 김 은 영
-                </p>
-                <p>
-                    문의전화 : 000-0000-0000
-                </p>
-                <p>
-                    운영시간 : 00시~00시
-                </p>
-                <p>
-                    주소 : 서울특별시 캘리포이나주 대구 부산역
-                </p>
-                <p>
-                    후원 : <strong>005702-04-091524</strong> 군미은행 티어하임
-                </p>
+            <div>
+            <p>문의 전화 : 000-0000-0000</p>
+            <p>운영 시간 : 00~00</p>
+            <p>주소 : 사랑시 고백구 행복동</p>
+            <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+            <p>대포이사 : 채토리</p>
+        </div>
             </footer>
         </section>
     </div>

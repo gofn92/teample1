@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ccc</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: black;
+        }
+        html,body{
+            height: 100%; width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .con{
+            width: 100%; height: 100%;
+            background: chocolate;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #test{
+            width: 300px; height: 300px;
+            position: absolute;
+            top: 40%; left: 40%;
+            transform: translate(-50%,-50%);
+            /* z-index: 9999999; */
+        }
+        .bg{
+            width: 500px; height: 500px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            background: #eee;
+            display: none;
+            z-index: 2;
+        }
+        .bg .modal{
+            display: none;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0, 0,0, 0.5);
+            top:0;
+            left: 0;
+            z-index: 1;
+            text-align: center;
+        }
+        .bg .modal .modalClose{
+            width: 26px; height: 26px;
+            position: absolute;
+            right: 15px; top: 0;
+        }
+        .bg .modal .modalClose > a{
+            width: 100%; height: 100%;
+            display: block;
+            text-indent: -99999px;
+            background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div id="test">
+            <img src="image/dog99.jpg" alt="">
+        </div>
+        <div class="bg">
+            <div class="modal">
+                <div class="modalClose">
+                    <a href="#">close</a>
+                </div>
+                <div>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum beatae inventore voluptates distinctio mollitia corporis molestiae quam, nihil incidunt animi saepe sequi dolor pariatur, aliquid esse in ullam modi itaque.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function(){
+            function open(){
+                document.querySelector('.modal').style.display ='block';
+                document.querySelector('.bg').style.display ='block';
+            }
+
+            function close(){
+                document.querySelector('.modal').style.display ='none';
+                document.querySelector('.bg').style.display ='none';
+            }
+
+            document.getElementById('test').addEventListener('click',open);
+            document.querySelector('.modalClose').addEventListener('click',close);
+        }
+    </script>
+</body>
+</html>

@@ -9,9 +9,13 @@
     <title>mian-idx</title>
     <script>
         $(function(){
-            $('#video1').delay(500).fadeOut(500,function(){
-                $(this).delay(500).fadeOut(500);
-            });
+            $video = $("#video1").get(0);
+            $video.play();
+            $("#video1").delay(500).fadeOut(1000);
+
+            // $('.loading').delay(500).fadeOut(1000, function() {
+            //     $("#video1").get(0).stop();
+            // });
         });
     </script>
     <style>
@@ -110,14 +114,14 @@
                 height: 50vh;
             }
             .content2 .crew-img{
-                width: 200px; 
+                width: 200px;
                 /* height: 200px; */
             }
             .content2 .crew-img img{
                 width: 200px; height: 200px;
             }
             .content2 .crew-txt{
-                width: 100%; 
+                width: 100%;
                 height: 60%;
                 display: flex;
                 justify-content: space-around;
@@ -164,8 +168,17 @@
     </style>
     <script>
         function changecon(n){
+                // 여기가 버튼을누르면 작동하는곳
+
+                $video.load();
+                // 비디오를 새로 로드
+                $video.play();
+                // 비디오를 실행
+
+                $("#video1").fadeIn(500).delay(500).fadeOut(500);
+                // 비디오를 나타나게하고 잠시후 다시사라지게 하는것
+
                 $visible = ".container" + n;
- 
                 for( $i = 0; $i < $maxmenu; $i++){
                     $reset = ".container"+($i+1);
                     $($reset).css("display","none");
@@ -174,12 +187,14 @@
             }
         $(function(){
             $maxmenu = $(".menubtn").length;
+
         });
     </script>
 </head>
 <body>
     <div class="loading">
-        <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" autoplay muted></video>
+        <!-- <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" autoplay muted></video> -->
+        <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" muted></video>
     </div>
     <div class="con">
         <header>
@@ -203,23 +218,23 @@
             </section>
             <section class="content2">
                 <h2>보호소 소개</h2>
-                
+
                 <div class="crew">
                     <div class="crew-img">
                         <img src="image/hugi6.jpg" alt="">
-                        
+
                     </div>
                     <div class="crew-img">
                         <img src="image/cogi.jpg" alt="">
-                        
+
                     </div>
                     <div class="crew-img">
                         <img src="image/doc.jpg" alt="">
-                        
+
                     </div>
                     <div class="crew-img">
                         <img src="image/cat2.jpg" alt="">
-                        
+
                     </div>
                 </div>
                 <article class="crew-txt">
@@ -259,7 +274,7 @@
                 <article class="crew-img2">
                     <div class="c-img2">
                         <img src="image/dc2.jpg" alt="" width="100%">
-                    </div>  
+                    </div>
                 </article>
             </section>
         </div>
@@ -275,6 +290,13 @@
         <div class="container container5">
             5번
         </div>
+        <!-- <script>
+            $(function(){
+                        alert("제발");
+                        $("#video1").get(0).pause();
+                        $("#video1").get(0).currenTime();
+                    });
+        </script> -->
         <footer>
             <p>문의 전화 : 000-0000-0000</p>
             <p>운영 시간 : 00~00</p>
