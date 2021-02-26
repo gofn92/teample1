@@ -166,6 +166,7 @@
                 line-height: 20px;
             }
 
+<<<<<<< Updated upstream
 
             .front1,
             .front2,
@@ -183,10 +184,14 @@
             .front14,
             .front15,
             .front16{
+=======
+            .front1, .front2, .front3, .front4{
+>>>>>>> Stashed changes
                 transform: rotateY(0deg);
                 transform-style: preserve-3d;
 
             }
+<<<<<<< Updated upstream
             .back1,
             .back2,
             .back3,
@@ -203,6 +208,9 @@
             .back14,
             .back15,
             .back16{
+=======
+            .back1, .back2, .back3, .back4{
+>>>>>>> Stashed changes
                 transform: rotateY(-180deg);
                 transform-style: preserve-3d;
             }
@@ -237,6 +245,7 @@
     </style>
 </head>
 <body>
+<<<<<<< Updated upstream
     <div class="loading">
         <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" autoplay muted></video>
         <!-- <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" muted></video> -->
@@ -503,6 +512,66 @@
                             </p>
                         </div>
                     </div>
+=======
+    <div class="box" id="box">
+        <div class="s-box" id="sBox">
+            <div class="front1 front" id="front1">
+                <div class="inner">
+                    <img src="image/hugi.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back1 back" id="back1">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="s-box" id="sBox">
+            <div class="front2 front" id="front2">
+                <div class="inner">
+                    <img src="image/hugi2.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back2 back" id="back2">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="s-box" id="sBox">
+            <div class="front3 front" id="front3">
+                <div class="inner">
+                    <img src="image/hugi3.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back3 back" id="back3">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="s-box" id="sBox">
+            <div class="front4 front" id="front4">
+                <div class="inner">
+                    <img src="image/hugi4.jpg" alt="" width="250" height="320">
+                </div>
+            </div>
+            <div class="back4 back" id="back4">
+                <div class="inner">
+                    <h2>입양입소안내</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                    </p>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </section>
@@ -525,12 +594,19 @@
         let c = document.getElementById('front2');
         let d = document.getElementById('back2');
 
+<<<<<<< Updated upstream
         let e = document.getElementById('front3');
         let f = document.getElementById('back3');
+=======
+        // let a = document.querySelectorAll("front");
+        // let b = document.querySelectorAll("back");
+
+>>>>>>> Stashed changes
 
         let g = document.getElementById('front4');
         let h = document.getElementById('back4');
 
+<<<<<<< Updated upstream
         let i = document.getElementById('front5');
         let j = document.getElementById('back5');
 
@@ -539,6 +615,24 @@
 
         let m = document.getElementById('front7');
         let n = document.getElementById('back7');
+=======
+        function open(){
+            a.classList.add('active');
+            a.classList.remove('active2');
+
+            b.classList.add('active1');
+            b.classList.remove('active3');
+
+        };
+
+        function close(){
+            a.classList.add('active2');
+            a.classList.remove('active');
+
+            b.classList.add('active3');
+            b.classList.remove('active1');
+        };
+>>>>>>> Stashed changes
 
         let o = document.getElementById('front8');
         let p = document.getElementById('back8');
@@ -552,6 +646,7 @@
         let u = document.getElementById('front11');
         let v = document.getElementById('back11');
 
+<<<<<<< Updated upstream
         let w = document.getElementById('front12');
         let x = document.getElementById('back12');
 
@@ -579,6 +674,11 @@
         function close(){
             this.previousElementSibling.classList.add('active2');
             this.previousElementSibling.classList.remove('active');
+=======
+        function close2(){
+            document.getElementById('front2').classList.add('active2');
+            document.getElementById('front2').classList.remove('active');
+>>>>>>> Stashed changes
 
             this.classList.add('active3');
             this.classList.remove('active1');
@@ -587,6 +687,7 @@
         a.addEventListener('click',open);
         b.addEventListener('click',close);
 
+<<<<<<< Updated upstream
         c.addEventListener('click',open);
         d.addEventListener('click',close);
 
@@ -633,6 +734,14 @@
 
         ee.addEventListener('click',open);
         ff.addEventListener('click',close);
+=======
+        c.addEventListener('click',open2);
+        d.addEventListener('click',close2);
+        
+        // for(i = 0; i > a.length; i++){
+        //     a[i].addEventListener('click',open);
+        // }
+>>>>>>> Stashed changes
     </script>
 </body>
 </html>
