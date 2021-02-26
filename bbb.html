@@ -70,7 +70,7 @@
                 background: red;
                 background-size: cover;
                 background-position: center;
-                transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: all 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
                 border-radius: 10px;
                 backface-visibility: hidden;
                 text-align: center;
@@ -92,12 +92,18 @@
                 line-height: 30px;
             }
 
-            .s-box .front1, .front2, .front3, .front4{
+            .front1,
+            .front2,
+            .front3,
+            .front4{
                 transform: rotateY(0deg);
                 transform-style: preserve-3d;
 
             }
-            .s-box .back1, .back2, .back3, .back4{
+            .back1,
+            .back2,
+            .back3,
+            .back4{
                 transform: rotateY(-180deg);
                 transform-style: preserve-3d;
             }
@@ -105,7 +111,7 @@
             .active{
                 transform: rotateY(180deg);
                 transform-style: preserve-3d;
-                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+                transition: all 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
             }
 
             .active1{
@@ -196,41 +202,75 @@
         let c = document.getElementById('front2');
         let d = document.getElementById('back2');
 
+        let e = document.getElementById('front3');
+        let f = document.getElementById('back3');
 
+        let g = document.getElementById('front4');
+        let h = document.getElementById('back4');
 
         function open(){
-            document.getElementById('front1').classList.add('active');
-            document.getElementById('front1').classList.remove('active2');
+            a.classList.add('active');
+            a.classList.remove('active2');
 
-            document.getElementById('back1').classList.add('active1');
-            document.getElementById('back1').classList.remove('active3');
-
+            b.classList.add('active1');
+            b.classList.remove('active3');
         };
 
         function open2(){
-            document.getElementById('front2').classList.add('active');
-            document.getElementById('front2').classList.remove('active2');
+            c.classList.add('active');
+            c.classList.remove('active2');
 
-            document.getElementById('back2').classList.add('active1');
-            document.getElementById('back2').classList.remove('active3');
+            d.classList.add('active1');
+            d.classList.remove('active3');
+        };
 
+        function open3(){
+            e.classList.add('active');
+            e.classList.remove('active2');
+
+            f.classList.add('active1');
+            f.classList.remove('active3');
+        };
+
+        function open4(){
+            g.classList.add('active');
+            g.classList.remove('active2');
+
+            h.classList.add('active1');
+            h.classList.remove('active3');
         };
 
 
         function close(){
-            document.getElementById('front1').classList.add('active2');
-            document.getElementById('front1').classList.remove('active');
+            a.classList.add('active2');
+            a.classList.remove('active');
 
-            document.getElementById('back1').classList.add('active3');
-            document.getElementById('back1').classList.remove('active1');
+            b.classList.add('active3');
+            b.classList.remove('active1');
         };
 
         function close2(){
-            document.getElementById('front2').classList.add('active2');
-            document.getElementById('front2').classList.remove('active');
+            c.classList.add('active2');
+            c.classList.remove('active');
 
-            document.getElementById('back2').classList.add('active3');
-            document.getElementById('back2').classList.remove('active1');
+            d.classList.add('active3');
+            d.classList.remove('active1');
+        };
+
+        function close3(){
+            e.classList.add('active2');
+            e.classList.remove('active');
+
+            f.classList.add('active3');
+            f.classList.remove('active1');
+        };
+
+        function close4(){
+            g.classList.add('active2');
+            g.classList.remove('active');
+
+            h.classList.add('active3');
+            h.classList.remove('active1');
         };
 
         a.addEventListener('click',open);
@@ -238,6 +278,12 @@
 
         c.addEventListener('click',open2);
         d.addEventListener('click',close2);
+
+        e.addEventListener('click',open3);
+        f.addEventListener('click',close3);
+
+        g.addEventListener('click',open4);
+        h.addEventListener('click',close4);
     </script>
 </body>
 </html>
