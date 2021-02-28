@@ -40,6 +40,24 @@
         // });
     </script>
     <style>
+        @font-face {
+            font-family: 'SDSamliphopangche_Outline';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Cafe24Dongdong';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        h2{
+            font-family: 'SDSamliphopangche_Outline';
+        }
+        p,span{
+            font-family: 'Cafe24Dongdong';
+        }
         @media (min-width: 1024px){
             *{
                 margin: 0;
@@ -53,7 +71,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: url(image/white.gif);
+                /* background: url(image/white.gif); */
+                background: rgba(245, 237, 228,1);
             }
             .loading{
                 width: 100%; height: 100%;
@@ -74,8 +93,8 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 8px 12px;
-                background: rgba(255,255,255,0.5);
-                border : 1px solid red;
+                /* background: rgba(255,255,255,0.5); */
+                /* border : 1px solid red; */
             }
             .logo img{
                 width: 65px; height: 65px;
@@ -88,6 +107,7 @@
             }
             header ul li img{
                 width: 100px; height: 50px;
+                background: white;
             }
             header ul li button{
                 transition: 0.5s;
@@ -108,6 +128,8 @@
             section{
                 width: 100%; height: 100%;
             }
+
+            
             .box{
                 height: 100%; width: 100%;
                 background: transparent;
@@ -148,7 +170,7 @@
                 border-radius: 10px;
                 backface-visibility: hidden;
                 text-align: center;
-                height: 320px; width: 256px;
+                height: 320px; width: 300px;
                 /* color: #fff; */
             }
             .s-box .back1, .back2, .back3, .back4,.back5,.back6,.back7,.back8,
@@ -159,7 +181,7 @@
                 background-repeat: no-repeat;
                 position: absolute;
                 top: 0; left: 0; bottom: 0; right: 0;
-                width: 256px; height: 320px;
+                width: 280px; height: 320px;
                 border-radius: 10px;
                 z-index: -11;
                 text-align: center;
@@ -209,6 +231,10 @@
                 transform-style: preserve-3d;
             }
 
+            .s-box .inner > img:hover{
+                transform: scale(1.2);
+                width: 300px;
+            }
             .active{
                 transform: rotateY(180deg);
                 transform-style: preserve-3d;
@@ -246,30 +272,30 @@
     <div class="con">
         <header>
             <div class="logo">
-                <img src="image/logo_pink.png" alt="logo">
+                <img src="image/logo_brown.png" alt="logo">
             </div>
             <ul>
-                <li><button type="button" class="menubtn" onclick="changecon(1);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(2);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(3);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(4);"><img src="image/dlqdid.gif" alt=""></button></li>
-                <li><button type="button" class="menubtn" onclick="changecon(5);"><img src="image/dlqdid.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(1);"><img src="image/입양후기.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(2);"><img src="image/입양후기.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(3);"><img src="image/입양후기.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(4);"><img src="image/입양후기.gif" alt=""></button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(5);"><img src="image/입양후기.gif" alt=""></button></li>
                 <li><a href="signIn.html"> 로그인 </a></li>
                 <li><a href="signUp.html"> 회원가입 </a></li>
             </ul>
         </header>
         <h2>강아지 보호 현황</h2>
-        <section>
+        <section id="ajd">
             <div class="box" id="box">
                 <div class="s-box" id="sBox">
                     <div class="front1" id="front1">
                         <div class="inner">
-                            <img src="image/hugi.jpg" alt="" width="200" height="320">
+                            <img src="image/0.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back1" id="back1">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>행복이</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -279,12 +305,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front2" id="front2">
                         <div class="inner">
-                            <img src="image/hugi2.jpg" alt="" width="200" height="320">
+                            <img src="image/poddle.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back2" id="back2">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>콩이</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -294,12 +320,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front3" id="front3">
                         <div class="inner">
-                            <img src="image/hugi3.jpg" alt="" width="200" height="320">
+                            <img src="image/1.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back3" id="back3">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>다비</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -309,12 +335,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front4" id="front4">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/3.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back4" id="back4">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>츄</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -324,12 +350,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front5" id="front5">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/4.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back5" id="back5">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>라떼</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -339,12 +365,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front6" id="front6">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/6.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back6" id="back6">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>탱이</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -354,12 +380,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front7" id="front7">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/5.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back7" id="back7">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>대빵이</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -369,12 +395,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front8" id="front8">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/2.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back8" id="back8">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>순이</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -389,12 +415,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front9" id="front9">
                         <div class="inner">
-                            <img src="image/hugi.jpg" alt="" width="200" height="320">
+                            <img src="image/c1.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back9" id="back9">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>고영희</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -404,12 +430,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front10" id="front10">
                         <div class="inner">
-                            <img src="image/hugi2.jpg" alt="" width="200" height="320">
+                            <img src="image/c2.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back10" id="back10">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>리라</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -419,12 +445,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front11" id="front11">
                         <div class="inner">
-                            <img src="image/hugi3.jpg" alt="" width="200" height="320">
+                            <img src="image/c3.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back11" id="back11">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>나비</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -434,12 +460,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front12" id="front12">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/c4.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back12" id="back12">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>레오</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -449,12 +475,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front13" id="front13">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/c5.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back13" id="back13">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>루비</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -464,12 +490,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front14" id="front14">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/c6.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back14" id="back14">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>심바</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -479,12 +505,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front15" id="front15">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/c7.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back15" id="back15">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>맥시</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
@@ -494,12 +520,12 @@
                 <div class="s-box" id="sBox">
                     <div class="front16" id="front16">
                         <div class="inner">
-                            <img src="image/hugi4.jpg" alt="" width="200" height="320">
+                            <img src="image/c8.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
                     <div class="back16" id="back16">
                         <div class="inner">
-                            <h2>입양입소안내</h2>
+                            <h2>크림이</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
                             </p>
