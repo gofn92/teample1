@@ -762,7 +762,7 @@ transform: rotate(-30deg);
     }
     100% {
       transform: scale(1);
-      transform: translate(370%, 30%) rotate(-150deg);
+      transform: translate(300%, 30%) rotate(-150deg);
     }
   }
   @keyframes scale6 {
@@ -828,11 +828,11 @@ transform: rotate(-30deg);
   @keyframes scale5r {
     100% {
       opacity: 0;
-      transform: translate(370%, 30%) rotate(-150deg);
+      transform: translate(300%, 30%) rotate(-150deg);
     }
     0% {
       opacity: 1;
-      transform: translate(370%, 30%) rotate(-150deg);
+      transform: translate(300%, 30%) rotate(-150deg);
     }
   }
   @keyframes scale6r {
