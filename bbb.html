@@ -7,37 +7,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>bbb</title>
     <script>
-         $(function(){
-            $video = $("#video1").get(0);
-            $video.play();
-            $("#video1").delay(500).fadeOut(1000);
+        //  $(function(){
+        //     $video = $("#video1").get(0);
+        //     $video.play();
+        //     $("#video1").delay(500).fadeOut(1000);
 
-            // $('.loading').delay(500).fadeOut(1000, function() {
-            //     $("#video1").get(0).stop();
-            // });
-        });
-        function changecon(n){
-                // 여기가 버튼을누르면 작동하는곳
+        //     $('.loading').delay(500).fadeOut(1000, function() {
+        //         $("#video1").get(0).stop();
+        //     });
+        // });
+        // function changecon(n){
+        //         // 여기가 버튼을누르면 작동하는곳
 
-                $video.load();
-                // 비디오를 새로 로드
-                $video.play();
-                // 비디오를 실행
+        //         $video.load();
+        //         // 비디오를 새로 로드
+        //         $video.play();
+        //         // 비디오를 실행
 
-                $("#video1").fadeIn(500).delay(500).fadeOut(500);
-                // 비디오를 나타나게하고 잠시후 다시사라지게 하는것
+        //         $("#video1").fadeIn(500).delay(500).fadeOut(500);
+        //         // 비디오를 나타나게하고 잠시후 다시사라지게 하는것
 
-                $visible = ".container" + n;
-                for( $i = 0; $i < $maxmenu; $i++){
-                    $reset = ".container"+($i+1);
-                    $($reset).css("display","none");
-                }
-                $($visible).css("display","block");
-            }
-        $(function(){
-            $maxmenu = $(".menubtn").length;
+        //         $visible = ".container" + n;
+        //         for( $i = 0; $i < $maxmenu; $i++){
+        //             $reset = ".container"+($i+1);
+        //             $($reset).css("display","none");
+        //         }
+        //         $($visible).css("display","block");
+        //     }
+        // $(function(){
+        //     $maxmenu = $(".menubtn").length;
 
-        });
+        // });
     </script>
     <style>
         @media (min-width: 1024px){
@@ -62,14 +62,14 @@
                 z-index: 111111111;
             }
             .con{
-                width: 90%; height: 100%;
+                width: 100%; height: 100%;
             }
             .con h2{
                 text-align: center;
                 margin: 50px auto;
             }
             header{
-                height: 120px;
+                height: 120px; width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -117,7 +117,7 @@
                 display: grid;
                 grid-template-columns: repeat(20%);
                 place-items: center center;
-                overflow: hidden;
+                /* overflow: hidden; */
             }
             .s-box{
                 width: 256px; height: 320px;
@@ -166,7 +166,6 @@
                 line-height: 20px;
             }
 
-<<<<<<< Updated upstream
 
             .front1,
             .front2,
@@ -176,7 +175,8 @@
             .front5,
             .front6,
             .front7,
-            .front8,.front9,
+            .front8,
+            .front9,
             .front10,
             .front11,
             .front12,
@@ -184,14 +184,11 @@
             .front14,
             .front15,
             .front16{
-=======
-            .front1, .front2, .front3, .front4{
->>>>>>> Stashed changes
                 transform: rotateY(0deg);
                 transform-style: preserve-3d;
-
             }
-<<<<<<< Updated upstream
+
+
             .back1,
             .back2,
             .back3,
@@ -208,9 +205,6 @@
             .back14,
             .back15,
             .back16{
-=======
-            .back1, .back2, .back3, .back4{
->>>>>>> Stashed changes
                 transform: rotateY(-180deg);
                 transform-style: preserve-3d;
             }
@@ -245,11 +239,10 @@
     </style>
 </head>
 <body>
-<<<<<<< Updated upstream
-    <div class="loading">
+    <!-- <div class="loading">
         <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" autoplay muted></video>
-        <!-- <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" muted></video> -->
-    </div>
+        <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" muted></video>
+    </div> -->
     <div class="con">
         <header>
             <div class="logo">
@@ -512,66 +505,6 @@
                             </p>
                         </div>
                     </div>
-=======
-    <div class="box" id="box">
-        <div class="s-box" id="sBox">
-            <div class="front1 front" id="front1">
-                <div class="inner">
-                    <img src="image/hugi.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back1 back" id="back1">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="s-box" id="sBox">
-            <div class="front2 front" id="front2">
-                <div class="inner">
-                    <img src="image/hugi2.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back2 back" id="back2">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="s-box" id="sBox">
-            <div class="front3 front" id="front3">
-                <div class="inner">
-                    <img src="image/hugi3.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back3 back" id="back3">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="s-box" id="sBox">
-            <div class="front4 front" id="front4">
-                <div class="inner">
-                    <img src="image/hugi4.jpg" alt="" width="250" height="320">
-                </div>
-            </div>
-            <div class="back4 back" id="back4">
-                <div class="inner">
-                    <h2>입양입소안내</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
-                    </p>
->>>>>>> Stashed changes
                 </div>
             </div>
         </section>
@@ -585,8 +518,6 @@
             </div>
         </footer>
     </div>
-
-
     <script>
         let a = document.getElementById('front1');
         let b = document.getElementById('back1');
@@ -594,19 +525,12 @@
         let c = document.getElementById('front2');
         let d = document.getElementById('back2');
 
-<<<<<<< Updated upstream
         let e = document.getElementById('front3');
         let f = document.getElementById('back3');
-=======
-        // let a = document.querySelectorAll("front");
-        // let b = document.querySelectorAll("back");
-
->>>>>>> Stashed changes
 
         let g = document.getElementById('front4');
         let h = document.getElementById('back4');
 
-<<<<<<< Updated upstream
         let i = document.getElementById('front5');
         let j = document.getElementById('back5');
 
@@ -615,25 +539,8 @@
 
         let m = document.getElementById('front7');
         let n = document.getElementById('back7');
-=======
-        function open(){
-            a.classList.add('active');
-            a.classList.remove('active2');
 
-            b.classList.add('active1');
-            b.classList.remove('active3');
-
-        };
-
-        function close(){
-            a.classList.add('active2');
-            a.classList.remove('active');
-
-            b.classList.add('active3');
-            b.classList.remove('active1');
-        };
->>>>>>> Stashed changes
-
+        
         let o = document.getElementById('front8');
         let p = document.getElementById('back8');
 
@@ -646,7 +553,7 @@
         let u = document.getElementById('front11');
         let v = document.getElementById('back11');
 
-<<<<<<< Updated upstream
+
         let w = document.getElementById('front12');
         let x = document.getElementById('back12');
 
@@ -662,7 +569,6 @@
         let ee = document.getElementById('front16');
         let ff = document.getElementById('back16');
 
-
         function open(){
             this.classList.add('active');
             this.classList.remove('active2');
@@ -674,20 +580,15 @@
         function close(){
             this.previousElementSibling.classList.add('active2');
             this.previousElementSibling.classList.remove('active');
-=======
-        function close2(){
-            document.getElementById('front2').classList.add('active2');
-            document.getElementById('front2').classList.remove('active');
->>>>>>> Stashed changes
 
             this.classList.add('active3');
             this.classList.remove('active1');
         };
 
+
         a.addEventListener('click',open);
         b.addEventListener('click',close);
 
-<<<<<<< Updated upstream
         c.addEventListener('click',open);
         d.addEventListener('click',close);
 
@@ -734,14 +635,6 @@
 
         ee.addEventListener('click',open);
         ff.addEventListener('click',close);
-=======
-        c.addEventListener('click',open2);
-        d.addEventListener('click',close2);
-        
-        // for(i = 0; i > a.length; i++){
-        //     a[i].addEventListener('click',open);
-        // }
->>>>>>> Stashed changes
     </script>
 </body>
 </html>
