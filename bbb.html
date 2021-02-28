@@ -52,10 +52,18 @@
             font-weight: normal;
             font-style: normal;
         }
+        @font-face {
+            font-family: 'MaplestoryOTFBold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         h2{
-            font-family: 'SDSamliphopangche_Outline';
+            font-family: 'MaplestoryOTFBold';
         }
         p,span{
+            font-size: 20px;
+            font-weight: bolder;
             font-family: 'Cafe24Dongdong';
         }
         @media (min-width: 1024px){
@@ -72,7 +80,6 @@
                 justify-content: center;
                 align-items: center;
                 /* background: url(image/white.gif); */
-                background: rgba(245, 237, 228,1);
             }
             .loading{
                 width: 100%; height: 100%;
@@ -175,13 +182,13 @@
             }
             .s-box .back1, .back2, .back3, .back4,.back5,.back6,.back7,.back8,
             .back9,.back10,.back11,.back12,.back13,.back14,.back15,.back16{
-                /* background: #cedce7; */
-                background: url(image/bg.jpg);
+                /* background: url(image/bg.jpg); */
+                background: rgba(222, 184, 135,0.3)	;
                 background-size: cover;
                 background-repeat: no-repeat;
                 position: absolute;
                 top: 0; left: 0; bottom: 0; right: 0;
-                width: 280px; height: 320px;
+                width: 280px; height: 420px;
                 border-radius: 10px;
                 z-index: -11;
                 text-align: center;
@@ -232,8 +239,7 @@
             }
 
             .s-box .inner > img:hover{
-                transform: scale(1.2);
-                width: 300px;
+                transform: scale(1.5);
             }
             .active{
                 transform: rotateY(180deg);
@@ -297,7 +303,10 @@
                         <div class="inner">
                             <h2>행복이</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이: 3살추정 <br>
+                                성별: 암컷(입양시 중성화 해드려요) <br>
+                                특징: 순하고 얌전하나 앙앙 깨물면서 노는 습관이 있습니다. <br> 입소 전 물리 상처가 있어 치료차 털이 부분 밀려있습니다.(현재는 완치되어 털이 자라고 있는 중입니다.) <br>
+                                양슬개골이 있어서 관리가 필요하며 심해질 경우 수술이 필요할 수도 있습니다.
                             </p>
                         </div>
                     </div>
@@ -312,7 +321,12 @@
                         <div class="inner">
                             <h2>콩이</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이:2살 추정 <br>
+                                체중: 5.7KG <br>
+                                성별: 남아(미중성/입양 전 중성화 해드립니다) <br>
+                                건강상태: 피부각질이 있습니다. 나이가 많지만 활동량이 좋고 건강해 보입니다. (입양 전 간단한 건강검진 해드립니다) <br>
+                                특징: 사람을 매우매우 좋아하며 애교가 많급니다. 산책을 무척 잘 합니다. 마킹을 하기 때문에 혹시 집 안에서도 하게 된다면 교육이 필요합니다. <br>
+                                질투가 있어 다견가정은 어려울 수 있습니다. 분리불안이 있어 교육이 필요합니다. <br>
                             </p>
                         </div>
                     </div>
@@ -327,7 +341,14 @@
                         <div class="inner">
                             <h2>다비</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이: 9살 추정 <br>
+                                성별: 여자아이(중성화 여부 알 수 없으나 원하실 경우 수술 해 드립니다.) <br>
+                                체중: 3.5KG <br>
+                                성격: 강아지들이랑 노는걸 엄청 좋아해서, 강아지가 있는 집에 갔으면 좋겠어요. <br>
+                                사람을 무척 무서워 하지만 조금씩 마음의 문을 열고 있어요. <br>
+                                호기심이 무척 많아요. <br>
+                                무척 조용해서, 조용한 걸 좋아하시는 분이 데려가시면 좋을 것 같아요. <br>
+                                특징: 산책을 좋아해요. <br> 
                             </p>
                         </div>
                     </div>
@@ -342,7 +363,13 @@
                         <div class="inner">
                             <h2>츄</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이:7살 <br>
+                                성별: 여자아이(중성화 여부 알 수 없으나 원하실 경우 수술 해 드립니다.) <br>
+                                체중: 5KG <br>
+                                성격: 대소변 잘 가림, 산책 좋아함, 사람 좋아함, 미용 싫어함, 분리불안 <br>
+                                츄츄는 사람을 무척 좋아하는 애교쟁이예요. 조금은 맹해보이지만 사실 훈련도 무척 빨리 배우는 똑똑이 예요. <br>
+                                츄츄는 사람이 없는것을 무서워 해 짖는 경우가 많아요. 그래서 사람이 오랫동안 같이 있는 집에 갔으면 좋겠어요^^ <br>
+                                대소변은 따로 훈련하지 않아도 알아서 잘 가리고 산책도 무척이나 매너 좋게 잘 한답니다. <br>
                             </p>
                         </div>
                     </div>
@@ -357,7 +384,11 @@
                         <div class="inner">
                             <h2>라떼</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이: 1살추정 <br>
+                                성별: 남아(입양시 중성화 해드려요) <br>
+                                체중: 4.3kg <br>
+                                건강상태: 건강하며, 입양 시 기초 건강검진 해드립니다. <br>
+                                특징: 털이 매우 멋있는 포메입니다. 짖음으로 의사표현을 하는 편입니다. 강아지에 대한 호불호는 있으나, 싸우거나 물지는 않습니다. 체격이 큰 남자분에게 안좋은 기억이 있는듯 합니다. (공격하진 않으나 만지는걸 싫어합니다)
                             </p>
                         </div>
                     </div>
@@ -372,7 +403,13 @@
                         <div class="inner">
                             <h2>탱이</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이:8개월 <br>
+                                성별:남아(입양시 중성화 해드려요) <br>
+                                체중:6.32KG <br>
+                                성격:탱이는 공놀이,인형놀이를 좋아하는 천진난만한 친구에요 <br>
+                                영리하고 눈치가 빨라 배변교육이나 기본적인 훈련들은 어렵지 않게 해낼수 있습니다 <br>
+                                탱이는 공격성이 적고 다른 친구들과 금방 친해지는 아이랍니다. <br>
+                                체력이 좋은 아이라서 산책을 자주 해주실수 있는 주인분을 기다리고있습니다.
                             </p>
                         </div>
                     </div>
@@ -387,7 +424,13 @@
                         <div class="inner">
                             <h2>대빵이</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이:2살 <br>
+                                성별:여아(중성화 되어있음) <br>
+                                체중:14KG <br>
+                                성격:대빵이는 닭가슴살이랑 공원 놀러가는것을 너무너무 좋아해요 <br>
+                                발만지는것과 정류장을 싫어해요 안좋은 기억이 있어서.. <br>
+                                하지만 대빵이는 여성스럽고 온순하게 자기 어필을 하고 애교도 많아요 <br>
+                                혼자있는것을 좋아하지 않아 주인과 함께 오래있는것을 좋아해요 ^^ 
                             </p>
                         </div>
                     </div>
@@ -398,11 +441,16 @@
                             <img src="image/2.jpg" alt="" width="200" height="320">
                         </div>
                     </div>
-                    <div class="back8" id="back8">
+                    <div class="back8" id="back8" style="height: 350px;">
                         <div class="inner">
                             <h2>순이</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                나이:5살 <br>
+                                성별:남아(중성화 되어있음) <br>
+                                체중:30KG <br>
+                                성격:천사같은 미소를 가진 태식이는 사람과 간식을 무척 좋아하고 순한 성격을 
+                                가지고 있는 귀여운 아이인데요 
+                                낯가림이라고는 전혀 없이 관리사분들과  잘 어울리며 뛰어노는 태식이 랍니다 :)
                             </p>
                         </div>
                     </div>
