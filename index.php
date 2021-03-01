@@ -299,8 +299,7 @@
 <?php
     if(isset($_COOKIE["loginCook"])){
         echo"<script>
-            var logout = '<a href=logout.php>로그아웃</a>';
-            $('#loginmenu').html(logout);
+            var logout = '<a href='logout.php'>로그아웃</a>';
             </script>";
     }
 ?>
