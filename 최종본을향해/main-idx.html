@@ -78,6 +78,7 @@
             flex-flow: row wrap column;
             justify-content: space-around;
             transition: 0.5s;
+            padding: 10px 0;
         }
         header ul li img{
             width: 60px; height: 50px;
@@ -429,6 +430,20 @@
         .container4 .page div{
             background-color: rgb(243,239,211);
             padding : 10px;
+            border: 1px solid red;
+        }
+        .container4 .page div .halfpage{
+            width: 90%;
+            height: 50%;
+            position: relative;
+        }
+        .container4 .page div .halfpage .innerpage{
+            width : 45%;
+            /* height: %; */
+            display: inline-block;
+            border:1px solid blue;
+            position: relative;
+            margin: 1px;
         }
         .container4 .open{
             /* display: block; */
@@ -436,10 +451,11 @@
             opacity: 1;
             /* border :5px solid white; */
         }
-        .container4 .page img{
+        .container4 .page .halfpage img{
             width : 50%;
-            height: 50%;
+            height: 100%;
             display: inline-block;
+
         }
 /* 입양후기끝 */
 /* 오시는길 */
@@ -506,7 +522,7 @@
             margin: 50px 0px;
             display: none;
         }
-        .container0{
+        .container4{
             display: block;
         }
     }
@@ -1112,35 +1128,62 @@
                         <div class="page pageLeft">
                             <div class="frontpage">맨앞(안보임)</div>
                             <div class="backpage">
-                                <img src="image/hugi11.jpg" alt="사진">
-                                <img src="image/hugi12.jpg" alt="사진">
+                                <div class="halfpage">
+                                    <img src="image/hugi11.jpg" alt="사진">
+                                    <div class="innerpage">
+                                    </div>
+                                </div>
+                                <div class="halfpage">
+                                    <img src="image/hugi12.jpg" alt="사진">
+                                    234
+                                </div>
                             </div>
                         </div>
                         <div class="page pageRight">
                             <div class="frontpage">
-                                <img src="image/hugi9.jpg" alt="사진">
-                                <img src="image/hugi10.jpg" alt="사진">
+                                <div class="halfpage">
+                                    <img src="image/hugi9.jpg" alt="사진">
+                                </div>
+                                <div class="halfpage">
+                                    <img src="image/hugi10.jpg" alt="사진">
+                                </div>
 
                             </div>
                             <div class="backpage">
-                                <img src="image/hugi7.jpg" alt="사진">
-                                <img src="image/hugi8.jpg" alt="사진">
+                                <div class="halfpage">
+                                    <img src="image/hugi7.jpg" alt="사진">
+                                </div>
+                                <div class="halfpage">
+                                    <img src="image/hugi8.jpg" alt="사진">
+                                </div>
                             </div>
                         </div>
                         <div class="page">
                             <div class="frontpage">
-                                <img src="image/hugi5.jpg" alt="사진">
-                                <img src="image/hugi6.jpg" alt="사진">
+                                <div class="halfpage">
+                                    <img src="image/hugi5.jpg" alt="사진">
+                                </div>
+                                <div class="halfpage">
+                                    <img src="image/hugi6.jpg" alt="사진">
+                                </div>
                             </div>
                             <div class="backpage">
-                                <img src="image/hugi3.jpg" alt="사진">
-                                <img src="image/hugi4.jpg" alt="사진">
+                                <div class="halfpage">
+                                    <img src="image/hugi3.jpg" alt="사진">
+                                </div>
+                                <div class="halfpage">
+                                    <img src="image/hugi4.jpg" alt="사진">
+                                </div>
                             </div>
                         </div>
                         <div class="page">
                             <div class="frontpage">
-                                <img src="image/hugi.jpg" alt="사진">
-                                <img src="image/hugi2.jpg" alt="사진">
+                                <div class="halfpage">
+                                    <img src="image/hugi.jpg" alt="사진">
+                                </div>
+                                <div class="halfpage">
+                                    <img src="image/hugi2.jpg" alt="사진">
+                                </div>
                             </div>
                             <div class="backpage">맨뒤(안보임)</div>
                         </div>
