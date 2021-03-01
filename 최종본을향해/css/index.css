@@ -57,7 +57,7 @@
     width: 20vh;
     height: 20vh;
     position: absolute; /*후원이미지*/
-    top: 500px;
+    top: 50vh;
     left: 100px;
     animation: dog1 3s infinite linear;
     box-shadow: rgba(0, 0, 0, 0.329) 5px 5px 5px 5px;
@@ -84,7 +84,7 @@
   }
   .ap {
     position: absolute; /*압정*/
-    top: 63.5%;
+    top: 49vh;
 
   }
   .slider {
@@ -148,8 +148,8 @@
   .post_it {
     width: 350px;
     position: absolute; /*포스트잇*/
-    top: 120px;
-    right: 120px;
+    top: 1vh;
+    right: 1vh;
   }
   .cat {
     width: 10%;
@@ -633,7 +633,7 @@ transform: rotate(-30deg);
   }
   /* -----------------return 고양이 머리가 디스플레이논 밑에 새로운머리---------------------------- */
   #toggleBtn8:checked ~ .root1 {
-    animation: active2 1s;
+    animation: active2 1s ;
     animation-fill-mode: both;
   }
   #toggleBtn8:checked ~ .root2 {
@@ -659,6 +659,7 @@ transform: rotate(-30deg);
   #toggleBtn8:checked ~ .root7 {
     animation: scale7r 1s 3.5s;
     animation-fill-mode: both;
+    animation-iteration-count: ;
   }
   #toggleBtn8:checked ~ .root8 {
     /* z-index: 10; */
