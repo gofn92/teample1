@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동물보호소 소개 페이지</title>
+    <script src="js/jquery.js"></script>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+    .a2{
+        width: 300px;
+        margin: 0 auto;
+        }
+    .a2 img{
+        width: 100%;
+    }
+    .im{
+        width : 320px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    .im img{
+        width : 100%;
+        height: 100%;
+    }
+    .im video{
+        width : 100%;
+        height: 100%;
+        margin: 0;
+    }
+    article div p{
+        margin: 15px;
+    }
+/* 반복되는 부분 */
+        @font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+          *{
+            box-sizing: border-box;
+            text-align: center;
+            font-family: 'Cafe24Dongdong';
+            padding:0;
+            margin: 0 auto;
+            color : rgb(75, 14, 110);
+            
+        }
+        li{list-style: none;}
+        /* 햄버거시작 */
+
+
+        @keyframes aa{
+            0%{
+                opacity: 0; transform: translateX(-25%);
+            }
+            100%{
+                opacity: 1; transform: translateX(0);
+            }
+        }
+        .overlay.visible{
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .overlay.visible ul li:nth-child(1){
+            animation-delay: 0.23s;
+        }
+        .overlay.visible ul li:nth-child(2){
+            animation-delay: 0.26s;
+        }
+        .overlay.visible ul li:nth-child(3){
+            animation-delay: 0.29s;
+        }
+        .overlay.visible ul li:nth-child(4){
+            animation-delay: 0.32s;
+        }
+        .overlay.visible ul li:nth-child(5){
+            animation-delay: 0.35s;
+        }
+        /* -------------------------------------------------------------- */
+        .ham-btn{
+            width: 50px; height: 50px;
+            position: absolute;
+            top: 30px; right: 0px;
+            transform: translateY(-50%);
+            cursor:pointer;
+            display: block;
+            z-index: 100;
+        }
+        .ham-btn span{
+            display: block;
+            position: absolute;
+            width: 80%; height: 5px;
+            border-radius: 30px;
+            background:rgb(73, 6, 73);
+            transition: all .5s;
+            z-index: 2;
+        }
+        .ham-btn span:nth-child(1){
+            top: 0;
+        }
+        .ham-btn span:nth-child(2),
+        .ham-btn span:nth-child(3){
+            top: 10px;
+        }
+        .ham-btn span:nth-child(4){
+            top: 20px;
+        }
+
+        .ham-btn.active span:nth-child(1),
+        .ham-btn.active span:nth-child(4){
+            opacity: 0;
+        }
+        .ham-btn.active span:nth-child(2){
+            transform: rotate(45deg);
+        }
+        .ham-btn.active span:nth-child(3){
+            transform: rotate(-45deg);
+        }
+/* 햄버거버튼끝 */
+    .overlay{
+            position: fixed;
+            top: 0; left: 0;
+            background-color:beige;
+            width: 100%; height: 0;
+            opacity: 0;
+            visibility: hidden;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            z-index: 99;
+        }
+        .overlay li{
+                font-size: 2.2rem;
+                margin: 30px;
+                color: rgb(252, 117, 139);
+        }
+        a{text-decoration: none;}
+        .a1{width: 350px;
+        height: 150px;
+        display: inline-block;
+        margin-top: 80px;
+        
+        }
+        .a1 ul a{
+            float: left;
+            margin-left: 10px;
+        }
+        .a1 ul {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .a1 li{width: 135px;
+        height: 50px;
+        margin: 0;
+        }
+        header{
+            position: relative;
+        }
+        body{
+            background:url(image/white.gif);
+        }
+        .c1{clear: both; margin: 20px;}
+        hr{margin: 20px;}
+        h2{
+            color: rgb(253, 106, 130);
+            font-family: 'SDSamliphopangche_Outline';
+            font-size: 3rem;
+        }
+        h1{font-size: 3rem;margin-top: 15px;}
+        footer div {background-color:rgb(189, 183, 183);}
+        p{font-weight:bolder; font-size: 1.25rem;}
+    </style>
+    <script>
+        $(function(){
+            $('.ham-btn').click(function(e){
+                e.preventDefault();
+                $(this).toggleClass('active');
+                $('.overlay').toggleClass('visible');
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <!-- 반복 -->
+<div id="container">
+        <h2>Tierheim</h2>
+        <div class="con">
+        <div class="overlay">
+                <ul>
+                    <a href="mobile2.html"><li> 입양&입소 안내 </li></a>
+                    <a href="mobile3.html"><li> 보호 현황(강아지) </li></a>
+                    <a href="mobile4.html"><li> 보호 현황(고양이) </li></a>
+                    <a href="mobile5.html"><li> 입양 후기 </li></a>
+                    <a href="mobile6.html"><li> 오시는 길 </li></a>
+                </ul>
+                <p>반려 용품샵은 모바일 지원이 되지 않습니다.<br>pc에서 접속 해주세요.</p>
+                <div class="a1">
+                    <ul>
+                        <a href="signIn.html"><li> 로그인 </li></a>
+                        <a href="signUp.html"><li> 회원 가입 </li></a>
+                    </ul>
+                </div>
+            </div>
+
+        <div class="ham-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- 반복 -->
+    <h1>보호소 소개</h1>
+    <header>
+
+    <div class="im">
+        <img src="image/dc4.jpg">
+    </div>
+    </header>
+    <article>
+        <div>
+            <p>
+                저희 보호소에서는 지속적인 발전을 통해 독일의 최대 규모인 유기견 보호소 'Tierheim' 의 운영을 기반으로 삼으며 운영중입니다.
+            </p>
+            <p>
+                저희 보호소에서는 아이들이 맘껏 뛰놀 수 있는 넓은 마당이 있습니다.
+            </p>
+            <p>
+                저희 보호소에서는 보호 명목으로 금전을 요구하는 일이 없으며<br>무료로 입소를 할 수 있습니다.
+            </p>
+            <p>
+                저희 보호소에서는 나의 반려 동물이 지내는 공간으로 생각하여<br>편안한 생활을 할 수 있도록 따듯한 보금자리가 되어주고 있습니다.
+            </p>
+        <div class="im">
+            <video autoplay loop muted preload="auto">
+                <source src="image/doctoy.mp4" type="video/mp4">
+                    zzz
+            </video>
+        </div>
+            <p>
+                저희 보호소에서는 아이들의 특별 훈련과<br>특별 관리체계를 진행 하고 있습니다.
+            </p>
+            <p>
+                저희 보호소에서는 아이들의 건강을 위해<br>'로0캣0'회사의 고급 사료들만 배식합니다.
+            </p>
+            <p>
+                저희 보호소에서는 아이들의 건강을 위해 의사 선생님께서<br>항시 대기중이십니다.
+            </p>
+            <p>
+                반려동물을 가족으로 생각하고 평생 함께할 각오와 책임만 다한다면 반려동물과 함께 하는 삶은 정서적으로 풍요롭고 행복할 수 있습니다.
+            </p>
+        </div>
+        </article>
+        <div class="a2">
+          <img src="image/hu.gif">
+        </div>
+    <p class="c1"></p>
+<hr>
+<footer>
+    <div>
+        <p>문의 전화 : 000-0000-0000</p>
+        <p>운영 시간 : 00~00</p>
+        <p>주소 : 사랑시 고백구 행복동</p>
+        <p>대포이사 : 채토리</p>
+    </div>
+</footer>
+</div>
+</body>
+</html>

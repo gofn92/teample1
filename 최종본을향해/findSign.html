@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> findSign.html </title>
+    <style>
+
+        *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;
+        font-family: 'Cafe24Dongdong';}
+        li{list-style: none;}
+        a{
+            text-decoration: none;
+            color : black;
+        }
+        #container {
+            width : 960px;
+        }
+        header {
+            width : 100%;
+            height : 100px;
+            border-bottom : 2px solid gray;
+        }
+        section {
+            /* height: 600px; */
+            padding : 20px;
+        }
+        /* form {
+            width : 400px;
+        } */
+        section label {
+            left : 0;
+            cursor: pointer;
+            width : 300px;
+            height : 30px;
+        }
+        section input {
+            width : 200px;
+            height : 30px;
+            text-align: left;
+            border : 1px solid green;
+            /* background-color: lightgreen; */
+            cursor: pointer;
+            /* margin-bottom: 10px; */
+        }
+        section input:focus {
+            outline : 2px solid green;
+        }
+        label p {
+            display: inline;
+            margin: 20px;
+        }
+        #submit {
+            background-color: white;
+            text-align: center;
+        }
+        p input:focus{
+            background-color: greenyellow;
+        }
+        /* 여기부터 */
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin : 0;
+        }
+        input[type=number]{
+            -moz-appearance: textfield;
+        }
+        /* 여기까지 input type=number에 붙는 스피너삭제 */
+         input[type=password]{
+             font-family: sans-serif;
+         }
+        .btn {
+            width : 150px;
+            text-align: center;
+            background-color: white;
+            margin : 40px;
+        }
+        .gender {
+            width : 15px;
+            height : 15px;
+            margin-right : 5px;
+        }
+        .twoword{
+            display: inline;
+            margin: 20px;
+            margin-right: 50px;
+        }
+        #genderbox label{
+            margin-right: 30px;
+        }
+        footer {
+            height : 100px;
+        }
+        footer li{
+           float : left;
+       }
+       footer::after{
+           content : "";
+           display: block;
+           clear : both;
+      }
+
+       /* 은영 */
+       @font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    body{background-color:rgb(250,219,224);}
+    h1{color: rgb(125, 15, 158);
+        font-size: 3rem; margin-top:15px;}
+    hr{margin: 20px;}
+
+    .z1{width: 30px;
+    height: 30px;}
+    .title{
+        /* background-color: rgb(158, 222, 238); */
+     font-family: 'SDSamliphopangche_Outline';text-shadow: 5px 5px 10px white;}
+    table td{
+        width : 100px;
+        height : 30px;
+        border : 5px solid transparent;
+    }
+    footer div {background-color:rgb(189, 183, 183);}
+    @media screen and (max-width : 768px){
+        #container {
+            width : 330px;
+        }
+        table tr td:first-child{
+            display: none;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <!-- container 시작 -->
+        <header>
+            <!-- header 시작 -->
+            <h1><img src="image/dog_paw.png" class="z1"><span class="title">Tierheim</span><img src="image/cat_paw.png" class="z1"></h1>
+
+        </header>
+            <!-- header 끝 -->
+
+        <section>
+            <!-- section 시작 -->
+            <article>
+                <h2> 아이디 찾기 </h2><br>
+                <form method="POST" action="findId.php" name="findId" autocomplete="off">
+                    <table>
+                        <tr>
+                            <td>이름</td>
+                            <td><input type="text" placeholder="이름" name="u_name"></td>
+                        </tr>
+                        <tr>
+                            <td>전화번호</td>
+                            <td><input type="number" placeholder="전화번호" name="tel"></td>
+                        </tr>
+                    </table>
+                    <p>
+                        <input type="submit" value="ID찾기" class="btn">
+                    </p>
+                </form>
+            </article>
+            <article>
+                <h2> 비밀번호 찾기 </h2><br>
+                <form method="POST" action="findPw.php" name="findId" autocomplete="off">
+                    <table>
+                        <tr>
+                            <td>이름</td>
+                            <td><input type="text" placeholder="이름" name="u_name"></td>
+                        </tr>
+                        <tr>
+                            <td>아이디</td>
+                            <td><input type="text" placeholder="아이디" name="u_id"></td>
+                        </tr>
+                        <tr>
+                            <td>전화번호</td>
+                            <td><input type="number" placeholder="전화번호" name="tel"></td>
+                        </tr>
+                    </table>
+                    <p>
+                        <input type="submit" value="비밀번호 찾기" class="btn">
+                    </p>
+                </form>
+            </article>
+        </section>
+        <hr>
+            <!-- section 끝 -->
+        <footer>
+                <div>
+                    <p>문의 전화 : 000-0000-0000</p>
+                    <p>운영 시간 : 00~00</p>
+                    <p>위치 : 사랑시 고백구 행복동</p>
+                    <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                    <p>대포이사 : 채토리</p>
+                </div>
+        </footer>
+    </div>
+    <!-- container -->
+</body>
+</html>

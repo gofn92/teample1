@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main-idx3</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/paging.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/paging.js"></script>
+    <style>
+/* 공통 스타일 */
+        @font-face {
+            font-family: 'Cafe24Syongsyong';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Syongsyong.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @media (max-width: 1920px){
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Cafe24Syongsyong';
+            text-align: center;
+            font-size: 20px;
+        }
+        html,body{
+            height: 100%; width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(image/white.gif);
+        }
+        a{color:black;}
+        .loading{
+                position: fixed;
+                top: 0; left: 0;
+        }
+        .con{
+            height: 100%; width: 90%;
+        }
+        h1,h2,h3,h4{
+                font-family: 'SDSamliphopangche_Outline';
+            }
+        header{
+            height: 160px;
+            /* display: flex; */
+            position:relative;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.5);
+        }
+        .logo{
+            position: absolute;
+            top: 50px; left: 10px;
+        }
+        .logo img{
+            width: 65px; height: 65px;
+        }
+        header ul{
+            display: flex;
+            flex-grow: 1;
+            flex: 1 1 150px;
+            margin-left: 60px;
+            margin-top: 30px;
+        }
+        header ul li{
+            /* padding: 10px 20px; */
+            width : 30%;
+            height : 50px;
+            /* display: flex; */
+            flex-flow: row wrap column;
+            justify-content: space-around;
+            transition: 0.5s;
+        }
+        header ul li img{
+            width: 60px; height: 50px;
+        }
+        header ul li button{
+            cursor: pointer;
+            background: none;
+            border: 0;
+            outline: 0;
+            padding : 10px 0px;
+        }
+        header ul li:hover{
+            transform: scale(0.8);
+            background-color: rgb(243, 198, 115);
+            cursor: pointer;
+        }
+        header .logging{
+            border: 2px solid blue;
+            position:absolute;
+            top:0px; right: 10px;
+        }
+        header a{
+            transition: all 0.5s;
+            padding : 5px;
+            color : black;
+            line-height: 2;
+        }
+        header a:hover{
+            transform: scale(2);
+            background-color: rgb(243, 198, 115);
+            cursor: pointer;
+        }
+        section{
+            /* height: 100vh; */
+            background: transparent;
+        }
+        article{
+            height: 100vh;
+            background: transparent;
+        }
+/* 공통스타일 끝 */
+/* 보호소 소개 */
+        
+        .container1{
+            padding-bottom: 50px;
+            overflow: hidden;
+            background-color: transparent;
+        }
+        .container1 h2{
+            font-size: 1.5rem;
+            line-height: 3;
+            margin-bottom: 30px;
+        }
+        .container1 article{
+            width : 90%;
+            height : 350px;
+            display: flex;
+            padding :20px;
+            /* background: url("image/wood.png"); */
+            background: url(image/pink.png);
+            margin-bottom: 50px;
+            transition: all 1s;
+            opacity: 0;
+        }
+        .container1 article:first-child{
+            padding:0;
+            width : 750px;
+            height : 600px;
+            background: none;
+            opacity: 1;
+            transition-property: none;
+        }
+        .container1 article:first-child div{
+            position: relative;
+            width : 100%;
+        }
+        .container1 article:first-child div img{
+            width : 100%;
+        }
+        .container1 article div{
+            width : 300px;
+            font-size: 1.3em;
+            line-height: 2;
+        }
+        .container1 article div img{
+            width : 100%;
+            height: 100%;
+        }
+        .comeLeft{
+            transform: translateX(-1000px);
+        }
+        .comeRight{
+            transform: translateX(1000px);
+        }
+
+        .come{
+            /* opacity: 1; */
+            transform: translateX(0px);
+        }
+/* 보호소 소개 끝 */
+/* 보호현황 시작 */
+        .container3{
+            width: 100%;
+        }    
+        .container3 article{
+            margin: 100px 0;
+        }
+            .box{
+                height: 100%; width: 100%;
+                background: transparent;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                display: grid;
+                grid-template-columns: repeat(20%);
+                place-items: center center;
+                /* overflow: hidden; */
+            }
+            .s-box{
+                width: 256px; height: 320px;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+            }
+            .s-box:nth-child(1){
+                grid-column: 1/1;
+            }
+            .s-box:nth-child(2){
+                grid-column: 2/2;
+            }
+            .s-box:nth-child(3){
+                grid-column: 3/3;
+            }   
+            .s-box:nth-child(4){
+                grid-column: 4/4;
+            }
+
+
+            .s-box .front1,.front2,.front3,.front4,.front5,.front6,.front7,.front8,
+            .front9,.front10,.front11,.front12,.front13,.front14,.front15,.front16,
+            .s-box .back1,.back2,.back3,.back4,.back5,.back6,.back7,.back8,
+            .back9,.back10,.back11,.back12,.back13,.back14,.back15,.back16{
+                background-size: cover;
+                background-position: center;
+                transition: all 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+                border-radius: 10px;
+                backface-visibility: hidden;
+                text-align: center;
+                height: 320px; width: 300px;
+                /* color: #fff; */
+            }
+            .s-box .back1, .back2, .back3, .back4,.back5,.back6,.back7,.back8,
+            .back9,.back10,.back11,.back12,.back13,.back14,.back15,.back16{
+                /* background: url(image/bg.jpg); */
+                background: rgba(222, 184, 135,0.3)	;
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0; left: 0; bottom: 0; right: 0;
+                width: 280px; height: 420px;
+                border-radius: 10px;
+                z-index: -11;
+                text-align: center;
+                line-height: 20px;
+            }
+
+
+            .front1,
+            .front2,
+            .front3,
+            .front4,
+            .front4,
+            .front5,
+            .front6,
+            .front7,
+            .front8,
+            .front9,
+            .front10,
+            .front11,
+            .front12,
+            .front13,
+            .front14,
+            .front15,
+            .front16{
+                transform: rotateY(0deg);
+                transform-style: preserve-3d;
+            }
+
+
+            .back1,
+            .back2,
+            .back3,
+            .back4,
+            .back5,
+            .back6,
+            .back7,
+            .back8,
+            .back9,
+            .back10,
+            .back11,
+            .back12,
+            .back13,
+            .back14,
+            .back15,
+            .back16{
+                transform: rotateY(-180deg);
+                transform-style: preserve-3d;
+            }
+
+            .s-box .inner > img:hover{
+                transform: scale(1.3);
+            }
+            .active{
+                transform: rotateY(180deg);
+                transform-style: preserve-3d;
+                transition: all 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+
+            .active1{
+                transform: rotateY(0deg);
+                transform-style: preserve-3d;
+                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+            .active2{
+                transform: rotateY(0deg);
+                transform-style: preserve-3d;
+                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+            .active3{
+                transform: rotateY(-180deg);
+                transform-style: preserve-3d;
+                transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            }
+/* 보호현황 끝 */
+/* 입양후기 */
+        .container4{
+            width : 100%;
+            height : 800px;
+            /* border : 1px solid red; */
+            position: relative;
+            perspective: 1000px;
+        }
+        .container4 article{
+            width : 800px;
+            height : 200px;
+        }
+        .container4 article .bookshelf{
+            width : 800px;
+            height : 200px;
+            position: absolute;
+            left: 450px;
+            bottom : 200px;
+            perspective: 1000px;
+            transform: rotateX(90deg);
+            transform-style:preserve-3d;
+            /* box-shadow: 10px 320px 100px -80px black; */
+        }
+        .container4 .bookshelf div{
+            background-image: url(image/wood.png) ;
+            background: cover no-repeat;
+            /* border : 1px solid black; */
+        }
+        .container4 .bookshelf .bsup{
+            width : 100%;
+            height : 100%;
+        }
+        .container4 .bookshelf .bsfront{
+            transform: rotateX(-50deg);
+            transform-origin: left top;
+            width : 100%;
+            height : 30px;
+            box-shadow: 30px 30px 60px 5px black;
+        }
+        .container4 .book{
+            position : absolute;
+            background-image: none;
+            bottom: -50px;
+            width : 175px;
+            height : 250px;
+            /* border : 10px solid rgb(233, 56, 56); */
+            /* box-shadow: 2px 0px 20px black; */
+            transition: all 1s;
+            background-image: url(image/bookcover.gif);
+            background-size: 175px 250px;
+            background-repeat: no-repeat;
+        }
+        .container4 .book img{
+            margin-top: 10px;
+            margin-left: 50px;
+            width : 50%;
+            height: 30%;
+        }
+        .container4 .book1{
+            transform:translateX(55px) translateY(-350px) translateZ(0px) rotateX(10deg);
+        }
+        .container4 .book1:hover{
+            transform:translateX(55px) translateY(-400px) translateZ(100px) rotateX(0deg);
+        }
+        .container4 .book2{
+            transform:translateX(305px) translateY(-350px) translateZ(0px) rotateX(10deg);
+        }
+        .container4 .book2:hover{
+            transform:translateX(305px) translateY(-400px) translateZ(100px) rotateX(0deg);
+        }
+        .container4 .book3{
+            transform:translateX(555px) translateY(-350px) translateZ(0px) rotateX(10deg);
+        }
+        .container4 .book3:hover{
+            transform:translateX(555px) translateY(-400px) translateZ(100px) rotateX(0deg);
+        }
+        .container4 .openbook{
+            width : 1000px;
+            height : 750px;
+            border : none;
+            z-index: 1;
+            transform:translateX(-150px) translateY(-80px) rotateX(0deg);
+            box-shadow: none;
+        }
+        .container4 .openbook img{
+            width : 100%;
+            height : 100%;
+        }
+        .container4 article .openshelf{
+            height : 500px;
+            left: -1500px;
+            transition: all 1s;
+            border : none;
+        }
+        .container4 .book:hover{
+            cursor: pointer;
+        }
+        .container4 #book{
+            width :1000px;
+            height : 750px;
+            display: none;
+            opacity: 0;
+            top: 30px;
+            left: -100px;
+            z-index: -99;
+            transition: all 1s;
+            perspective: 20000px;
+            background-image: url("image/book.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
+        .container4 .page{
+            border : 30px solid transparent;
+        }
+        .container4 .page div{
+            background-color: rgb(243,239,211);
+            padding : 10px;
+        }
+        .container4 .open{
+            /* display: block; */
+            /* z-index: 99; */
+            opacity: 1;
+            /* border :5px solid white; */
+        }
+        .container4 .page img{
+            width : 50%;
+            height: 50%;
+            display: inline-block;
+        }
+/* 입양후기끝 */
+/* 오시는길 */
+        .container5{
+            width : 100%;
+            height : 90vh;
+            padding: 1%;
+        }
+        .container5 article{
+            margin-top: 30px;
+            font-size: 1.2em;
+            width : 90%;
+            height : 650px;
+            line-height: 2;
+            position: relative;
+        }
+        .container5 #map{
+            position: relative;
+            width : 75%;
+            height: 500px;
+            margin : 10px;
+            border :1px solid blue;
+        }
+        .container5 article .waytobtn{
+            position: absolute;
+            top: 20px;
+            right: 2%;
+            width : 300px;
+            height : 400px;
+        }
+        .container5 article .waytobtn ul{
+            width : 100%;
+            height: 300px;
+        }
+        .container5 article .waytobtn ul li{
+            width : 100%;
+        }
+        .container5 article .waytobtn ul li a{
+            float: left;
+            padding : 10px 80px;
+            margin: 70px 30px;
+            color: chocolate;
+            border: 1px solid pink;
+        }
+        .container5 article .waytobtn ul li a:hover{
+            background-color: tomato;
+            color:white;
+        }
+        .container5 article .waytobtn ul li a:focus{
+            background-color: tomato;
+            color:white;
+        }
+        .waytobtn ul li a::after{
+            content:"";
+            display: block;
+            clear:both;
+        }
+/* 오시는길 끝 */
+        footer{
+            /* background: white; */
+            border-top: 3px solid white;
+        }
+        .container{
+            margin: 50px 0px;
+            display: none;
+        }
+        .container0{
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <!-- <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" autoplay muted></video> -->
+        <!-- <video id="video1" src="image/냥냥첩첩.avi" width="100%" height="100%" muted></video> -->
+    </div>
+    <div class="con">
+        <header>
+            <div class="logo">
+                <img src="image/logo_pink.png" alt="logo">
+            </div>
+            <ul>
+                <li><button type="button" class="menubtn" onclick="changecon(0);">메인페이지</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(1);">보호소 소개</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(2);">입양/입소 안내</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(3);">보호 현황</button></li>
+            </ul>
+            <ul>
+                <li><button type="button" class="menubtn" onclick="changecon(4);">입양후기</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(5);">오시는길</button></li>
+                <li><button type="button" class="menubtn" onclick="changecon(6);">애견샾</button></li>
+            </ul>
+            <div class="logging">
+                <a href="signIn.html"> 로그인 </a>
+                <a href="signUp.html"> 회원가입 </a>
+            </div>
+        </header>
+        <section class="container container0">
+            <div class="cont">
+                <div class="bg" style="background-image: url(./image/bg.jpg);"></div>
+                <div class="dot">
+                
+                </div>
+                <div class="choco2">
+                    <img class="a1" src="./image/t.png" width="6%"  alt="">
+                    <img class="a2" src="./image/i.png" width="6%"  alt="">
+                    <img class="a1" src="./image/e.png" width="6%"  alt="">
+                    <img class="a2" src="./image/r.png" width="6%"  alt="">
+                    <img class="a1" src="./image/h.png" width="6%"  alt="">
+                    <img class="a2" src="./image/e.png" width="6%"  alt="">
+                    <img class="a1" src="./image/i.png" width="6%"  alt="">
+                    <img class="a2" src="./image/m.png" width="6%"  alt="">
+                </div>
+                <div class="slider">
+                    <img class="slide" src="./image/Bgle.jpg" width="100%" alt="">
+                    <img class="slide" src="./image/sleep_cat.jpg"alt="">
+                    <img class="slide" src="./image/dat_dog.jpg"alt="">
+                    <img class="slide" src="./image/Bgle.jpg"alt="">
+                    <a class="prev" onclick="button_click(-1)"><img src="./image/dog_paw.png" width="100%" alt=""></a>
+                    <a class="next" onclick="button_click(1)"><img src="./image/dog_paw.png" width="100%" alt=""></a>
+                    <div class="idle"><h2>입양가능한아이들</h2></div>
+                </div>
+                    <!--<div class="menu-con">
+                    <div class="menu1">
+                        <img class="paw1" src="./image/발바닥.gif" width="20%" alt="">
+                        <a href="#" onclick="changecon(2);"><img class="men1" src="./image/보호소소개.gif" width="15%" alt=""></a>
+                    </div>
+                    <div class="menu2">
+                        <img class="paw2" src="./image/발바닥_얼룩.png" width="10%" alt="">
+                        <a href="#" onclick="changecon(3);"><img class="men2" src="./image/입양입소안내.gif" width="15%" alt=""></a>
+                    </div>
+                    <div class="menu3">
+                        <img class="paw3" src="./image/발바닥_블랙.png" width="30%" alt="">
+                        <a href="#" onclick="changecon(4);"><img class="men3" src="./image/오시는길.gif" width="15%" alt=""></a>
+                    </div>
+                    <div class="menu4">
+                        <img class="paw4" src="./image/발바닥_그레이.png" width="20%" alt="">
+                        <a href="#" onclick="changecon(5);"><img class="men4" src="./image/애견용품샵.gif" width="15%" alt=""></a>
+                    </div>
+                    <div class="menu5">
+                        <img class="paw5" src="./image/발바닥_브라운.png" width="10%" alt="">
+                        <a href="#" onclick="changecon(6);"><img class="men5" src="./image/입양후기.gif" width="15%" alt=""></a>
+                    </div>
+                    <div class="menu6">
+                        <img class="paw6" src="./image/발바닥.gif" width="25%" alt="">
+                        <a href="#" onclick="changecon(1);"><img class="men6" src="./image/입양후기.gif" width="15%" alt=""></a>
+                    </div>
+                </div>-->
+                <div class="dog1">
+                    <img src="./image/support_320.png" alt="">
+                </div>
+                <div class="ap">
+                    <img src="./image/apjung.png" width="15%" alt="">
+                </div>
+                <div class="post_it">
+                    <img src="./image/post_active.gif" width="80%" alt="">
+                    <p style="position: absolute; left: 37%;top: 40%;">💕</p>
+                </div>
+                <div class="cat">
+                    <video class="eat"src="./image/cat_eat_320.mp4" loop muted autoplay width="20%" height="20%" ></video>
+                </div>
+            </div>
+        </section>
+        <section class="container container1">
+            <article class="adbot">
+                <div>
+                    <img src="image/dog99.jpg" alt="" width="90%" height="auto">
+                </div>
+            </article>
+                <h2>저희 보호소에서는</h2>
+                <article class="adobt1 comeRight">
+                    <div>
+                        저희 보호소에서는 지속적인 발전을 통해 독일의 최대 규모인 유기견 보호소 'Tierheim' 의 운영을 기반으로 삼으며 운영중입니다.
+                    </div>
+                    <div>
+                        <img src="image/tierheim4.jpg" alt="">
+                    </div>
+                </article>
+                <article class="adobt1 comeLeft">
+                    <div>
+                        <img src="image/tierheim4.jpg" alt="">
+                    </div>
+                    <div>
+                        저희 보호소에서는 아이들이 맘껏 뛰놀 수 있는 넓은 마당이 있습니다.
+                        사진구해줄사람어디없나
+                    </div>
+                </article>
+                <article class="adobt1 comeRight">
+                    <div>
+                        저희 보호소에서는 보호 명목으로 금전을 요구하는 일이 없으며 무료로 입소를 할 수 있습니다.
+                    </div>
+                    <div>
+                        <img src="image/tierheim4.jpg" alt="">
+                    </div>
+                </article>
+                <article class="adobt1 comeLeft">
+                    <div>
+                        <img src="image/tierheim4.jpg" alt="">
+                    </div>
+                    <div>
+                        저희 보호소에서는 나의 반려 동물이 지내는 공간으로 생각하여 편안한 생활을 할 수 있도록 따듯한 보금자리가 되어주고 있습니다.
+                    </div>
+                </article>
+            <h2>우리 보호소 장점</h2>
+            <article class="adobt2 comeLeft">
+                <div>
+                    <img src="image/tierheim.jpg" alt="">
+                </div>
+                <div>
+                    저희 보호소에서는 아이들의 특별 훈련과 특별 관리체계를 진행 하고 있습니다.
+                </div>
+            </article>
+            <article class="adobt2 comeRight">
+                <div>
+                    저희 보호소에서는 아이들의 건강을 위해 '로0캣0'회사의 고급 사료들만 배식합니다.
+                </div>
+                <div>
+                    <img src="image/tierheim.jpg" alt="">
+                </div>
+            </article>
+            <article class="adobt2 comeLeft">
+                <div>
+                    <img src="image/tierheim.jpg" alt="">
+                </div>
+                <div>
+                    저희 보호소에서는 아이들의 건강을위해 의사 선생님께서 항시 대기중이십니다.
+                </div>
+            </article>
+            <article class="adobt2 comeRight">
+                <div>
+                    반려동물을 가족으로 생각하고 평생 함께할 각오와 책임만 다한다면 반려동물과 함께 하는 삶은 정서적으로 풍요롭고 행복할 수 있습니다.
+                </div>
+                <div>
+                    <img src="image/tierheim.jpg" alt="">
+                </div>
+            </article>
+        </section>
+        <section class="container container2">
+            <div class="catbody">
+                <input type="checkbox" id="toggleBtn1">
+                <label for="toggleBtn1" class="root root1">
+                    <img src="./image/cat_head.png"  alt="">
+                    <!-- <img src="./image/cat_body.png" width="100%" style="position: absolute; bottom: -60%;" alt=""> -->
+                </label>
+                <input type="checkbox" id="toggleBtn8">
+                <label for="toggleBtn8" class="root root8">
+                    <img src="./image/cat_head.png"  alt="">
+                    <!-- <img src="./image/cat_body.png" width="100%" style="position: absolute; bottom: -60%;" alt=""> -->
+                </label>
+                <input type="checkbox" id="toggleBtn9">
+                <label for="toggleBtn9" class="root root9">
+                    <!-- <img src="./image/cat_head.png" width="100%" style="z-index: 10;" alt=""> -->
+                    <img src="./image/cat_body.png"  alt="">
+                </label>
+                <input type="checkbox" id="toggleBtn2">
+                <label for="toggleBtn2" class="root root2">
+                    <h2>2</h2>
+                    <div id="paw2"><img src="./image/adoptcat_line.png"alt=""></div>
+                </label>
+                <input type="checkbox" id="toggleBtn3">
+                <label for="toggleBtn3" class="root root3">
+                    <h2>3</h2>
+                <div id="paw3"><img src="./image/doberman.png"alt=""></div>
+                </label>
+                <input type="checkbox" id="toggleBtn4">
+                <label for="toggleBtn4" class="root root4">
+                    <img id="card4" class="card"  src="./image/입양안내.png"  alt="">
+                    <img id="paw4" src="./image/cat_paw_black_300.png" alt="">
+                    <h2>4</h2>
+                </label>
+                <input type="checkbox" id="toggleBtn5">
+                <label for="toggleBtn5" class="root root5">
+                    <img id="card5"  class="card" src="./image/입양안내.png"   alt="">
+                    <img id="paw5" src="./image/cat_paw_grey_300.png" alt="">
+                    <h2>5</h2>
+                </label>
+                <input type="checkbox" id="toggleBtn6">
+                <label for="toggleBtn6" class="root root6">
+                    <img id="card6" class="card" src="./image/adopt.png"  alt="">
+                    <img id="paw6" src="./image/cat_paw_brown_300.png" alt="">
+                    <h2>6</h2>      
+                </label>
+                <input type="checkbox" id="toggleBtn7">
+                <label for="toggleBtn7" class="root root7">
+                    <img id="card7" class="card" src="./image/enroll.png"  alt="">
+                    <img id="paw7" src="./image/cat_paw_300.png"   alt="">
+                    <h2>7</h2>
+                </label>
+                <input type="checkbox" id="toggleBtn10">
+                <label for="toggleBtn10" class="root root10">
+                    <div class="exit">
+                        <img src="./image/carrot.svg"  alt="">
+                        <p class="hide">클릭시 안내창 닫힘</p>
+                    </div>
+                </label>
+                <div class="root 화살" style="z-index: 9999;">
+                    <h4>click</h4>
+                    <img src="./image/under_arrow.svg" alt="">
+                </div>
+                <!-- <div class="탭"></div>-->
+            </div>
+        </section>
+        <section class="container container3">
+            <article id="ajd">
+            <h2>강아지 보호 현황</h2>
+            <div class="box"
+             id="box">
+                    <div class="s-box" id="sBox">
+                        <div class="front1" id="front1">
+                            <div class="inner">
+                                <img src="image/0.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back1" id="back1">
+                            <div class="inner">
+                                <h2>행복이</h2>
+                                <p>
+                                    나이: 3살추정 <br>
+                                    성별: 암컷(입양시 중성화 해드려요) <br>
+                                    특징: 순하고 얌전하나 앙앙 깨물면서 노는 습관이 있습니다. <br> 입소 전 물리 상처가 있어 치료차 털이 부분 밀려있습니다.(현재는 완치되어 털이 자라고 있는 중입니다.) <br>
+                                    양슬개골이 있어서 관리가 필요하며 심해질 경우 수술이 필요할 수도 있습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front2" id="front2">
+                            <div class="inner">
+                                <img src="image/poddle.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back2" id="back2">
+                            <div class="inner">
+                                <h2>콩이</h2>
+                                <p>
+                                    나이:2살 추정 <br>
+                                    체중: 5.7KG <br>
+                                    성별: 남아(미중성/입양 전 중성화 해드립니다) <br>
+                                    건강상태: 피부각질이 있습니다. 나이가 많지만 활동량이 좋고 건강해 보입니다. (입양 전 간단한 건강검진 해드립니다) <br>
+                                    특징: 사람을 매우매우 좋아하며 애교가 많급니다. 산책을 무척 잘 합니다. 마킹을 하기 때문에 혹시 집 안에서도 하게 된다면 교육이 필요합니다. <br>
+                                    질투가 있어 다견가정은 어려울 수 있습니다. 분리불안이 있어 교육이 필요합니다. <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front3" id="front3">
+                            <div class="inner">
+                                <img src="image/1.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back3" id="back3">
+                            <div class="inner">
+                                <h2>다비</h2>
+                                <p>
+                                    나이: 9살 추정 <br>
+                                    성별: 여자아이(중성화 여부 알 수 없으나 원하실 경우 수술 해 드립니다.) <br>
+                                    체중: 3.5KG <br>
+                                    성격: 강아지들이랑 노는걸 엄청 좋아해서, 강아지가 있는 집에 갔으면 좋겠어요. <br>
+                                    사람을 무척 무서워 하지만 조금씩 마음의 문을 열고 있어요. <br>
+                                    호기심이 무척 많아요. <br>
+                                    무척 조용해서, 조용한 걸 좋아하시는 분이 데려가시면 좋을 것 같아요. <br>
+                                    특징: 산책을 좋아해요. <br> 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front4" id="front4">
+                            <div class="inner">
+                                <img src="image/3.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back4" id="back4">
+                            <div class="inner">
+                                <h2>츄</h2>
+                                <p>
+                                    나이:7살 <br>
+                                    성별: 여자아이(중성화 여부 알 수 없으나 원하실 경우 수술 해 드립니다.) <br>
+                                    체중: 5KG <br>
+                                    성격: 대소변 잘 가림, 산책 좋아함, 사람 좋아함, 미용 싫어함, 분리불안 <br>
+                                    츄츄는 사람을 무척 좋아하는 애교쟁이예요. 조금은 맹해보이지만 사실 훈련도 무척 빨리 배우는 똑똑이 예요. <br>
+                                    츄츄는 사람이 없는것을 무서워 해 짖는 경우가 많아요. 그래서 사람이 오랫동안 같이 있는 집에 갔으면 좋겠어요^^ <br>
+                                    대소변은 따로 훈련하지 않아도 알아서 잘 가리고 산책도 무척이나 매너 좋게 잘 한답니다. <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front5" id="front5">
+                            <div class="inner">
+                                <img src="image/4.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back5" id="back5">
+                            <div class="inner">
+                                <h2>라떼</h2>
+                                <p>
+                                    나이: 1살추정 <br>
+                                    성별: 남아(입양시 중성화 해드려요) <br>
+                                    체중: 4.3kg <br>
+                                    건강상태: 건강하며, 입양 시 기초 건강검진 해드립니다. <br>
+                                    특징: 털이 매우 멋있는 포메입니다. 짖음으로 의사표현을 하는 편입니다. 강아지에 대한 호불호는 있으나, 싸우거나 물지는 않습니다. 체격이 큰 남자분에게 안좋은 기억이 있는듯 합니다. (공격하진 않으나 만지는걸 싫어합니다)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front6" id="front6">
+                            <div class="inner">
+                                <img src="image/6.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back6" id="back6">
+                            <div class="inner">
+                                <h2>탱이</h2>
+                                <p>
+                                    나이:8개월 <br>
+                                    성별:남아(입양시 중성화 해드려요) <br>
+                                    체중:6.32KG <br>
+                                    성격:탱이는 공놀이,인형놀이를 좋아하는 천진난만한 친구에요 <br>
+                                    영리하고 눈치가 빨라 배변교육이나 기본적인 훈련들은 어렵지 않게 해낼수 있습니다 <br>
+                                    탱이는 공격성이 적고 다른 친구들과 금방 친해지는 아이랍니다. <br>
+                                    체력이 좋은 아이라서 산책을 자주 해주실수 있는 주인분을 기다리고있습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front7" id="front7">
+                            <div class="inner">
+                                <img src="image/5.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back7" id="back7">
+                            <div class="inner">
+                                <h2>대빵이</h2>
+                                <p>
+                                    나이:2살 <br>
+                                    성별:여아(중성화 되어있음) <br>
+                                    체중:14KG <br>
+                                    성격:대빵이는 닭가슴살이랑 공원 놀러가는것을 너무너무 좋아해요 <br>
+                                    발만지는것과 정류장을 싫어해요 안좋은 기억이 있어서.. <br>
+                                    하지만 대빵이는 여성스럽고 온순하게 자기 어필을 하고 애교도 많아요 <br>
+                                    혼자있는것을 좋아하지 않아 주인과 함께 오래있는것을 좋아해요 ^^ 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front8" id="front8">
+                            <div class="inner">
+                                <img src="image/2.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back8" id="back8" style="height: 350px;">
+                            <div class="inner">
+                                <h2>순이</h2>
+                                <p>
+                                    나이:5살 <br>
+                                    성별:남아(중성화 되어있음) <br>
+                                    체중:30KG <br>
+                                    성격:천사같은 미소를 가진 태식이는 사람과 간식을 무척 좋아하고 순한 성격을 
+                                    가지고 있는 귀여운 아이인데요 
+                                    낯가림이라고는 전혀 없이 관리사분들과  잘 어울리며 뛰어노는 태식이 랍니다 :)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+            <h2>고양이 보호 현황</h2>
+            <div class="box" id="box">
+                    <div class="s-box" id="sBox">
+                        <div class="front9" id="front9">
+                            <div class="inner">
+                                <img src="image/c1.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back9" id="back9">
+                            <div class="inner">
+                                <h2>고영희</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front10" id="front10">
+                            <div class="inner">
+                                <img src="image/c2.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back10" id="back10">
+                            <div class="inner">
+                                <h2>리라</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front11" id="front11">
+                            <div class="inner">
+                                <img src="image/c3.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back11" id="back11">
+                            <div class="inner">
+                                <h2>나비</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front12" id="front12">
+                            <div class="inner">
+                                <img src="image/c4.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back12" id="back12">
+                            <div class="inner">
+                                <h2>레오</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front13" id="front13">
+                            <div class="inner">
+                                <img src="image/c5.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back13" id="back13">
+                            <div class="inner">
+                                <h2>루비</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front14" id="front14">
+                            <div class="inner">
+                                <img src="image/c6.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back14" id="back14">
+                            <div class="inner">
+                                <h2>심바</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front15" id="front15">
+                            <div class="inner">
+                                <img src="image/c7.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back15" id="back15">
+                            <div class="inner">
+                                <h2>맥시</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-box" id="sBox">
+                        <div class="front16" id="front16">
+                            <div class="inner">
+                                <img src="image/c8.jpg" alt="" width="200" height="320">
+                            </div>
+                        </div>
+                        <div class="back16" id="back16">
+                            <div class="inner">
+                                <h2>크림이</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam animi laudantium ab distinctio facere, eum sequi excepturi, quia quam reprehenderit neque repellat dolor suscipit earum sunt, magnam praesentium eaque tenetur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <script src="js/container3.js"></script>
+        <section class="container container4">
+            <article>
+                <div class="bookshelf">
+                    <div class="bsup"></div>
+                    <div class="bsfront"></div>
+                </div>
+                    <div class="book book1">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div class="book book2">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div class="book book3">
+                        <img src="image/logo_pink.png" alt="이미지">
+                    </div>
+                    <div id="book">
+                        <div id="bookLeft"></div>
+                        <div id="bookRight"></div>
+                        <div class="page pageLeft">
+                            <div class="frontpage">맨앞(안보임)</div>
+                            <div class="backpage">
+                                <img src="image/hugi11.jpg" alt="사진">
+                                <img src="image/hugi12.jpg" alt="사진">
+                            </div>
+                        </div>
+                        <div class="page pageRight">
+                            <div class="frontpage">
+                                <img src="image/hugi9.jpg" alt="사진">
+                                <img src="image/hugi10.jpg" alt="사진">
+
+                            </div>
+                            <div class="backpage">
+                                <img src="image/hugi7.jpg" alt="사진">
+                                <img src="image/hugi8.jpg" alt="사진">
+                            </div>
+                        </div>
+                        <div class="page">
+                            <div class="frontpage">
+                                <img src="image/hugi5.jpg" alt="사진">
+                                <img src="image/hugi6.jpg" alt="사진">
+                            </div>
+                            <div class="backpage">
+                                <img src="image/hugi3.jpg" alt="사진">
+                                <img src="image/hugi4.jpg" alt="사진">
+                            </div>
+                        </div>
+                        <div class="page">
+                            <div class="frontpage">
+                                <img src="image/hugi.jpg" alt="사진">
+                                <img src="image/hugi2.jpg" alt="사진">
+                            </div>
+                            <div class="backpage">맨뒤(안보임)</div>
+                        </div>
+                    </div>
+            </article>
+        </section>
+        <section class="container container5">
+                <h1> 오시는길 </h1>
+                <article>
+                <div id="map">
+                    <!-- 이부분에 지도가 나오는건데 특정웹페이지에서만 나옵니다
+                    제 자리에서 파일질라로 서버에파일올리면 보실수 있어요 -->
+                </div>
+                <!-- 수정할때오래걸린다면 이아래부분을 주석처리하고 수정하세요 요청하고 거절당할때까지 로딩이안되는겁니다 -->
+                <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ff7c2a21f45d70f4b5198fa38d5efdb"></script> -->
+                <div class="waytobtn">
+                    <ul>
+                        <li><a href="https://map.kakao.com/link/to/Tierheim,37.56092925965829, 127.03480620586456"> 길찾기 </a></li>
+                        <li><a href="https://map.kakao.com/link/roadview/37.56104268588326, 127.0350491188542"> 로드뷰 </a></li>
+                    </ul>
+                </div>
+                <div class="howtoway">
+                    <h1>
+                        주 소 사랑시 고백구 행복동</h1>
+                    <h3> 자가용으로 오시는 길</h3>
+                    <p> 국민시 후원구 계좌동을 지나 바로 나오는 사랑시 고백구 행복동 Tierheim </p>
+                    <h3> 대중교통을 이용하여 오시는 길</h3>
+                    <p> 사랑역에서 행복동 방향으로 가는 486버스 승차 후 Tierheim 정류장 하차 </p>
+                </div>
+            </article>
+        </section>
+            <footer>
+                <div>
+                    <p>문의 전화 : 000-0000-0000</p>
+                    <p>운영 시간 : 00~00</p>
+                    <p>주소 : 사랑시 고백구 행복동</p>
+                    <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                    <p>대포이사 : 채토리</p>
+                </div>
+            </footer>
+        </div>
+        <script>
+            //페이지 로딩시 들어오는 애니메이션
+            $(function(){
+                $video = $("#video1").get(0);
+                $video.play();
+                $("#video1").delay(500).fadeOut(1000);
+            });
+            // 헤더에서 메뉴클릭시 애니메이션 나타나게 + container전환
+            $(window).scroll(function(){
+                $(".container1>article").each(function(){
+                    var objectTop = $(this).offset().top;
+                    var windowTop = $(window).scrollTop();
+                    var workTop = (windowTop-objectTop)/2;
+                    if( workTop > -400 ){
+                        $(this).addClass("come").delay(300).animate({'opacity':'1'},300);
+                    }
+                    else{
+                        $(this).css("opacity","0").removeClass("come");
+                    }
+                });
+            });
+
+            // 지도지도지도지도
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(37.56092925965829, 127.03480620586456),
+                level: 2
+            };
+
+            var map = new kakao.maps.Map(container, options);
+            // map.setDraggable(false);
+            // 맵 못움직이게 하는 부분
+
+            //마커의 위치를 잡아주는 변수
+            var markerPosition  = new kakao.maps.LatLng(37.56092925965829, 127.03480620586456);
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+        </script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

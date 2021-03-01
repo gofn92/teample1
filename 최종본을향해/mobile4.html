@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보호소 현황(고양이)</title>
+    <script src="js/jquery.js"></script>
+    <style>
+.a3{
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+        }
+    .box1{width: 150px; height: 190px; float: left;}
+    .box2{width: 150px; height: 190px; float: right; border: 5px solid white;}
+    .box2 li{font-size: 1.5rem; padding:2px}
+    img{width:100%;height:100%;border: 5px solid white;}
+    .a2{width: 150px; font-size: 1.45rem;}
+    .a2 img{width : 100%; border-radius: 50%;}
+/* 반복되는 부분 */
+@font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+          *{
+            box-sizing: border-box;
+            text-align: center;
+            font-family: 'Cafe24Dongdong';
+            padding:0;
+            margin: 0 auto;
+            color : rgb(75, 14, 110);
+            font-weight: bolder;
+        }
+        li{list-style: none;}
+        /* 햄버거시작 */
+
+        .overlay ul li:hover{
+            opacity: 1;
+        }
+
+        @keyframes aa{
+            0%{
+                opacity: 0; transform: translateX(-25%);
+            }
+            100%{
+                opacity: 1; transform: translateX(0);
+            }
+        }
+
+        .overlay.visible{
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .overlay.visible ul li:nth-child(1){
+            animation-delay: 0.23s;
+        }
+        .overlay.visible ul li:nth-child(2){
+            animation-delay: 0.26s;
+        }
+        .overlay.visible ul li:nth-child(3){
+            animation-delay: 0.29s;
+        }
+        .overlay.visible ul li:nth-child(4){
+            animation-delay: 0.32s;
+        }
+        .overlay.visible ul li:nth-child(5){
+            animation-delay: 0.35s;
+        }
+        /* -------------------------------------------------------------- */
+        .ham-btn{
+            width: 50px; height: 50px;
+            position: absolute;
+            top: 30px; right: 0px;
+            transform: translateY(-50%);
+            cursor:pointer;
+            display: block;
+            z-index: 100;
+        }
+        .ham-btn span{
+            display: block;
+            position: absolute;
+            width: 80%; height: 5px;
+            border-radius: 30px;
+            background:black;
+            transition: all .5s;
+            z-index: 2;
+        }
+        .ham-btn span:nth-child(1){
+            top: 0;
+        }
+        .ham-btn span:nth-child(2),
+        .ham-btn span:nth-child(3){
+            top: 10px;
+        }
+        .ham-btn span:nth-child(4){
+            top: 20px;
+        }
+
+        .ham-btn.active span:nth-child(1),
+        .ham-btn.active span:nth-child(4){
+            opacity: 0;
+        }
+        .ham-btn.active span:nth-child(2){
+            transform: rotate(45deg);
+        }
+        .ham-btn.active span:nth-child(3){
+            transform: rotate(-45deg);
+        }
+/* 햄버거버튼끝 */
+    .overlay{
+            position: fixed;
+            top: 0; left: 0;
+            background-color:beige;
+            width: 100%; height: 0;
+            opacity: 0;
+            visibility: hidden;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            z-index: 99;
+        }
+        .overlay li{
+                font-size: 2.2rem;
+                margin: 30px;
+                color: rgb(252, 117, 139);
+        }
+        a{text-decoration: none;}
+        .a1{width: 350px;
+        height: 150px;
+        display: inline-block;
+        margin-top: 80px;
+        
+        }
+        .a1 ul a{
+            float: left;
+            margin-left: 10px;
+        }
+        .a1 ul {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .a1 li{width: 135px;
+        height: 50px;
+        margin: 0;
+        }
+        header{
+            position: relative;
+        }
+        body{
+            background:url(image/white.gif)
+        }
+        .c1{clear: both; margin: 20px;}
+        hr{margin: 20px;}
+        h2{
+            color: rgb(253, 106, 130);
+            font-family: 'SDSamliphopangche_Outline';
+            font-size: 2rem;
+        }
+        h1{font-size: 3rem; margin-top: 15px;}
+        footer div {background-color:rgb(189, 183, 183);}
+
+    </style>
+    <script>
+        $(function(){
+            $('.ham-btn').click(function(e){
+                e.preventDefault();
+                $(this).toggleClass('active');
+                $('.overlay').toggleClass('visible');
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div id="container">
+        <h2>Tierheim</h2>
+        <div class="con">
+        <div class="overlay">
+                <ul>
+                    <a href="mobile1.html"><li> 보호소 소개 </li></a>
+                    <a href="mobile2.html"><li> 입양&입소 안내 </li></a>
+                    <a href="mobile3.html"><li> 보호 현황(강아지) </li></a>
+                    <a href="mobile5.html"><li> 입양 후기 </li></a>
+                    <a href="mobile6.html"><li> 오시는 길 </li></a>
+                </ul>
+                <p>반려 용품샵은 모바일 지원이 되지 않습니다.<br>pc에서 접속 해주세요.</p>
+                <div class="a1">
+                    <ul>
+                        <a href="signIn.html"><li> 로그인 </li></a>
+                        <a href="signUp.html"><li> 회원 가입 </li></a>
+                    </ul>
+                </div>
+            </div>
+
+        <div class="ham-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- 반복 -->
+        <h1>보호소 현황</h1>
+
+        <div class="a3">
+            <div class="box1"> <img src="image/tierheim.jpg"></div>
+
+            <div class="box2">
+            <ul>
+                <li> 이름 : 몽이 </li>
+                <li> 특징 : 눈 마주치기 </li>
+                <li> 견종 : 하얗종 </li>
+                <li> 나이 : 1살 </li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="a3">
+            <div class="box1"><img src="image/tierheim1.jpg"></div>
+            <div class="box2">
+            <ul>
+                <li> 이름 : 홍이 </li>
+                <li> 특징 : 상자속에 들어가있기 </li>
+                <li> 견종 : 예쁘종 </li>
+                <li> 나이 : 0.5살 </li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="a3">
+            <div class="box1"><img src="image/cat2.jpg"></div>
+                <div class="box2">
+                    <ul>
+                    <li> 이름 : 콩이 </li>
+                    <li> 특징 : 귀엽기 </li>
+                    <li> 견종 : 알다가도 모르겠종 </li>
+                    <li> 나이 : 3살 </li>
+                </ul>
+                </div>
+            </div>
+
+        <div class="a3">
+            <div class="box1"><img src="image/tierheim3.jpg"></div>
+                <div class="box2">
+                    <ul>
+                    <li> 이름 : 뚱이 </li>
+                    <li> 특징 : 일광욕하기 </li>
+                    <li> 견종 : 뭘보종 </li>
+                    <li> 나이 : 2살 </li>
+                </ul>
+                </div>
+            </div>
+
+<p class="c1"></p>
+        
+            <div class="a2"><a href="mobile3.html"><img src="image/tierheim4.jpg" width="150" height="200">강아지 페이지로<br> 넘어가기!</a> </div>
+       
+        <hr>
+        <footer>
+            <div>
+                <p>문의 전화 : 000-0000-0000</p>
+                <p>운영 시간 : 00~00</p>
+                <p>주소 : 사랑시 고백구 행복동</p>
+                <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                <p>대포이사 : 채토리</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

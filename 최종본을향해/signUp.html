@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> signup.html </title>
+    <script src="js/checking.js"></script>
+    <style>
+        *{margin:0 auto; padding:0; box-sizing: border-box; text-align: center;
+        font-family: 'Cafe24Dongdong';}
+        li{list-style: none;}
+        a{
+            text-decoration: none;
+            color : black;
+        }
+        #container {
+            width : 960px;
+        }
+        header {
+            width : 100%;
+            height : 100px;
+            border-bottom : 2px solid gray;
+        }
+        section {
+            /* height: 600px; */
+            padding : 20px;
+        }
+        /* form {
+            width : 400px;
+        } */
+        section label {
+            left : 0;
+            cursor: pointer;
+            width : 300px;
+            height : 30px;
+        }
+        section input {
+            width : 200px;
+            height : 30px;
+            text-align: left;
+            border : 1px solid green;
+            /* background-color: lightgreen; */
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        section input:focus {
+            outline : 2px solid green;
+        }
+        label p {
+            display: inline;
+            margin: 20px;
+        }
+        #submit {
+            background-color: white;
+            text-align: center;
+        }
+        p input:focus{
+            background-color: greenyellow;
+        }
+        /* 여기부터 */
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin : 0;
+        }
+        input[type=number]{
+            -moz-appearance: textfield;
+        }
+        /* 여기까지 input type=number에 붙는 스피너삭제 */
+         input[type=password]{
+             font-family: sans-serif;
+         }
+        .btn {
+            width : 150px;
+            text-align: center;
+            background-color: white;
+            margin : 40px;
+        }
+        .gender {
+            width : 15px;
+            height : 15px;
+            margin-right : 5px;
+        }
+        footer {
+            height : 100px;
+        }
+        footer li{
+           float : left;
+       }
+       footer::after{
+           content : "";
+           display: block;
+           clear : both;
+      }
+
+       /* 은영 */
+       @font-face {
+    font-family: 'Cafe24Dongdong';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    body{background:url(image/white.gif)}
+    h1{
+            color: rgb(253, 106, 130);
+            font-family: 'SDSamliphopangche_Outline';
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+    h2{font-size: 2rem; margin-top: 15px;}
+    hr{margin: 20px;}
+    .z1{width: 30px;
+    height: 30px;}
+
+    footer div {background-color:rgb(189, 183, 183);}
+    @media screen and (max-width : 768px){
+        #container {
+            width : 330px;
+        }
+    }
+    /* 창영 */
+    table td{
+        width : 150px;
+        height:20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <!-- container 시작 -->
+        <header>
+            <!-- header 시작 -->
+            <h1><img src="image/dog_paw.png" class="z1">Tierheim<img src="image/cat_paw.png" class="z1"></h1>
+        </header>
+            <!-- header 끝 -->
+
+        <section>
+            <!-- section 시작 -->
+            <h2> 회원가입 </h2><br>
+            <form method="POST" action="signUp.php" name="form" onsubmit="return checked()" autocomplete="off">
+                <table>
+                    <tr>
+                        <td> 아 이 디</td>
+                        <td><input type="text" id="u_id" name="u_id" placeholder=" 아이디" required></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" id="u_pw1" name="u_pw1" value="" required onkeyup="check_pw()"></td>
+                    </tr>
+                    <tr>
+                        <td>비번확인</td>
+                        <td><input type="password" id="u_pw2" name="u_pw2" value="" onkeyup="check_pw()" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span id="pw_check_msg"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            성 명
+                        </td>
+                        <td>
+                            <input type="text" name="u_name" placeholder=" 성함을 적어주세요" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            생년월일
+                        </td>
+                        <td>
+                            <input type="number" name="birth" placeholder=" ex)960512">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            전화번호
+                        </td>
+                        <td>
+                            <input type="number" name="tel"pattern="[0-9]+" placeholder=" '-' 없이 숫자만 입력해주세요" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            이 메 일
+                        </td>
+                        <td>
+                            <input type="email" name="email" placeholder="이메일을 적어주세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            성 별
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="radio" class="gender" name="gender" value="man">남자</label>
+                        </td>
+                        <td>
+                            <label><input type="radio" class="gender" name="gender" value="woman">여자</label>
+                        </td>
+                    </tr>
+                <!-- <div>
+                    <input type="radio" class="gender">메세지 광고 수신 동의(입소 소식, 이벤트)</label>
+                </div> -->
+            </table>
+
+                <p>
+                    <input type="submit" value="가입하기" class="btn">
+                    <input type="reset" value="취 소" class="btn">
+                </p>
+            </form>
+        </section>
+        <hr>
+            <!-- section 끝 -->
+        <footer>
+                <div>
+                    <p>문의 전화 : 000-0000-0000</p>
+                    <p>운영 시간 : 00~00</p>
+                    <p>위치 : 사랑시 고백구 행복동</p>
+                    <p>후원 : 005702-04-091524 국민은행 티어하임</p>
+                    <p>대포이사 : 채토리</p>
+                </div>
+        </footer>
+    </div>
+    <!-- container -->
+</body>
+</html>
