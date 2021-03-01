@@ -97,7 +97,10 @@ showSlide(currSlide);
     } 
 function changecon(n){
         $visible = ".container" + n;
-
+        if( $visible= ".container6"){
+            alert("!");
+            location.href="shop.html";
+        }
         for( $i = 0; $i < $maxmenu; $i++){
             $reset = ".container"+($i);
             $($reset).css("display","none");

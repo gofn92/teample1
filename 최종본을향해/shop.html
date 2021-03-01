@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+    <style>
+        @font-face {
+                font-family: 'SDSamliphopangche_Outline';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Cafe24Dongdong';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+        @media (max-width: 1920px){
+            html,body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                font-size: 100%;
+                /* background-image: url(image/핑크.png); 핑크색배경임  */
+                background: url(image/white.gif);
+            }
+            #container{
+                width: 90%; height: 100%;
+                min-width: 1024px;
+            }
+            nav{
+                display: grid;
+                grid-template-columns: 5% 5% 5% 75% 5% 5%;
+                align-items: center;
+                justify-content: space-around;
+                position: relative;
+                border-bottom: 1px solid black;
+            }
+            nav a{
+                text-decoration: none;
+                color: rgba(0,0,0,0.5);
+                transition: 0.2s;
+                font-weight: bolder;
+                padding: 0 0px;
+                font-family: 'Cafe24Dongdong';
+            }
+            nav a:hover{
+                color: black;
+                font-size: 1.2rem;
+            }
+            nav .nav-btn1{
+                padding: 5px;
+                background: none;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Cafe24Dongdong';
+            }
+            nav .nav-btn2{
+                padding: 5px;
+                background: none;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Cafe24Dongdong';
+            }
+            nav p{
+                font-weight: bolder;
+                font-size: 2rem;
+                text-align: center;
+                font-family: 'SDSamliphopangche_Outline';
+                padding-right: 6%;
+            }
+            .logo-box{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 50px 0 ;
+            }
+            header{
+                border-bottom: 1px solid black;
+                padding: 0 0 10px 0;
+            }
+            header ul{
+                display: flex;
+                justify-content: space-around;
+                list-style: none;
+            }
+            header ul li a{
+                text-decoration: none;
+                color: black;
+                transition: 0.2s;
+                font-family: 'Cafe24Dongdong';
+            }
+            header ul li a:hover{
+                font-weight: bolder;
+                font-size: 1.2rem;
+            }
+            #slide-sec{
+                margin: 50px 0;
+            }
+            #item1 article{
+                width: 100%; height: 100%;
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: repeat(2,1fr);
+                place-items: center center;
+            }
+            #item1 article .content-item{
+                width: 250px; height: 300px;
+                position: relative;
+                border: 1px solid gray;
+                margin: 30px 0;
+            }
+            #partner{
+                display: grid;
+                place-items: center center;
+                font-size: 3rem;
+            }
+            #partner h2{
+                font-family: 'SDSamliphopangche_Outline';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="main-img">
+            <img src="image/배너-4마리.png" alt="배너" width="100%" height="200vh">
+        </div>
+        <!-- shop main img -->
+        <nav>
+            <div class="dog1">
+                <img src="image/dogr.svg" alt="dogr" width="60px" height="60px">
+            </div>
+            <div class="dog2">
+                <img src="image/dogl.svg" alt="dogl" width="60px" height="60px">
+            </div>
+            <!-- nav small img -->
+            <a href="#">HOME</a>
+            <!-- home button -->
+            <p>애완견용품</p>
+            <input type="button" value="LogIn" class="nav-btn1">
+            <input type="button" value="JoinUs" class="nav-btn2">
+            <!-- login and join btn -->
+        </nav>
+        <div class="logo-box">
+            <img src="image/logo_brown.png" alt="logo" width="160px" height="160px">
+        </div>
+        <header>
+            <ul>
+                <li><a href="#">애견 사료</a></li>
+                <li><a href="#">애견 간식</a></li>
+                <li><a href="#">건강 식품</a></li>
+                <li><a href="#">패션 의류</a></li>
+                <li><a href="#">이동캐리어</a></li>
+                <li><a href="#">산책리드</a></li>
+                <!-- shop menu -->
+            </ul>
+        </header>
+        <section id="slide-sec">
+            <div class="slide">
+                <img src="image/dog99.jpg" alt="slide" width="100%" height="100%">
+            </div>
+        </section>
+        <section id="item1">
+            <article>
+                <div class="content-item">
+                    <a href="shop-dog.html"><img src="image/pp1.png" alt="item1" width="250px" height="300px"></a>
+                </div>
+                <div class="content-item">
+                    <img src="image/pp2.png" alt="item1" width="250px" height="300px">
+                </div>
+                <div class="content-item">
+                    <img src="image/pp3.png" alt="item1" width="250px" height="300px">
+                </div>
+                <div class="content-item">
+                    <img src="image/pp4.png" alt="item1" width="250px" height="300px">
+                </div>
+                <div class="content-item">
+                    <img src="image/pp5.jpg" alt="item1" width="250px" height="300px">
+                </div>
+                <div class="content-item">
+                    <img src="image/pp6.jpg" alt="item1" width="250px" height="300px">
+                </div>
+                <div class="content-item">
+                    <img src="image/pp7.jpg" alt="item1" width="250px" height="300px">
+                </div>
+                <div class="content-item">
+                    <img src="image/pp8.jpg" alt="item1" width="250px" height="300px">
+                </div>
+            </article>
+            <!-- main content item / add hover effect + behind text-->
+        </section>
+        <section id="partner">
+            <h2>파트너쉽 브랜드</h2>
+            <div class="part-brand">
+                <img src="image/part.png" alt="partner">
+            </div>
+            <!-- partner brand section / click -> go to partner page  -->
+            <footer>
+                <p>footer section</p>
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
